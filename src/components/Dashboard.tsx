@@ -11,10 +11,10 @@ import {
   PieChart, Pie, Cell, Legend, LabelList
 } from 'recharts';
 import { cn } from '../utils';
-import { 
-  parseData, getKPISummary, getLeadsByAdvisor, getLeadsByStatus, 
-  getLeadsByFaculty, getLeadsByArea, getLeadsByTitle, getLeadsByDepartment, 
-  getLeadsByUniversity, getAdvisorStats 
+import {
+  parseData, getGanados, getCupones, getKPISummary, getLeadsByAdvisor, getLeadsByStatus,
+  getLeadsByFaculty, getLeadsByArea, getLeadsByTitle, getLeadsByDepartment,
+  getLeadsByUniversity, getAdvisorStats
 } from '../data';
 
 const COLORS = ['#f59e0b', '#3b82f6', '#10b981', '#8b5cf6', '#64748b', '#f43f5e', '#0ea5e9'];
@@ -45,9 +45,11 @@ export default function Dashboard() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const leads = useMemo(() => parseData(), []);
+  const ganadosMes = useMemo(() => getGanados(), []);
+  const cuponesMes = useMemo(() => getCupones(), []);
   const kpis = useMemo(() => getKPISummary(leads), [leads]);
   const leadsByStatus = useMemo(() => getLeadsByStatus(leads), [leads]);
-  const advisorStats = useMemo(() => getAdvisorStats(leads), [leads]);
+  const advisorStats = useMemo(() => getAdvisorStats(leads, ganadosMes), [leads, ganadosMes]);
   const leadsByFaculty = useMemo(() => getLeadsByFaculty(leads), [leads]);
   const leadsByArea = useMemo(() => getLeadsByArea(leads), [leads]);
   const leadsByTitle = useMemo(() => getLeadsByTitle(leads), [leads]);
@@ -88,7 +90,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">619</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">673</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
@@ -149,7 +151,12 @@ export default function Dashboard() {
 
     // Slide 3: Distribución Estado de Leads
     () => {
-      const sortedLeadsByStatus = [...leadsByStatus].sort((a, b) => {
+      // Los Ganados del mes (6) incluyen cierres de convocatorias previas que
+      // no están en el pipeline principal, por eso se sobreescribe el conteo.
+      const adjustedByStatus = leadsByStatus.map(s =>
+        s.name.toLowerCase().includes('ganado') ? { ...s, value: ganadosMes.length } : s
+      );
+      const sortedLeadsByStatus = [...adjustedByStatus].sort((a, b) => {
         const aName = a.name.toLowerCase();
         const bName = b.name.toLowerCase();
         
@@ -218,7 +225,7 @@ export default function Dashboard() {
                           <span className={cn("text-sm line-clamp-1", isGanado ? "text-emerald-400 font-bold" : "text-slate-200 font-medium")}>{status.name}</span>
                           {isValorando && (
                             <span className="text-xs text-amber-500 mt-0.5 font-medium flex items-center gap-1">
-                              <ArrowRight className="w-3 h-3" /> 1 pasan a cupón
+                              <ArrowRight className="w-3 h-3" /> 2 pasan a cupón
                             </span>
                           )}
                         </div>
@@ -239,7 +246,7 @@ export default function Dashboard() {
 
     // Slide 4: Ganados del Mes
     () => {
-      const ganados = leads.filter(l => l.status === 'Ganado' && l.closingMonth === 'Julio');
+      const ganados = ganadosMes;
       
       const advisorCards = [
         { 
@@ -326,7 +333,7 @@ export default function Dashboard() {
 
     // Slide 6: Oportunidades con Cupón
     () => {
-      const cupones = leads.filter(l => l.coupon === 'Sí');
+      const cupones = cuponesMes;
       return (
         <div className="h-full flex flex-col space-y-8">
           <div className="space-y-2 shrink-0 flex justify-between items-end">
@@ -532,7 +539,7 @@ export default function Dashboard() {
         { name: 'Abril', value: 6 },
         { name: 'Mayo', value: 3 },
         { name: 'Junio', value: 5 },
-        { name: 'Julio', value: 5 },
+        { name: 'Julio', value: 6 },
       ];
 
       return (
@@ -609,15 +616,7 @@ export default function Dashboard() {
       <header className="shrink-0 border-b border-[#053629]/60 bg-[#02120e]/80 backdrop-blur-xl z-50 flex items-center justify-between px-8 py-5">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#00df9a] flex items-center justify-center p-1.5 shadow-lg shadow-[#00df9a]/20">
-              <svg viewBox="0 0 100 100" className="w-full h-full text-[#1a1a1a]" fill="none" stroke="currentColor" strokeWidth="18">
-                <g transform="rotate(-45 50 50)">
-                  <path d="M 82 25 L 48 25 A 25 25 0 0 0 48 75 L 82 75" />
-                  <line x1="23" y1="50" x2="62" y2="50" />
-                </g>
-              </svg>
-            </div>
-            <span className="text-2xl font-bold tracking-tight text-white">Unieduca</span>
+            <img src="/logo-unieduca.png" alt="Unieduca" className="h-9 w-auto" />
           </div>
           <div className="h-8 border-l border-[#053629] ml-2"></div>
           <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Julio</span></span>
