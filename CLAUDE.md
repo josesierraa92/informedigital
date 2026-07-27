@@ -113,9 +113,13 @@ Cuando pidan "cambiar X a Y", suele ser un valor fijo en `Dashboard.tsx`:
   por mes escritos a mano.
 - **"N pasan a cupón"** en Distribución Estado de Leads: texto fijo.
 - **Distribución Estado – Ganados:** se **sobreescribe** el conteo a `ganadosMes.length`
-  (el pipeline solo tiene 2 ganados; el real del mes es 6). Ver `adjustedByStatus`.
-- **Eficiencia Comercial:** `getAdvisorStats(leads, ganadosMes)` fusiona los ganados
-  del dataset dedicado sin doble-contar (dedup por `# Digital`).
+  (el pipeline solo tiene 2 ganados; el real del mes son 9). Ver `adjustedByStatus`.
+- **Eficiencia Comercial:** `getAdvisorStats(leads, ganadosMes)` usa el dataset de
+  ganados como fuente **autoritativa** de "won". Ojo: algunos ganados están en el
+  pipeline con OTRO estado (p. ej. Jackelin #1856 = Valorando/Cupón), por eso NO basta
+  con contar los 'ganado' del pipeline. La función salta los `# Digital` que están en
+  el dataset de ganados al clasificar el pipeline (para no meterlos en "en proceso") y
+  suma al total solo los ganados que no vienen ya en el pipeline.
 
 ## Verificación visual sin abrir el navegador
 

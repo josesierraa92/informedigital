@@ -539,7 +539,7 @@ export default function Dashboard() {
         { name: 'Abril', value: 6 },
         { name: 'Mayo', value: 3 },
         { name: 'Junio', value: 5 },
-        { name: 'Julio', value: 6 },
+        { name: 'Julio', value: 9 },
       ];
 
       return (

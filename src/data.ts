@@ -264,12 +264,15 @@ export const parseData = (): Lead[] => parseCsv(rawData);
 // Incluye ganados de convocatorias anteriores que cerraron en Julio y que
 // no están en el pipeline principal, por eso se mantiene como dataset aparte.
 export const ganadosRawData = `Nº;ESTADO;ASESOR EDUCATIVO;NOMBRE;CANAL DE INGRESO;# Digital;TELÉFONO;UNIVERSIDAD;CONVOCATORIA;ÁREA DE ESTUDIO;FACULTAD;TÍTULO DE INTERÉS;ÚLTIMOS ESTUDIOS;DEPARTAMENTO;CIUDAD;EMPRESA;EMAIL;MÉTODO DE PAGO;F. PAGO RESERVA;MES CIERRE;INICIO CLASES;DESCUENTO;VALOR INICIAL;VALOR FINAL;PASA CUPÓN;COMENTARIO DIRECTOR;F. ULT. SEGUIMIENTO;TRANSFERIDO;INF. CONVENIO;INF. FINANCIERO;HOMOLOGACIÓN;FECHA CREADA;ÚLTIMA ACTUALIZACIÓN
-1;Ganado;Jineth Janeth Sarmiento;Lina Maria Rojas Osorio;Digital;1830;+573228577207;FUNIR;Otoño 2026;Especialización;Administración de la Salud;Especialización en Auditoría en Salud;Profesional/Licenciado;;;;linamary2158@gmail.com;Financiado;2026-07-30;Julio;Agosto;50%;$ 13.147.500;$ 6.573.750;Sí;;;No;No;No;No;26/06/26 09:09am;06/07/26 11:33am
-2;Ganado;Jineth Janeth Sarmiento;Sandra Gutiérrez Jaramillo;Digital;1825;+573202356988;UNIR;Otoño 2026;Maestría;Derecho;Derecho de Familia;Profesional/Licenciado;Meta;Villavicencio;;abgsandragutierrezjaramillo@gmail.com;Financiado;2026-07-07;Julio;Noviembre;50%;$ 30.444.000;$ 15.222.000;Sí;;;No;No;No;No;25/06/26 09:29am;07/07/26 08:56am
-3;Ganado;Nathaly Rojas Barreiro;Sulema Simón;Digital;1687;+573102728070;UNIR;Otoño 2026;Maestría;Educación;Didáctica de la lengua Infantil y Primaria;Profesional/Licenciado;Vaupés;Mitú;;Sulemarce@gmail.com;;2026-07-08;Julio;;;;;Sí;;;No;No;No;No;03/06/26 12:03pm;08/07/26 04:56pm
-4;Ganado;Yeisi Gallego;Maribel Cecilia Narváez Hernández;Digital;1886;+573234822480;UNIR;Otoño 2026;Maestría;Educación;Liderazgo y Dirección de Centros Educativos;;Antioquia;Arboletes;;maribelcecilianarvaez@gmail.com;;2026-07-14;Julio;;50%;$ 33.120.000;$ 16.560.000;Sí;;;No;No;No;No;07/07/26 07:59am;16/07/26 11:10am
-5;Ganado;Yeisi Gallego;Jefferson Cifuentes Vivas;Digital;1362;+573106964421;FUNIR;Otoño 2026;Especialización;Educación;Especialización en Pedagogía y Docencia;;Valle del Cauca;Cali;;cifuentesjefferson221@gmail.com;;2026-07-15;Julio;;55%;$ 11.298.500;$ 5.084.325;Sí;;;No;No;No;No;30/05/26 10:51am;16/07/26 10:58am
-6;Ganado;Yesica Marcela Giraldo;Jose Santos España Males;Digital;1866;+573147248119;Asturias;Otoño 2026;Especialización;Educación;Especialización en Innovación Educativa en Docencia Universitaria;Ingeniero/Profesional;Nariño;Pasto;Digital;joescolombia@gmail.com;Financiado;2026-07-04;Julio;Agosto;;$ 7.500.000;$ 7.500.000;Sí;1994598;2026-07-16;No;No;No;No;03/07/26 04:13pm;16/07/26 10:24pm`;
+1;Ganado;Jineth Janeth Sarmiento;Jackelin Maribel Epiayu Sijona;Digital;1856;+573202791619;UNIR;Otoño 2026;Maestría;Educación;Educación Emocional;Profesional/Licenciado;La Guajira;Fonseca;;jmepiayus@uniguajira.edu.co;Financiado;2026-07-24;Julio;Octubre;55%;$ 30.480.000;$ 13.716.000;Sí;;;No;No;No;No;02/07/26 09:44am;24/07/26 03:59pm
+2;Ganado;Jineth Janeth Sarmiento;Lina Maria Rojas Osorio;Digital;1830;+573228577207;FUNIR;Otoño 2026;Especialización;Administración de la Salud;Especialización en Auditoría en Salud;Profesional/Licenciado;;;;linamary2158@gmail.com;Financiado;2026-07-30;Julio;Agosto;50%;$ 13.147.500;$ 6.573.750;Sí;;;No;No;No;No;26/06/26 09:09am;06/07/26 11:33am
+3;Ganado;Jineth Janeth Sarmiento;Sandra Gutiérrez Jaramillo;Digital;1825;+573202356988;UNIR;Otoño 2026;Maestría;Derecho;Derecho de Familia;Profesional/Licenciado;Meta;Villavicencio;;abgsandragutierrezjaramillo@gmail.com;Financiado;2026-07-07;Julio;Noviembre;50%;$ 30.444.000;$ 15.222.000;Sí;;;No;No;No;No;25/06/26 09:29am;24/07/26 03:02pm
+4;Ganado;Jineth Janeth Sarmiento;Victoria Milena Barros;Digital;1718;+573187738610;UNIR;Otoño 2026;Maestría;Ingeniería;Prevención de Riesgos Laborales;Ingeniero/Profesional;Magdalena;Santa Marta;;ingvictoriabf@gmail.com;Financiado;2026-07-24;Julio;Octubre;50%;$ 32.160.000;$ 16.080.000;Sí;;;No;No;No;No;09/06/26 08:47am;24/07/26 03:51pm
+5;Ganado;Nathaly Rojas Barreiro;Sulema Simón;Digital;1687;+573102728070;UNIR;Otoño 2026;Maestría;Educación;Didáctica de la lengua Infantil y Primaria;Profesional/Licenciado;Vaupés;Mitú;;Sulemarce@gmail.com;;2026-07-08;Julio;;;;;Sí;;;No;No;No;No;03/06/26 12:03pm;08/07/26 04:56pm
+6;Ganado;Yeisi Gallego;Maribel Cecilia Narváez Hernández;Digital;1886;+573234822480;UNIR;Otoño 2026;Maestría;Educación;Liderazgo y Dirección de Centros Educativos;;Antioquia;Arboletes;;maribelcecilianarvaez@gmail.com;;2026-07-14;Julio;;50%;$ 33.120.000;$ 16.560.000;Sí;;;No;No;No;No;07/07/26 07:59am;16/07/26 11:10am
+7;Ganado;Yeisi Gallego;Carlos Arturo Martinez Jurado;Digital;1676;+573057902528;FUNIR;Otoño 2026;Especialización;Educación;Especialización en Gerencia Educativa;;Bogotá D.C.;Bogotá;;carlosmartinezjurado@gmail.com;;2026-07-24;Julio;;50%;$ 14.669.500;$ 7.334.750;Sí;;;No;No;No;No;02/06/26 09:20am;25/07/26 10:35am
+8;Ganado;Yeisi Gallego;Jefferson Cifuentes Vivas;Digital;1362;+573106964421;FUNIR;Otoño 2026;Especialización;Educación;Especialización en Pedagogía y Docencia;;Valle del Cauca;Cali;;cifuentesjefferson221@gmail.com;;2026-07-15;Julio;;55%;$ 11.298.500;$ 5.084.325;Sí;;;No;No;No;No;30/05/26 10:51am;16/07/26 10:58am
+9;Ganado;Yesica Marcela Giraldo;Jose Santos España Males;Digital;1866;+573147248119;Asturias;Otoño 2026;Especialización;Educación;Especialización en Innovación Educativa en Docencia Universitaria;Ingeniero/Profesional;Nariño;Pasto;Digital;joescolombia@gmail.com;Financiado;2026-07-04;Julio;Agosto;;$ 7.500.000;$ 7.500.000;Sí;1994598;2026-07-16;No;No;No;No;03/07/26 04:13pm;27/07/26 10:03am`;
 
 export const getGanados = (): Lead[] => parseCsv(ganadosRawData);
 
@@ -332,10 +335,19 @@ export const getAdvisorStats = (leads: Lead[], ganados: Lead[] = []) => {
     return stats[adv];
   };
 
+  // El dataset de ganados es la fuente autoritativa de "ganados". Algunos de
+  // ellos están en el pipeline con OTRO estado (p. ej. Valorando/Cupón), así
+  // que no basta con contar los 'ganado' del pipeline.
   const pipelineIds = new Set(leads.map(l => l.digitalId));
+  const ganadoIds = new Set(ganados.map(g => g.digitalId));
+
   leads.forEach(l => {
     const s = ensure(l.advisor || 'Sin Asesor');
     s.total++;
+
+    // Si el lead es realmente un ganado, se contabiliza en la pasada de abajo;
+    // aquí no lo clasificamos para no meterlo en "en proceso" ni "perdido".
+    if (ganadoIds.has(l.digitalId)) return;
 
     const status = l.status.toLowerCase();
     if (status === 'ganado') {
@@ -347,13 +359,12 @@ export const getAdvisorStats = (leads: Lead[], ganados: Lead[] = []) => {
     }
   });
 
-  // Suma los ganados del mes que NO están en el pipeline (cierres de
-  // convocatorias previas); los que ya están se cuentan una sola vez.
   ganados.forEach(g => {
-    if (pipelineIds.has(g.digitalId)) return;
     const s = ensure(g.advisor || 'Sin Asesor');
-    s.total++;
     s.won++;
+    // Los ganados que no están en el pipeline (cierres de convocatorias
+    // previas) suman también al total; los que ya están ya se contaron.
+    if (!pipelineIds.has(g.digitalId)) s.total++;
   });
 
   return Object.entries(stats).map(([name, data]) => ({
