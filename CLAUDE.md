@@ -51,7 +51,7 @@ parseados por la función compartida `parseCsv(raw)`:
 
 | Constante          | Función        | Qué contiene                                             |
 |--------------------|----------------|----------------------------------------------------------|
-| `rawData`          | `parseData()`  | Pipeline principal del mes (todos los leads, ~167 filas) |
+| `rawData`          | `parseData()`  | Pipeline principal del mes (todos los leads, ~228 filas) |
 | `ganadosRawData`   | `getGanados()` | Cierres del mes (Ganados). Dataset curado.               |
 | `cuponesRawData`   | `getCupones()` | Leads con Cupón / Alta Intención. Dataset curado.        |
 
@@ -59,32 +59,25 @@ parseados por la función compartida `parseCsv(raw)`:
 anteriores que **no** están en el pipeline principal, por eso no se pueden derivar
 filtrando `rawData`. Se mantienen aparte y se usan directamente en sus slides.
 
-### Orden de columnas del CSV (reporte "22 julio" en adelante)
+### Columnas del CSV — parser por NOMBRE de cabecera
 
-`parseCsv` mapea por **índice de columna**. El orden actual es:
+`parseCsv` mapea por **nombre de columna** (no por índice). Lee la primera línea del
+CSV, la baja a minúsculas y busca cada campo del `Lead` en el mapa `CSV_COLUMNS`
+(campo → nombre de columna). Por eso es **robusto al reordenamiento y a columnas
+nuevas**: el orden ha cambiado ya 3 veces y aparecieron columnas como
+`Nivel de Interés` y `@ WHATSAPP` que simplemente se ignoran.
 
-```
-0 Nº              9  ÁREA DE ESTUDIO   18 F. PAGO RESERVA   27 TRANSFERIDO
-1 ESTADO          10 FACULTAD          19 MES CIERRE        28 INF. CONVENIO
-2 ASESOR          11 TÍTULO INTERÉS    20 INICIO CLASES     29 INF. FINANCIERO
-3 NOMBRE          12 ÚLTIMOS ESTUDIOS  21 DESCUENTO         30 HOMOLOGACIÓN
-4 CANAL           13 DEPARTAMENTO      22 VALOR INICIAL     31 FECHA CREADA
-5 # DIGITAL       14 CIUDAD            23 VALOR FINAL        32 ÚLTIMA ACTUALIZACIÓN
-6 TELÉFONO        15 EMPRESA           24 PASA CUPÓN
-7 UNIVERSIDAD     16 EMAIL             25 COMENTARIO DIR
-8 CONVOCATORIA    17 MÉTODO PAGO       26 F. ULT. SEGUIMIENTO
-```
-
-⚠️ **El orden de columnas ha cambiado entre exports.** Si llega un CSV nuevo, **revisa
-la cabecera primero**. Si difiere, actualiza los índices en `parseCsv` (tienen un
-comentario con este mapa) — no basta con pegar los datos.
+⚠️ Si un CSV nuevo **renombra** una columna que sí usamos (p. ej. cambia
+`TÍTULO DE INTERÉS`), hay que actualizar el valor correspondiente en `CSV_COLUMNS`.
+Añadir/quitar/reordenar columnas NO requiere tocar nada.
 
 ## Cómo actualizar los datos con un CSV nuevo (workflow probado)
 
 1. **Guarda el CSV en disco y léelo desde ahí**, NO copies el texto pegado en el chat.
    Los CSV pegados llegan con acentos corruptos (mojibake: `MaestrÃ­a` en vez de
    `Maestría`). El archivo real suele ser UTF-8 con BOM y sale limpio con la tool Read.
-2. **Compara la cabecera** con el mapa de arriba. Si cambió el orden, ajusta `parseCsv`.
+2. **Revisa la cabecera.** El parser mapea por nombre, así que reordenar o agregar
+   columnas no rompe nada. Solo actualiza `CSV_COLUMNS` si **renombran** una columna usada.
 3. **Reemplaza el template literal** correspondiente (`rawData` / `ganadosRawData` /
    `cuponesRawData`) con el contenido nuevo:
    - Quita el BOM, normaliza CRLF→LF, `trim()`.
@@ -113,7 +106,7 @@ Cuando pidan "cambiar X a Y", suele ser un valor fijo en `Dashboard.tsx`:
   por mes escritos a mano.
 - **"N pasan a cupón"** en Distribución Estado de Leads: texto fijo.
 - **Distribución Estado – Ganados:** se **sobreescribe** el conteo a `ganadosMes.length`
-  (el pipeline solo tiene 2 ganados; el real del mes son 9). Ver `adjustedByStatus`.
+  (el pipeline tiene 3 ganados; el real del mes son 9). Ver `adjustedByStatus`.
 - **Eficiencia Comercial:** `getAdvisorStats(leads, ganadosMes)` usa el dataset de
   ganados como fuente **autoritativa** de "won". Ojo: algunos ganados están en el
   pipeline con OTRO estado (p. ej. Jackelin #1856 = Valorando/Cupón), por eso NO basta
