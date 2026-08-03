@@ -1,10 +1,11 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Users, TrendingUp, UserCheck, UserX, Clock, ChevronDown, 
-  ChevronLeft, ChevronRight, Presentation, MapPin, BookOpen, 
+import {
+  Users, TrendingUp, UserCheck, UserX, Clock, ChevronDown,
+  ChevronLeft, ChevronRight, Presentation, MapPin, BookOpen,
   GraduationCap, Building, Phone, Calendar, PieChart as PieChartIcon,
-  Award, Star, Ticket, ArrowRight
+  Award, Star, Ticket, ArrowRight, ShieldCheck, Megaphone, Wrench,
+  Headset, ExternalLink, MessageCircle
 } from 'lucide-react';
 import { 
   BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, 
@@ -607,7 +608,107 @@ export default function Dashboard() {
       );
     },
 
-    // Slide 12: Gracias
+    // Slide 12: Tarifas de WhatsApp Business Platform
+    () => {
+      const categories = [
+        {
+          name: 'Autenticación',
+          icon: <ShieldCheck className="w-6 h-6" />,
+          color: '#3b82f6',
+          description: 'Códigos de verificación para confirmar la identidad del usuario (OTP, doble factor).',
+          example: '"Tu código de verificación Unieduca es 482910. No lo compartas con nadie."',
+          price: '$46,0227',
+        },
+        {
+          name: 'Marketing',
+          icon: <Megaphone className="w-6 h-6" />,
+          color: '#a855f7',
+          description: 'Promociones, ofertas y anuncios para atraer nuevos leads o reactivar prospectos.',
+          example: '"🎓 Últimos cupos para la Maestría en Educación. ¡20% de descuento esta semana!"',
+          price: '$46,0227',
+        },
+        {
+          name: 'Utilidad',
+          icon: <Wrench className="w-6 h-6" />,
+          color: '#00df9a',
+          description: 'Actualizaciones sobre una transacción o solicitud en curso (confirmaciones, recordatorios).',
+          example: '"Tu inscripción a la Especialización fue confirmada. ¡Bienvenido a Unieduca!"',
+          price: '$2,9455',
+        },
+        {
+          name: 'Servicio',
+          icon: <Headset className="w-6 h-6" />,
+          color: '#64748b',
+          description: 'Conversación iniciada por el usuario y respondida dentro de la ventana de atención (24h).',
+          example: '"Hola, quiero información sobre la Maestría en Derecho."',
+          price: 'Gratis',
+          isFree: true,
+        },
+      ];
+
+      return (
+        <div className="h-full flex flex-col space-y-6">
+          <div className="space-y-2 shrink-0">
+            <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
+              <MessageCircle className="text-[#00df9a] w-8 h-8" /> Tarifas de WhatsApp Business Platform
+            </h2>
+            <p className="text-slate-400">
+              Meta cobra por categoría de mensaje enviado. Referencia de tarifas para Colombia (COP) por conversación.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 flex-1 min-h-0">
+            {categories.map(cat => (
+              <div
+                key={cat.name}
+                className="bg-[#032018]/50 border rounded-2xl p-6 flex flex-col shadow-lg"
+                style={{ borderColor: `${cat.color}30` }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center border shrink-0"
+                    style={{ backgroundColor: `${cat.color}15`, borderColor: `${cat.color}30`, color: cat.color }}
+                  >
+                    {cat.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white">{cat.name}</h3>
+                </div>
+
+                <p className="text-sm text-slate-400 leading-relaxed mb-4">{cat.description}</p>
+
+                <div className="bg-[#02120e]/60 border border-[#053629] rounded-lg p-3 mb-4 flex-1">
+                  <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Ejemplo</p>
+                  <p className="text-xs text-slate-300 italic leading-relaxed">{cat.example}</p>
+                </div>
+
+                <div className="mt-auto">
+                  <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Tarifa por mensaje (COP)</p>
+                  <p
+                    className={cn("text-3xl font-bold tracking-tight", cat.isFree ? "text-[#00df9a]" : "text-white")}
+                  >
+                    {cat.price}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="shrink-0 flex items-center justify-between bg-[#032018]/40 border border-[#053629]/80 rounded-xl px-6 py-3">
+            <p className="text-xs text-slate-500">Fuente: tarifas oficiales de Meta para Colombia (COP), consultadas en el comparador de WhatsApp Business Platform.</p>
+            <a
+              href="https://whatsappbusiness.com/es-la/products/platform-pricing/?country=Colombia&currency=Peso%20colombiano%20(COP)&category=Marketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs font-bold text-[#00df9a] hover:text-[#5cffd6] transition-colors shrink-0 ml-4"
+            >
+              Ver comparador oficial <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      );
+    },
+
+    // Slide 13: Gracias
     () => (
       <div className="h-full flex flex-col items-center justify-center space-y-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#00df9a]/10 to-transparent pointer-events-none"></div>
