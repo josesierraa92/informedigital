@@ -41,6 +41,14 @@ const getStatusColor = (status: string, index: number = 0) => {
   return COLORS[index % COLORS.length];
 };
 
+const getInterestColor = (level: string) => {
+  const normalized = level.toLowerCase();
+  if (normalized === 'alto') return '#10b981';
+  if (normalized === 'medio') return '#f59e0b';
+  if (normalized === 'bajo') return '#64748b';
+  return '#475569';
+};
+
 export default function Dashboard() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -90,7 +98,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">673</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">748</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
@@ -209,8 +217,7 @@ export default function Dashboard() {
                   const color = getStatusColor(status.name, i);
                   const isGanado = status.name.toLowerCase().includes('ganado');
                   const isValorando = status.name.toLowerCase().includes('valorando') || status.name.toLowerCase().includes('cupón');
-                  const cuponesCount = leads.filter(l => l.pasaCupon && l.estado === status.name).length;
-                  
+
                   return (
                     <div key={status.name} className={cn("py-2.5 px-4 rounded-xl border flex justify-between items-center w-full transition-all shrink-0", isGanado ? "bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.15)] scale-[1.02] z-10" : "bg-[#02120e]/40 border-[#053629] hover:bg-[#053629]/40")}>
                       <div className="flex items-center gap-3">
@@ -225,7 +232,7 @@ export default function Dashboard() {
                           <span className={cn("text-sm line-clamp-1", isGanado ? "text-emerald-400 font-bold" : "text-slate-200 font-medium")}>{status.name}</span>
                           {isValorando && (
                             <span className="text-xs text-amber-500 mt-0.5 font-medium flex items-center gap-1">
-                              <ArrowRight className="w-3 h-3" /> 2 pasan a cupón
+                              <ArrowRight className="w-3 h-3" /> {cuponesMes.length} pasan a cupón
                             </span>
                           )}
                         </div>
@@ -370,6 +377,7 @@ export default function Dashboard() {
                     <th className="px-6 py-4">Nombre</th>
                     <th className="px-6 py-4">Programa</th>
                     <th className="px-6 py-4">Ciudad</th>
+                    <th className="px-6 py-4">Interés</th>
                     <th className="px-6 py-4">Estado</th>
                   </tr>
                 </thead>
@@ -381,6 +389,22 @@ export default function Dashboard() {
                       <td className="px-6 py-4 font-medium text-slate-200">{lead.name}</td>
                       <td className="px-6 py-4 text-slate-400 text-xs max-w-[200px] truncate" title={lead.title || lead.faculty}>{lead.title || lead.faculty}</td>
                       <td className="px-6 py-4 text-slate-400 text-xs">{lead.city || '-'}</td>
+                      <td className="px-6 py-4">
+                        {lead.interestLevel ? (
+                          <span
+                            className="px-2 py-1 rounded text-[10px] font-bold tracking-wider uppercase whitespace-nowrap border w-fit"
+                            style={{
+                              backgroundColor: `${getInterestColor(lead.interestLevel)}15`,
+                              borderColor: `${getInterestColor(lead.interestLevel)}30`,
+                              color: getInterestColor(lead.interestLevel)
+                            }}
+                          >
+                            {lead.interestLevel}
+                          </span>
+                        ) : (
+                          <span className="text-slate-600 text-xs">-</span>
+                        )}
+                      </td>
                       <td className="px-6 py-4">
                         <span 
                           className={cn(

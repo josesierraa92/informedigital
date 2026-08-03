@@ -100,11 +100,12 @@ Añadir/quitar/reordenar columnas NO requiere tocar nada.
 
 Cuando pidan "cambiar X a Y", suele ser un valor fijo en `Dashboard.tsx`:
 
-- **"Leads Total Otoño 2026"** (portada de universidades): número fijo (ej. `673`).
+- **"Leads Total Otoño 2026"** (portada de universidades): número fijo (ej. `748`).
   El otro número grande de esa slide sí es `{kpis.total}` (derivado).
 - **Tendencia de Ganados por Mes** (slide ~11): array `ganadosMesData` con valores
   por mes escritos a mano.
-- **"N pasan a cupón"** en Distribución Estado de Leads: texto fijo.
+- **"N pasan a cupón"** en Distribución Estado de Leads: **ya NO es texto fijo**,
+  es `{cuponesMes.length}` — se actualiza solo al reemplazar `cuponesRawData`.
 - **Distribución Estado – Ganados:** se **sobreescribe** el conteo a `ganadosMes.length`
   (el pipeline tiene 3 ganados; el real del mes son 9). Ver `adjustedByStatus`.
 - **Eficiencia Comercial:** `getAdvisorStats(leads, ganadosMes)` usa el dataset de
@@ -113,6 +114,10 @@ Cuando pidan "cambiar X a Y", suele ser un valor fijo en `Dashboard.tsx`:
   con contar los 'ganado' del pipeline. La función salta los `# Digital` que están en
   el dataset de ganados al clasificar el pipeline (para no meterlos en "en proceso") y
   suma al total solo los ganados que no vienen ya en el pipeline.
+- **Nivel de Interés** (`Lead.interestLevel`, columna `Nivel de Interés`): campo
+  opcional que no todos los CSV traen (los datasets viejos de ganados no la tienen,
+  `indexOf` devuelve -1 y queda `''`, sin romper nada). Se muestra como badge
+  Alto/Medio/Bajo en la tabla de "Leads con Cupón".
 
 ## Verificación visual sin abrir el navegador
 

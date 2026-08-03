@@ -231,6 +231,7 @@ export const rawData = `Nº;ESTADO;Nivel de Interés;ASESOR EDUCATIVO;NOMBRE;CAN
 export interface Lead {
   id: string;
   status: string;
+  interestLevel: string;
   advisor: string;
   name: string;
   phone: string;
@@ -271,6 +272,7 @@ export interface Lead {
 const CSV_COLUMNS: Record<keyof Lead, string> = {
   id: 'nº',
   status: 'estado',
+  interestLevel: 'nivel de interés',
   advisor: 'asesor educativo',
   name: 'nombre',
   channel: 'canal de ingreso',
@@ -353,16 +355,14 @@ export const getGanados = (): Lead[] => parseCsv(ganadosRawData);
 // Leads con Cupón (Alta Intención) — reporte "9 valorando 22 julio".
 // Lista curada de prospectos prioritarios con cupón (incluye leads de
 // convocatorias previas), por eso se mantiene como dataset aparte.
-export const cuponesRawData = `Nº;ESTADO;ASESOR EDUCATIVO;NOMBRE;CANAL DE INGRESO;# Digital;TELÉFONO;UNIVERSIDAD;CONVOCATORIA;ÁREA DE ESTUDIO;FACULTAD;TÍTULO DE INTERÉS;ÚLTIMOS ESTUDIOS;DEPARTAMENTO;CIUDAD;EMPRESA;EMAIL;MÉTODO DE PAGO;F. PAGO RESERVA;MES CIERRE;INICIO CLASES;DESCUENTO;VALOR INICIAL;VALOR FINAL;PASA CUPÓN;COMENTARIO DIRECTOR;F. ULT. SEGUIMIENTO;TRANSFERIDO;INF. CONVENIO;INF. FINANCIERO;HOMOLOGACIÓN;FECHA CREADA;ÚLTIMA ACTUALIZACIÓN
-1;Valorando/Cupón;Yeisi Gallego;Andres Pulido;Digital;1987;+573502810411;UNIR;Otoño 2026;Maestría;MBA;MBA;;Bogotá D.C.;Bogotá;;wilmerpulido1987@gmail.com;;;;;;;;Sí;;;No;No;No;No;18/07/26 09:42am;21/07/26 03:00pm
-2;Valorando/Cupón;Jineth Janeth Sarmiento;Jackelin Maribel Epiayu Sijona;Digital;1856;+573202791619;UNIR;Otoño 2026;Maestría;Educación;Educación Emocional;Profesional/Licenciado;La Guajira;Fonseca;;jmepiayus@uniguajira.edu.co;Financiado;;;Octubre;55%;$ 30.480.000;$ 13.716.000;Sí;;;No;No;No;No;02/07/26 09:44am;10/07/26 06:30pm
-3;Valorando/Cupón;Jineth Janeth Sarmiento;Abraham Paul Morante Barrios;Digital;1775;+573004462479;FUNIR;Otoño 2026;Especialización;Ingeniería;Especialización en Dirección y Gestión de Proyectos;Ingeniero/Profesional;Bolívar;El Carmen de Bolívar;;abrahammorante1@gmail.com;;;;;;;;Sí;;;No;No;No;No;16/06/26 12:14pm;22/06/26 04:21pm
-4;Valorando/Cupón;Jineth Janeth Sarmiento;Sol Merys Mattos;Digital;1755;+573117922684;UNIR;Otoño 2026;Maestría;Educación;;;;;;solmemattos81@gmail.com;;;;;;;;Sí;;;No;No;No;No;11/06/26 10:38am;11/07/26 02:38pm
-5;Valorando/Cupón;Jineth Janeth Sarmiento;Herney Zemanate Mamian;Digital;1679;+573173495779;UNIR;Otoño 2026;Maestría;;;;Risaralda;Dosquebradas;;hzemanatem@ut.edu.co;;;;;;;;Sí;;;No;No;No;No;03/06/26 11:52am;05/06/26 06:54pm
-6;Valorando/Cupón;Jineth Janeth Sarmiento;Oscar Luis García Peñate;Digital;1667;+573206809296;UNIR;Otoño 2026;Maestría;Educación;;;Atlántico;Barranquilla;;3184782960 oscarluis060671@gmail.com;;;;;;;;Sí;;;No;No;No;No;30/05/26 10:11am;20/06/26 01:02pm
-7;Valorando/Cupón;Yeisi Gallego;Amanda Corpas;Digital;1643;+573172993893;UNIR;Otoño 2026;Maestría;Derecho;;Profesional/Licenciado;;;;;;;;;;;;Sí;;;No;No;No;No;26/05/26 10:03am;10/06/26 02:59pm
-8;Valorando/Cupón;Jineth Janeth Sarmiento;Maribel Jaimes;Digital;1601;+573214149650;UNIR;Otoño 2026;Maestría;Educación;;;Norte de Santander;Cúcuta;;fonomaribelj20@gmail.com;;;;;;;;Sí;;;No;No;No;No;20/05/26 09:45am;25/05/26 02:46pm
-9;Valorando/Cupón;Jineth Janeth Sarmiento;Nidia Ardila Marulanda;Digital;1501;+573182185333;UNIR;Otoño 2026;Maestría;;;;Valle del Cauca;;;;;;;;;;;Sí;;;No;No;No;No;18/05/26 05:40pm;26/05/26 09:26am`;
+export const cuponesRawData = `Nº;ESTADO;Nivel de Interés;ASESOR EDUCATIVO;NOMBRE;CANAL DE INGRESO;# Digital;TELÉFONO;@ WHATSAPP;UNIVERSIDAD;CONVOCATORIA;ÁREA DE ESTUDIO;FACULTAD;TÍTULO DE INTERÉS;ÚLTIMOS ESTUDIOS;DEPARTAMENTO;CIUDAD;EMPRESA;EMAIL;MÉTODO DE PAGO;F. PAGO RESERVA;MES CIERRE;INICIO CLASES;DESCUENTO;VALOR INICIAL;VALOR FINAL;PASA CUPÓN;COMENTARIO DIRECTOR;F. ULT. SEGUIMIENTO;TRANSFERIDO;INF. CONVENIO;INF. FINANCIERO;HOMOLOGACIÓN;FECHA CREADA;ÚLTIMA ACTUALIZACIÓN
+1;Valorando/Cupón;Alto;Jineth Janeth Sarmiento;María Andrey Serna Franco;Digital;1943;+573046399822;;UNIR;Otoño 2026;Maestría;Derecho;Derechos Humanos;Especialista;Antioquia;Medellín;;andry771@hotmail.com;Financiado;;;Noviembre;50%;$ 29.280.000;$ 14.640.000;Sí;;;No;No;No;No;14/07/26 02:11pm;31/07/26 06:08pm
+2;Valorando/Cupón;;Jineth Janeth Sarmiento;Abraham Paul Morante Barrios;Digital;1775;+573004462479;;FUNIR;Otoño 2026;Especialización;Ingeniería;Especialización en Dirección y Gestión de Proyectos;Ingeniero/Profesional;Bolívar;El Carmen de Bolívar;;abrahammorante1@gmail.com;;;;;;;;Sí;;;No;No;No;No;16/06/26 12:14pm;22/06/26 04:21pm
+3;Valorando/Cupón;Alto;Jineth Janeth Sarmiento;Sol Merys Mattos;Digital;1755;+573117922684;;UNIR;Otoño 2026;Maestría;Educación;;;;;;solmemattos81@gmail.com;;;;;;;;Sí;;;No;No;No;No;11/06/26 10:38am;22/07/26 04:32pm
+4;Valorando/Cupón;;Jineth Janeth Sarmiento;Herney Zemanate Mamian;Digital;1679;+573173495779;;UNIR;Otoño 2026;Maestría;;;;Risaralda;Dosquebradas;;hzemanatem@ut.edu.co;;;;;;;;Sí;;;No;No;No;No;03/06/26 11:52am;05/06/26 06:54pm
+5;Valorando/Cupón;;Jineth Janeth Sarmiento;Oscar Luis García Peñate;Digital;1667;+573206809296;;UNIR;Otoño 2026;Maestría;Educación;;;Atlántico;Barranquilla;;3184782960 oscarluis060671@gmail.com;;;;;;;;Sí;;;No;No;No;No;30/05/26 10:11am;20/06/26 01:02pm
+6;Valorando/Cupón;Bajo;Yeisi Gallego;Amanda Corpas;Digital;1643;+573172993893;;UNIR;Otoño 2026;Maestría;Derecho;;Profesional/Licenciado;;;;;;;;;;;;Sí;;;No;No;No;No;26/05/26 10:03am;01/08/26 04:25pm
+7;Valorando/Cupón;;Jineth Janeth Sarmiento;Nidia Ardila Marulanda;Digital;1501;+573182185333;;UNIR;Otoño 2026;Maestría;;;;Valle del Cauca;;;;;;;;;;;Sí;;;No;No;No;No;18/05/26 05:40pm;26/05/26 09:26am`;
 
 export const getCupones = (): Lead[] => parseCsv(cuponesRawData);
 
