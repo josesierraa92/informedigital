@@ -618,6 +618,7 @@ export default function Dashboard() {
           description: 'Códigos de verificación para confirmar la identidad del usuario (OTP, doble factor).',
           example: '"Tu código de verificación Unieduca es 482910. No lo compartas con nadie."',
           price: '$2,9455',
+          priceUsd: '≈ US$0,0009',
         },
         {
           name: 'Marketing',
@@ -626,6 +627,7 @@ export default function Dashboard() {
           description: 'Promociones, ofertas y anuncios para atraer nuevos leads o reactivar prospectos.',
           example: '"🎓 Últimos cupos para la Maestría en Educación. ¡20% de descuento esta semana!"',
           price: '$46,0227',
+          priceUsd: '≈ US$0,0148',
         },
         {
           name: 'Utilidad',
@@ -634,6 +636,7 @@ export default function Dashboard() {
           description: 'Actualizaciones sobre una transacción o solicitud en curso (confirmaciones, recordatorios).',
           example: '"Tu inscripción a la Especialización fue confirmada. ¡Bienvenido a Unieduca!"',
           price: '$2,9455',
+          priceUsd: '≈ US$0,0009',
         },
         {
           name: 'Servicio',
@@ -642,6 +645,7 @@ export default function Dashboard() {
           description: 'Conversación iniciada por el usuario y respondida dentro de la ventana de atención (24h).',
           example: '"Hola, quiero información sobre la Maestría en Derecho."',
           price: 'Gratis',
+          priceUsd: 'US$0,00',
           isFree: true,
         },
       ];
@@ -688,13 +692,17 @@ export default function Dashboard() {
                   >
                     {cat.price}
                   </p>
+                  <p className="text-xs text-slate-500 font-mono mt-1">{cat.priceUsd}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="shrink-0 flex items-center justify-between bg-[#032018]/40 border border-[#053629]/80 rounded-xl px-6 py-3">
-            <p className="text-xs text-slate-500">Fuente: tarifas oficiales de Meta para Colombia (COP), consultadas en el comparador de WhatsApp Business Platform.</p>
+            <p className="text-xs text-slate-500">
+              Fuente: tarifas oficiales de Meta para Colombia (COP), consultadas en el comparador de WhatsApp Business Platform.
+              Valores en USD son una <span className="text-slate-400 font-medium">conversión aproximada</span> (TRM ≈ COP 3.120 / US$1), no la tarifa oficial en dólares.
+            </p>
             <a
               href="https://whatsappbusiness.com/es-la/products/platform-pricing/?country=Colombia&currency=Peso%20colombiano%20(COP)&category=Marketing"
               target="_blank"
