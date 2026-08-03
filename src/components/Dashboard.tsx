@@ -617,7 +617,7 @@ export default function Dashboard() {
           color: '#3b82f6',
           description: 'Códigos de verificación para confirmar la identidad del usuario (OTP, doble factor).',
           example: '"Tu código de verificación Unieduca es 482910. No lo compartas con nadie."',
-          price: '$46,0227',
+          price: '$2,9455',
         },
         {
           name: 'Marketing',
