@@ -3,9 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
   Users, TrendingUp, UserCheck, UserX, Clock, ChevronDown,
   ChevronLeft, ChevronRight, Presentation, MapPin, BookOpen,
-  GraduationCap, Building, Phone, Calendar, PieChart as PieChartIcon,
-  Award, Star, Ticket, ArrowRight, ShieldCheck, Megaphone, Wrench,
-  Headset, ExternalLink, MessageCircle
+  GraduationCap, Building, Calendar, PieChart as PieChartIcon,
+  Award, Star, Ticket, ArrowRight
 } from 'lucide-react';
 import { 
   BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, 
@@ -73,7 +72,7 @@ export default function Dashboard() {
           <Presentation className="text-white w-12 h-12" />
         </div>
         <div className="space-y-4 max-w-3xl">
-          <h1 className="text-sm uppercase tracking-[0.4em] text-[#00df9a] font-bold">Reporte Ejecutivo • Mes de Julio</h1>
+          <h1 className="text-sm uppercase tracking-[0.4em] text-[#00df9a] font-bold">Reporte Ejecutivo • Mes de Agosto</h1>
           <h2 className="text-5xl md:text-7xl font-light tracking-tight text-white leading-tight">
             Informe y Proyección <br/><span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#00df9a] to-[#5cffd6]">Canal Digital</span>
           </h2>
@@ -99,7 +98,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">748</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">861</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
@@ -109,7 +108,7 @@ export default function Dashboard() {
                 <div className="absolute -inset-4 bg-blue-500/20 blur-xl rounded-full"></div>
                 <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] tracking-tighter">{kpis.total}</div>
               </div>
-              <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Julio)</div>
+              <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Agosto)</div>
             </div>
           </div>
         </div>
@@ -160,7 +159,7 @@ export default function Dashboard() {
 
     // Slide 3: Distribución Estado de Leads
     () => {
-      // Los Ganados del mes (6) incluyen cierres de convocatorias previas que
+      // Los Ganados del mes (3) incluyen cierres de convocatorias previas que
       // no están en el pipeline principal, por eso se sobreescribe el conteo.
       const adjustedByStatus = leadsByStatus.map(s =>
         s.name.toLowerCase().includes('ganado') ? { ...s, value: ganadosMes.length } : s
@@ -256,40 +255,23 @@ export default function Dashboard() {
     () => {
       const ganados = ganadosMes;
       
-      const advisorCards = [
-        { 
-          name: 'Jineth Janeth Sarmiento', 
-          count: ganados.filter(l => l.advisor.includes('Jineth')).length,
-          bgClass: 'from-emerald-500/20 to-[#032018] border-emerald-500/30 shadow-emerald-500/5',
-          textClass: 'text-emerald-400',
-          iconBgClass: 'bg-emerald-500/20 border-emerald-500/30',
-          icon: <Star className="text-emerald-400 w-8 h-8" />
-        },
-        { 
-          name: 'Yeisi Gallego', 
-          count: ganados.filter(l => l.advisor.includes('Yeisi')).length,
-          bgClass: 'from-blue-500/20 to-[#032018] border-blue-500/30 shadow-blue-500/5',
-          textClass: 'text-blue-400',
-          iconBgClass: 'bg-blue-500/20 border-blue-500/30',
-          icon: <Award className="text-blue-400 w-8 h-8" />
-        },
-        { 
-          name: 'Yesica Marcela Giraldo', 
-          count: ganados.filter(l => l.advisor.includes('Yesica')).length,
-          bgClass: 'from-purple-500/20 to-[#032018] border-purple-500/30 shadow-purple-500/5',
-          textClass: 'text-purple-400',
-          iconBgClass: 'bg-purple-500/20 border-purple-500/30',
-          icon: <UserCheck className="text-purple-400 w-8 h-8" />
-        },
-        { 
-          name: 'Nathaly Rojas Barreiro', 
-          count: ganados.filter(l => l.advisor.includes('Nathaly')).length,
-          bgClass: 'from-orange-500/20 to-[#032018] border-orange-500/30 shadow-orange-500/5',
-          textClass: 'text-orange-400',
-          iconBgClass: 'bg-orange-500/20 border-orange-500/30',
-          icon: <TrendingUp className="text-orange-400 w-8 h-8" />
-        }
+      // Las tarjetas salen del propio dataset de ganados: los asesores que
+      // cierran cambian cada mes, así no hay que tocar nombres a mano.
+      const cardStyles = [
+        { bgClass: 'from-emerald-500/20 to-[#032018] border-emerald-500/30 shadow-emerald-500/5', textClass: 'text-emerald-400', iconBgClass: 'bg-emerald-500/20 border-emerald-500/30', icon: <Star className="text-emerald-400 w-8 h-8" /> },
+        { bgClass: 'from-blue-500/20 to-[#032018] border-blue-500/30 shadow-blue-500/5', textClass: 'text-blue-400', iconBgClass: 'bg-blue-500/20 border-blue-500/30', icon: <Award className="text-blue-400 w-8 h-8" /> },
+        { bgClass: 'from-purple-500/20 to-[#032018] border-purple-500/30 shadow-purple-500/5', textClass: 'text-purple-400', iconBgClass: 'bg-purple-500/20 border-purple-500/30', icon: <UserCheck className="text-purple-400 w-8 h-8" /> },
+        { bgClass: 'from-orange-500/20 to-[#032018] border-orange-500/30 shadow-orange-500/5', textClass: 'text-orange-400', iconBgClass: 'bg-orange-500/20 border-orange-500/30', icon: <TrendingUp className="text-orange-400 w-8 h-8" /> },
       ];
+
+      const advisorCounts: Record<string, number> = {};
+      ganados.forEach(l => {
+        const adv = l.advisor || 'Sin Asesor';
+        advisorCounts[adv] = (advisorCounts[adv] || 0) + 1;
+      });
+      const advisorCards = Object.entries(advisorCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([name, count], i) => ({ name, count, ...cardStyles[i % cardStyles.length] }));
       
       return (
         <div className="h-full flex flex-col space-y-8">
@@ -300,7 +282,10 @@ export default function Dashboard() {
             <p className="text-slate-400">Detalle de los {ganados.length} estudiantes confirmados en el periodo actual.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-8 shrink-0">
+          <div className={cn(
+            "grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 shrink-0",
+            advisorCards.length >= 4 ? "xl:grid-cols-4" : advisorCards.length === 3 ? "xl:grid-cols-3" : "xl:grid-cols-2"
+          )}>
             {advisorCards.map(card => (
               <div key={card.name} className={`bg-gradient-to-br ${card.bgClass} border rounded-xl p-6 flex items-center justify-between shadow-2xl`}>
                 <div>
@@ -339,7 +324,7 @@ export default function Dashboard() {
       );
     },
 
-    // Slide 6: Oportunidades con Cupón
+    // Slide 5: Oportunidades con Cupón
     () => {
       const cupones = cuponesMes;
       return (
@@ -432,7 +417,7 @@ export default function Dashboard() {
       );
     },
 
-    // Slide 7: Detalle de Asesores (Tabla)
+    // Slide 6: Detalle de Asesores (Tabla)
     () => (
       <div className="h-full flex flex-col space-y-8">
         <div className="space-y-2 shrink-0">
@@ -480,7 +465,7 @@ export default function Dashboard() {
       </div>
     ),
 
-    // Slide 8: Facultades y Áreas
+    // Slide 7: Facultades y Áreas
     () => (
       <div className="h-full flex flex-col space-y-8">
         <div className="space-y-2 shrink-0">
@@ -527,7 +512,7 @@ export default function Dashboard() {
     ),
 
 
-    // Slide 9: Programas Específicos
+    // Slide 8: Programas Específicos
     () => (
       <div className="h-full flex flex-col space-y-8">
         <div className="space-y-2 shrink-0">
@@ -558,13 +543,14 @@ export default function Dashboard() {
       </div>
     ),
 
-    // Slide 11: Ganados por Mes
+    // Slide 9: Ganados por Mes
     () => {
       const ganadosMesData = [
         { name: 'Abril', value: 6 },
         { name: 'Mayo', value: 3 },
         { name: 'Junio', value: 5 },
         { name: 'Julio', value: 9 },
+        { name: 'Agosto', value: 3 },
       ];
 
       return (
@@ -573,7 +559,7 @@ export default function Dashboard() {
             <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
               <Calendar className="text-[#00df9a] w-8 h-8" /> Tendencia de Ganados por Mes
             </h2>
-            <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio).</p>
+            <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio, Agosto).</p>
           </div>
 
           <div className="bg-gradient-to-b from-[#032018]/80 to-transparent border border-[#00df9a]/20 rounded-xl p-8 flex-1 min-h-0 flex flex-col relative overflow-hidden shadow-[0_0_30px_rgba(0,223,154,0.05)]">
@@ -608,115 +594,7 @@ export default function Dashboard() {
       );
     },
 
-    // Slide 12: Tarifas de WhatsApp Business Platform
-    () => {
-      const categories = [
-        {
-          name: 'Autenticación',
-          icon: <ShieldCheck className="w-6 h-6" />,
-          color: '#3b82f6',
-          description: 'Códigos de verificación para confirmar la identidad del usuario (OTP, doble factor).',
-          example: '"Tu código de verificación Unieduca es 482910. No lo compartas con nadie."',
-          price: '$2,9455',
-          priceUsd: '≈ US$0,0009',
-        },
-        {
-          name: 'Marketing',
-          icon: <Megaphone className="w-6 h-6" />,
-          color: '#a855f7',
-          description: 'Promociones, ofertas y anuncios para atraer nuevos leads o reactivar prospectos.',
-          example: '"🎓 Últimos cupos para la Maestría en Educación. ¡20% de descuento esta semana!"',
-          price: '$46,0227',
-          priceUsd: '≈ US$0,0148',
-        },
-        {
-          name: 'Utilidad',
-          icon: <Wrench className="w-6 h-6" />,
-          color: '#00df9a',
-          description: 'Actualizaciones sobre una transacción o solicitud en curso (confirmaciones, recordatorios).',
-          example: '"Tu inscripción a la Especialización fue confirmada. ¡Bienvenido a Unieduca!"',
-          price: '$2,9455',
-          priceUsd: '≈ US$0,0009',
-        },
-        {
-          name: 'Servicio',
-          icon: <Headset className="w-6 h-6" />,
-          color: '#64748b',
-          description: 'Conversación iniciada por el usuario y respondida dentro de la ventana de atención (24h).',
-          example: '"Hola, quiero información sobre la Maestría en Derecho."',
-          price: 'Gratis',
-          priceUsd: 'US$0,00',
-          isFree: true,
-        },
-      ];
-
-      return (
-        <div className="h-full flex flex-col space-y-6">
-          <div className="space-y-2 shrink-0">
-            <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
-              <MessageCircle className="text-[#00df9a] w-8 h-8" /> Tarifas de WhatsApp Business Platform
-            </h2>
-            <p className="text-slate-400">
-              Meta cobra por categoría de mensaje enviado. Referencia de tarifas para Colombia (COP) por conversación.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 flex-1 min-h-0">
-            {categories.map(cat => (
-              <div
-                key={cat.name}
-                className="bg-[#032018]/50 border rounded-2xl p-6 flex flex-col shadow-lg"
-                style={{ borderColor: `${cat.color}30` }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center border shrink-0"
-                    style={{ backgroundColor: `${cat.color}15`, borderColor: `${cat.color}30`, color: cat.color }}
-                  >
-                    {cat.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white">{cat.name}</h3>
-                </div>
-
-                <p className="text-sm text-slate-400 leading-relaxed mb-4">{cat.description}</p>
-
-                <div className="bg-[#02120e]/60 border border-[#053629] rounded-lg p-3 mb-4 flex-1">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Ejemplo</p>
-                  <p className="text-xs text-slate-300 italic leading-relaxed">{cat.example}</p>
-                </div>
-
-                <div className="mt-auto">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Tarifa por mensaje (COP)</p>
-                  <p
-                    className={cn("text-3xl font-bold tracking-tight", cat.isFree ? "text-[#00df9a]" : "text-white")}
-                  >
-                    {cat.price}
-                  </p>
-                  <p className="text-xs text-slate-500 font-mono mt-1">{cat.priceUsd}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="shrink-0 flex items-center justify-between bg-[#032018]/40 border border-[#053629]/80 rounded-xl px-6 py-3">
-            <p className="text-xs text-slate-500">
-              Fuente: tarifas oficiales de Meta para Colombia (COP), consultadas en el comparador de WhatsApp Business Platform.
-              Valores en USD son una <span className="text-slate-400 font-medium">conversión aproximada</span> (TRM ≈ COP 3.120 / US$1), no la tarifa oficial en dólares.
-            </p>
-            <a
-              href="https://whatsappbusiness.com/es-la/products/platform-pricing/?country=Colombia&currency=Peso%20colombiano%20(COP)&category=Marketing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs font-bold text-[#00df9a] hover:text-[#5cffd6] transition-colors shrink-0 ml-4"
-            >
-              Ver comparador oficial <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </div>
-      );
-    },
-
-    // Slide 13: Gracias
+    // Slide 10: Gracias
     () => (
       <div className="h-full flex flex-col items-center justify-center space-y-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#00df9a]/10 to-transparent pointer-events-none"></div>
@@ -752,7 +630,7 @@ export default function Dashboard() {
             <img src="/logo-unieduca.png" alt="Unieduca" className="h-9 w-auto" />
           </div>
           <div className="h-8 border-l border-[#053629] ml-2"></div>
-          <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Julio</span></span>
+          <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Agosto</span></span>
         </div>
         
         <div className="flex items-center gap-2">
