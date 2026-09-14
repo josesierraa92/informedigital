@@ -72,7 +72,7 @@ export default function Dashboard() {
           <Presentation className="text-white w-12 h-12" />
         </div>
         <div className="space-y-4 max-w-3xl">
-          <h1 className="text-sm uppercase tracking-[0.4em] text-[#00df9a] font-bold">Reporte Ejecutivo • Mes de Agosto</h1>
+          <h1 className="text-sm uppercase tracking-[0.4em] text-[#00df9a] font-bold">Reporte Ejecutivo • Mes de Septiembre</h1>
           <h2 className="text-5xl md:text-7xl font-light tracking-tight text-white leading-tight">
             Informe y Proyección <br/><span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#00df9a] to-[#5cffd6]">Canal Digital</span>
           </h2>
@@ -85,7 +85,15 @@ export default function Dashboard() {
     ),
 
     // Slide 2: Leads y Universidades
-    () => (
+    () => {
+      // Cifras del mes fijadas a mano (no derivadas del export, que trae 83
+      // leads y 49 de UNIR): total de Septiembre = 93 y UNIR = 59.
+      const totalLeadsMes = 93;
+      const universityCounts = leadsByUniversity.map(u =>
+        u.name.toUpperCase() === 'UNIR' ? { ...u, value: 59 } : u
+      );
+
+      return (
       <div className="h-full flex flex-col space-y-8">
         <div className="flex justify-between items-end shrink-0">
           <div className="space-y-2">
@@ -98,7 +106,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">861</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">944</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
@@ -106,15 +114,15 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-blue-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] tracking-tighter">{kpis.total}</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] tracking-tighter">{totalLeadsMes}</div>
               </div>
-              <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Agosto)</div>
+              <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Septiembre)</div>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 flex-1 min-h-0 pb-4">
-          {leadsByUniversity.map((uni, index) => {
+          {universityCounts.map((uni, index) => {
             const color = getUniversityColor(uni.name, index);
             
             const getInstitutionType = (name: string) => {
@@ -144,10 +152,10 @@ export default function Dashboard() {
                     <span className="text-4xl font-bold text-white leading-none">{uni.value}</span>
                   </div>
                   <div className="w-full bg-[#02120e]/50 h-2 rounded-full overflow-hidden mb-3">
-                    <div className="h-full rounded-full" style={{ width: `${(uni.value / kpis.total) * 100}%`, backgroundColor: color }} />
+                    <div className="h-full rounded-full" style={{ width: `${(uni.value / totalLeadsMes) * 100}%`, backgroundColor: color }} />
                   </div>
                   <div className="w-full text-right text-xs font-bold uppercase tracking-wider" style={{ color: color }}>
-                    {((uni.value / kpis.total) * 100).toFixed(1)}% del total
+                    {((uni.value / totalLeadsMes) * 100).toFixed(1)}% del total
                   </div>
                 </div>
               </div>
@@ -155,11 +163,12 @@ export default function Dashboard() {
           })}
         </div>
       </div>
-    ),
+      );
+    },
 
     // Slide 3: Distribución Estado de Leads
     () => {
-      // Los Ganados del mes (3) incluyen cierres de convocatorias previas que
+      // Los Ganados del mes (2) incluyen cierres de convocatorias previas que
       // no están en el pipeline principal, por eso se sobreescribe el conteo.
       const adjustedByStatus = leadsByStatus.map(s =>
         s.name.toLowerCase().includes('ganado') ? { ...s, value: ganadosMes.length } : s
@@ -327,6 +336,22 @@ export default function Dashboard() {
     // Slide 5: Oportunidades con Cupón
     () => {
       const cupones = cuponesMes;
+
+      // Los contadores por asesor salen del dataset de cupones, igual que en la
+      // slide de Ganados, para no depender de nombres fijos.
+      const pillStyles = [
+        'bg-emerald-500/10 border-emerald-500/20 text-emerald-400',
+        'bg-blue-500/10 border-blue-500/20 text-blue-400',
+        'bg-purple-500/10 border-purple-500/20 text-purple-400',
+        'bg-orange-500/10 border-orange-500/20 text-orange-400',
+      ];
+      const cuponCounts: Record<string, number> = {};
+      cupones.forEach(l => {
+        const adv = l.advisor || 'Sin Asesor';
+        cuponCounts[adv] = (cuponCounts[adv] || 0) + 1;
+      });
+      const advisorPills = Object.entries(cuponCounts).sort((a, b) => b[1] - a[1]);
+
       return (
         <div className="h-full flex flex-col space-y-8">
           <div className="space-y-2 shrink-0 flex justify-between items-end">
@@ -335,13 +360,12 @@ export default function Dashboard() {
                 <Ticket className="text-[#00df9a] w-8 h-8" /> Leads con Cupón (Alta Intención)
               </h2>
               <p className="text-slate-400">Prospectos marcados como prioritarios ("Pasa Cupón").</p>
-              <div className="flex gap-4 mt-4 text-sm font-medium">
-                <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1 rounded-lg">
-                  Jineth Sarmiento: <span className="text-white font-bold text-lg ml-1">{cupones.filter(l => l.advisor.includes('Jineth')).length}</span>
-                </div>
-                <div className="bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-lg">
-                  Yeisi Gallego: <span className="text-white font-bold text-lg ml-1">{cupones.filter(l => l.advisor.includes('Yeisi')).length}</span>
-                </div>
+              <div className="flex flex-wrap gap-4 mt-4 text-sm font-medium">
+                {advisorPills.map(([name, count], i) => (
+                  <div key={name} className={cn("border px-3 py-1 rounded-lg", pillStyles[i % pillStyles.length])}>
+                    {name}: <span className="text-white font-bold text-lg ml-1">{count}</span>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="text-right flex flex-col items-end">
@@ -551,6 +575,7 @@ export default function Dashboard() {
         { name: 'Junio', value: 5 },
         { name: 'Julio', value: 9 },
         { name: 'Agosto', value: 3 },
+        { name: 'Septiembre', value: 2 },
       ];
 
       return (
@@ -559,7 +584,7 @@ export default function Dashboard() {
             <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
               <Calendar className="text-[#00df9a] w-8 h-8" /> Tendencia de Ganados por Mes
             </h2>
-            <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio, Agosto).</p>
+            <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio, Agosto, Septiembre).</p>
           </div>
 
           <div className="bg-gradient-to-b from-[#032018]/80 to-transparent border border-[#00df9a]/20 rounded-xl p-8 flex-1 min-h-0 flex flex-col relative overflow-hidden shadow-[0_0_30px_rgba(0,223,154,0.05)]">
@@ -630,7 +655,7 @@ export default function Dashboard() {
             <img src="/logo-unieduca.png" alt="Unieduca" className="h-9 w-auto" />
           </div>
           <div className="h-8 border-l border-[#053629] ml-2"></div>
-          <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Agosto</span></span>
+          <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Septiembre</span></span>
         </div>
         
         <div className="flex items-center gap-2">
