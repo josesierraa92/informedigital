@@ -85,15 +85,7 @@ export default function Dashboard() {
     ),
 
     // Slide 2: Leads y Universidades
-    () => {
-      // Cifras del mes fijadas a mano (no derivadas del export, que trae 83
-      // leads y 49 de UNIR): total de Septiembre = 93 y UNIR = 59.
-      const totalLeadsMes = 93;
-      const universityCounts = leadsByUniversity.map(u =>
-        u.name.toUpperCase() === 'UNIR' ? { ...u, value: 59 } : u
-      );
-
-      return (
+    () => (
       <div className="h-full flex flex-col space-y-8">
         <div className="flex justify-between items-end shrink-0">
           <div className="space-y-2">
@@ -106,7 +98,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">944</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">990</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
@@ -114,7 +106,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-blue-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] tracking-tighter">{totalLeadsMes}</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] tracking-tighter">{kpis.total}</div>
               </div>
               <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Septiembre)</div>
             </div>
@@ -122,7 +114,7 @@ export default function Dashboard() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 flex-1 min-h-0 pb-4">
-          {universityCounts.map((uni, index) => {
+          {leadsByUniversity.map((uni, index) => {
             const color = getUniversityColor(uni.name, index);
             
             const getInstitutionType = (name: string) => {
@@ -152,10 +144,10 @@ export default function Dashboard() {
                     <span className="text-4xl font-bold text-white leading-none">{uni.value}</span>
                   </div>
                   <div className="w-full bg-[#02120e]/50 h-2 rounded-full overflow-hidden mb-3">
-                    <div className="h-full rounded-full" style={{ width: `${(uni.value / totalLeadsMes) * 100}%`, backgroundColor: color }} />
+                    <div className="h-full rounded-full" style={{ width: `${(uni.value / kpis.total) * 100}%`, backgroundColor: color }} />
                   </div>
                   <div className="w-full text-right text-xs font-bold uppercase tracking-wider" style={{ color: color }}>
-                    {((uni.value / totalLeadsMes) * 100).toFixed(1)}% del total
+                    {((uni.value / kpis.total) * 100).toFixed(1)}% del total
                   </div>
                 </div>
               </div>
@@ -163,12 +155,11 @@ export default function Dashboard() {
           })}
         </div>
       </div>
-      );
-    },
+    ),
 
     // Slide 3: Distribución Estado de Leads
     () => {
-      // Los Ganados del mes (2) incluyen cierres de convocatorias previas que
+      // Los Ganados del mes (4) incluyen cierres de convocatorias previas que
       // no están en el pipeline principal, por eso se sobreescribe el conteo.
       const adjustedByStatus = leadsByStatus.map(s =>
         s.name.toLowerCase().includes('ganado') ? { ...s, value: ganadosMes.length } : s
@@ -575,16 +566,27 @@ export default function Dashboard() {
         { name: 'Junio', value: 5 },
         { name: 'Julio', value: 9 },
         { name: 'Agosto', value: 3 },
-        { name: 'Septiembre', value: 2 },
+        { name: 'Septiembre', value: 4 },
       ];
+
+      const totalGanados = ganadosMesData.reduce((acc, m) => acc + m.value, 0);
 
       return (
         <div className="h-full flex flex-col space-y-6">
-          <div className="space-y-2 shrink-0">
-            <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
-              <Calendar className="text-[#00df9a] w-8 h-8" /> Tendencia de Ganados por Mes
-            </h2>
-            <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio, Agosto, Septiembre).</p>
+          <div className="shrink-0 flex justify-between items-end">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
+                <Calendar className="text-[#00df9a] w-8 h-8" /> Tendencia de Ganados por Mes
+              </h2>
+              <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio, Agosto, Septiembre).</p>
+            </div>
+            <div className="text-right flex flex-col items-end">
+              <div className="relative mr-2">
+                <div className="absolute -inset-4 bg-[#00df9a]/20 blur-xl rounded-full"></div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(0,223,154,0.5)] tracking-tighter">{totalGanados}</div>
+              </div>
+              <div className="text-xs text-[#00df9a] uppercase tracking-[0.2em] font-bold mt-2 bg-[#00df9a]/10 px-4 py-1.5 rounded-full border border-[#00df9a]/20">Total Ganados</div>
+            </div>
           </div>
 
           <div className="bg-gradient-to-b from-[#032018]/80 to-transparent border border-[#00df9a]/20 rounded-xl p-8 flex-1 min-h-0 flex flex-col relative overflow-hidden shadow-[0_0_30px_rgba(0,223,154,0.05)]">
