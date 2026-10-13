@@ -72,7 +72,7 @@ export default function Dashboard() {
           <Presentation className="text-white w-12 h-12" />
         </div>
         <div className="space-y-4 max-w-3xl">
-          <h1 className="text-sm uppercase tracking-[0.4em] text-[#00df9a] font-bold">Reporte Ejecutivo • Mes de Septiembre</h1>
+          <h1 className="text-sm uppercase tracking-[0.4em] text-[#00df9a] font-bold">Reporte Ejecutivo • Mes de Octubre</h1>
           <h2 className="text-5xl md:text-7xl font-light tracking-tight text-white leading-tight">
             Informe y Proyección <br/><span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#00df9a] to-[#5cffd6]">Canal Digital</span>
           </h2>
@@ -98,7 +98,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">990</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">1081</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
@@ -108,7 +108,7 @@ export default function Dashboard() {
                 <div className="absolute -inset-4 bg-blue-500/20 blur-xl rounded-full"></div>
                 <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] tracking-tighter">{kpis.total}</div>
               </div>
-              <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Septiembre)</div>
+              <div className="text-xs text-blue-400 uppercase tracking-[0.2em] font-bold mt-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">Total Leads (Octubre)</div>
             </div>
           </div>
         </div>
@@ -566,7 +566,8 @@ export default function Dashboard() {
         { name: 'Junio', value: 5 },
         { name: 'Julio', value: 9 },
         { name: 'Agosto', value: 3 },
-        { name: 'Septiembre', value: 4 },
+        { name: 'Septiembre', value: 6 },
+        { name: 'Octubre', value: 4 },
       ];
 
       const totalGanados = ganadosMesData.reduce((acc, m) => acc + m.value, 0);
@@ -578,7 +579,7 @@ export default function Dashboard() {
               <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
                 <Calendar className="text-[#00df9a] w-8 h-8" /> Tendencia de Ganados por Mes
               </h2>
-              <p className="text-slate-400">Evolución de matrículas confirmadas (Abril, Mayo, Junio, Julio, Agosto, Septiembre).</p>
+              <p className="text-slate-400">Evolución de matrículas confirmadas (Abril a Octubre).</p>
             </div>
             <div className="text-right flex flex-col items-end">
               <div className="relative mr-2">
@@ -657,7 +658,7 @@ export default function Dashboard() {
             <img src="/logo-unieduca.png" alt="Unieduca" className="h-9 w-auto" />
           </div>
           <div className="h-8 border-l border-[#053629] ml-2"></div>
-          <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Septiembre</span></span>
+          <span className="text-sm font-bold tracking-widest text-slate-300 uppercase">Canal Digital <span className="text-[#00df9a] ml-2 border-l border-[#084f3c] pl-3">Informe Mes de Octubre</span></span>
         </div>
         
         <div className="flex items-center gap-2">
