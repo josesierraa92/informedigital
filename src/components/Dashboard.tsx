@@ -98,7 +98,7 @@ export default function Dashboard() {
             <div className="flex flex-col items-end">
               <div className="relative mr-2">
                 <div className="absolute -inset-4 bg-purple-500/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">1081</div>
+                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] tracking-tighter">1122</div>
               </div>
               <div className="text-xs text-purple-400 uppercase tracking-[0.2em] font-bold mt-2 bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Leads Total Otoño 2026</div>
             </div>
