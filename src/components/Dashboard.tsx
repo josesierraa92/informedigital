@@ -113,7 +113,11 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 flex-1 min-h-0 pb-4">
+        {/* Todas las universidades en una sola fila: si hay 5 no queda una sola abajo */}
+        <div className={cn(
+          "grid grid-cols-2 gap-6 flex-1 min-h-0 pb-4",
+          leadsByUniversity.length >= 5 ? "md:grid-cols-5" : "md:grid-cols-4"
+        )}>
           {leadsByUniversity.map((uni, index) => {
             const color = getUniversityColor(uni.name, index);
             
@@ -645,6 +649,9 @@ export default function Dashboard() {
         </div>
       </div>
     ),
+
+    // Slides 11-23: presentación "Así renovamos nuestra página web"
+    ...Array.from({ length: WEB_RENOVADA_SLIDES }, (_, i) => () => <WebRenovadaSlide n={i + 1} />),
   ];
 
   const CurrentSlideComponent = slides[currentSlide];
@@ -726,6 +733,22 @@ export default function Dashboard() {
         </button>
       </footer>
     </div>
+  );
+}
+
+// La presentación de la página web renovada vive tal cual en public/web-renovada.html
+// (deck exportado). Cada diapositiva del informe la embebe abierta en su número (#n);
+// sin eventos de puntero para que un clic no avance el deck por dentro.
+const WEB_RENOVADA_SLIDES = 13;
+
+function WebRenovadaSlide({ n }: { n: number }) {
+  return (
+    <iframe
+      src={`/web-renovada.html#${n}`}
+      title={`Página web renovada — diapositiva ${n}`}
+      tabIndex={-1}
+      className="h-full w-full border-0 pointer-events-none"
+    />
   );
 }
 
