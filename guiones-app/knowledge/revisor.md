@@ -7,7 +7,7 @@ Los puntajes son **juicios de oficio, no mediciones**: sirven para decidir qué 
 |---|---|---|
 | **Gancho (0–3 s)** | 30 % | Frena el scroll, ≤ 12 palabras, concreto, genera una pregunta que el video responde |
 | **Retención** | 25 % | Algo nuevo cada 5–7 s, bucle abierto cerrado antes del CTA, sin relleno ni saludo |
-| **Especificidad de marca** | 20 % | Incluye un dato real del programa, una objeción real y algo que solo aplica a esta universidad |
+| **Especificidad** | 20 % | Tiene un detalle concreto (dato del programa, anécdota o frase real del usuario, situación precisa del público); si es de una universidad, algo que solo aplica a ella |
 | **Cumplimiento y verdad** | 15 % | Sin promesas prohibidas, `[CONFIRMAR]` donde falta dato, urgencia real |
 | **CTA y compartibilidad** | 10 % | Un solo CTA, fácil, con siguiente paso claro; motivo para guardar o compartir |
 
