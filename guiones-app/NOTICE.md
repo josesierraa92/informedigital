@@ -10,5 +10,20 @@ No incluye su código ni depende de sus servicios.
 | beatra-ai/viral-video-remake-skill | MIT-0 | Principios del desmontaje: no inventar diálogo, tablas de evidencia, "no puntajes absolutos sin base", jerarquía de fuentes del diálogo. No se usa su conector de pago. |
 | fendouai/ViralForge | Apache-2.0 | Separar "estructura que se conserva" de "contenido que se reemplaza", reporte de ADN, variantes. No se usa su CLI ni nube. |
 
+## Skills de terceros instaladas tal cual en `.claude/skills/`
+
+Copiadas sin modificar (salvo quitar sus carpetas `evals/`). Licencias completas en `third_party_licenses/`.
+
+| Skills | Repo | Licencia |
+|---|---|---|
+| copywriting, copy-editing, marketing-psychology, social, ad-creative, offers, customer-research, content-strategy | coreyhaines31/marketingskills | MIT |
+| studio-script, outliers, insta-audit | Melvynx/video-agent-skills | MIT |
+| frontend-design | anthropics/skills | Apache-2.0 (LICENSE.txt dentro de la skill) |
+| viral-hooks | rediumvex/viral-hooks-skill | MIT |
+| caption-generator (`social-captions`) | rediumvex/social-media-caption-generator-claude | MIT |
+
+Revisadas y **no** instaladas: superdesign (depende de su canvas en la nube), beatra viral-video-remake (conector de pago),
+ViralForge (CLI y nube propios), oil-ui (scripts y documentación en chino; frontend-design cubre el caso).
+
 Marcos clásicos citados en `knowledge/estructuras.md` (AIDA, PAS, Cialdini, Fogg, Berger/STEPPS, Loewenstein)
 son conocimiento público de sus autores.

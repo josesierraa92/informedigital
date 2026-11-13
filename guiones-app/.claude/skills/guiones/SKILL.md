@@ -17,6 +17,34 @@ No eres un generador genérico. Armas cada guion **en capas**, y nunca saltas la
 | **variantes** | "dame 5 versiones" | Mismo guion, ganchos/audiencias distintas |
 | **revisar** | el usuario pega un guion | Puntaje + reescritura de lo débil |
 
+## Skills instaladas y cuándo delegar
+
+Este skill es el **orquestador**. Las skills de abajo están instaladas en `.claude/skills/` y se usan como
+especialistas. Todas siguen sujetas a las reglas de esta página (cumplimiento, `[CONFIRMAR]`, verificación).
+
+| Necesidad | Skill | Nota |
+|---|---|---|
+| Guion corto de máxima calidad, "semana de guiones", reescritura, quitar tono de IA | `studio-script` | Requiere `video-agent/voice.md` de la marca activa (ver abajo). Su modo `humanize` se pasa a **todo** guion antes de entregar. |
+| Qué es viral en el nicho (medido contra la mediana de cada cuenta) | `studio-script viral` (YouTube, gratis con yt-dlp) · `outliers` (TikTok/Instagram vía Treg, de pago ~USD 0,001 por página) | Necesita red a YouTube / Treg. Si no hay acceso, dilo y usa el modo desmontar con lo que pegue el usuario. Siempre decir el costo antes de gastar. |
+| Auditar la cuenta de Instagram de la universidad | `insta-audit` | Treg; gratis en la cuenta propia. Pide autorización antes de instalar nada. |
+| 100 ganchos extra (inglés) | `viral-hooks` | Complementa `knowledge/ganchos.md`; traducir y adaptar, nunca literal. |
+| Psicología de persuasión honesta (sesgos, anclaje, prueba social) | `marketing-psychology` | Para elegir disparadores. |
+| Oferta: becas, cupones, urgencia honesta | `offers` | Para guiones de cierre/convocatoria. |
+| Variantes de anuncio pagado (Meta/TikTok Ads) | `ad-creative` | Cuando el video irá con pauta. |
+| Plan de contenidos / calendario por programa | `content-strategy` · `social` | Para "qué publico este mes". |
+| Copy de captions, landing, mensajes | `copywriting` · `copy-editing` · `caption-generator` | Caption final del guion. `caption-generator` escribe en inglés por defecto: pídele siempre español. |
+| Entender objeciones a partir de comentarios/encuestas de leads | `customer-research` | Alimenta `marcas/<slug>.md` → Audiencias. |
+| Diseño visual del panel u otras páginas | `frontend-design` | — |
+
+### Marca activa y `video-agent/voice.md`
+
+`studio-script`, `outliers` e `insta-audit` leen un único `video-agent/voice.md`. Cuando el usuario elija o cambie de
+universidad, **genera** ese archivo desde `marcas/<slug>.md` usando `video-agent/_voice-plantilla.md` y dilo en una línea
+("Marca activa: <slug>"). Nunca inventes datos al generarlo. Sus guiones se guardan en `video-agent/scripts/`; al entregarlos
+pásalos también por `tools/revisar.mjs` (convierte al formato de beats si hace falta).
+
+## Biblioteca incorporada
+
 Si el usuario no da video de referencia, **usa la biblioteca incorporada**
 (`knowledge/ganchos.md` + `knowledge/estructuras.md`). Si lo da, esa referencia manda sobre la biblioteca.
 

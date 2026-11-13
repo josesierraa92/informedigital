@@ -37,6 +37,24 @@ resultados/             # métricas reales de lo publicado (memoria)
 tools/revisar.mjs       # verifica duración + cumplimiento + formato
 ```
 
+## Skills especialistas instaladas
+
+Además de `guiones` (orquestador) hay 14 skills de terceros en `.claude/skills/` (lista y licencias en `NOTICE.md`).
+La tabla de cuándo usar cada una está en `.claude/skills/guiones/SKILL.md`. Las clave:
+`studio-script` (guionista + quitar tono de IA), `outliers` / `studio-script viral` (qué es viral en el nicho, medido),
+`marketing-psychology`, `offers`, `ad-creative`, `copywriting`, `frontend-design` (diseño del panel).
+
+`studio-script`, `outliers` e `insta-audit` leen `video-agent/voice.md`: se genera desde `marcas/<slug>.md`
+con `video-agent/_voice-plantilla.md` cada vez que cambia la marca activa.
+
+Red: la búsqueda de virales necesita acceso a YouTube (yt-dlp) o Treg (TikTok/Instagram, de pago y con login).
+Si el entorno no lo permite, se trabaja con transcripciones pegadas.
+
+## Panel visual
+
+`panel/index.html` es el Taller de Guiones (configurar pedido, ganchos, estructuras, revisión rápida). Se abre en el
+navegador sin servidor. La versión publicada está en claude.ai como artifact privado.
+
 ## Reglas de trabajo
 
 - Idioma de todo: español (neutro latinoamericano salvo que la marca pida otro regionalismo).
