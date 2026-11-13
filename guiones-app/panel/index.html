@@ -5,493 +5,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 </head>
 <body>
-<title>Taller de Guiones</title>
+<title>Guiones</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap">
 <style>
-/* Concepto: mesa de guionista. El teléfono vertical que reproduce el guion es la pieza protagonista;
-   todo lo demás es tranquilo. Papel azulado, tinta violeta profunda, cobalto para acciones, coral solo en subtítulos. */
+/* Una sola tarea: leer las opciones de una tanda y elegir la favorita.
+   La miniatura oscura con el gancho en subtítulo coral es la pieza fuerte; el resto, tranquilo. */
 :root{
   --paper:#f4f5fa; --surface:#ffffff; --ink:#1d1b3a; --muted:#5f5e79; --line:#dcdde9;
-  --cobalt:#3043e6; --cobalt-soft:#e6e9ff; --on-cobalt:#ffffff; --coral:#ff6a3d;
-  --phone:#15142b; --phone-ink:#ffffff;
-  --ok:#147a4a; --warn:#9a5a00; --bad:#b4232f;
+  --cobalt:#3043e6; --on-cobalt:#ffffff; --coral:#ff6a3d; --thumb:#1b1a40;
   --f-display:"Unbounded","Figtree",system-ui,sans-serif;
   --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --r-sm:8px; --r-lg:22px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#111126; --surface:#1b1a35; --ink:#ecebfa; --muted:#a6a5c4; --line:#2f2e55;
-  --cobalt:#8e99ff; --cobalt-soft:#262a5c; --on-cobalt:#0e0f2a; --coral:#ff8a63;
-  --phone:#05050f; --phone-ink:#ffffff; --ok:#56d295; --warn:#f2b44f; --bad:#ff7d88; color-scheme:dark}}
+  --cobalt:#8e99ff; --on-cobalt:#0e0f2a; --coral:#ff8a63; --thumb:#0a0a1e; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#111126; --surface:#1b1a35; --ink:#ecebfa; --muted:#a6a5c4; --line:#2f2e55;
-  --cobalt:#8e99ff; --cobalt-soft:#262a5c; --on-cobalt:#0e0f2a; --coral:#ff8a63;
-  --phone:#05050f; --phone-ink:#ffffff; --ok:#56d295; --warn:#f2b44f; --bad:#ff7d88; color-scheme:dark}
-
+  --cobalt:#8e99ff; --on-cobalt:#0e0f2a; --coral:#ff8a63; --thumb:#0a0a1e; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font:16px/1.55 var(--f-body);padding-block:28px 64px;
+body{background:var(--paper);color:var(--ink);font:16px/1.55 var(--f-body);padding-block:32px 72px;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:1120px;margin:0 auto}
-h1,h2,h3{margin:0;text-wrap:balance}
-h1{font:700 clamp(30px,5vw,48px)/1.02 var(--f-display);letter-spacing:-.02em}
-h2{font:700 17px/1.3 var(--f-body)}
-h3{font:600 16px/1.35 var(--f-body)}
-p{margin:0}
-.lede{color:var(--muted);max-width:58ch;margin-top:10px;font-size:17px}
-header{display:grid;gap:22px;margin-bottom:26px}
-button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:6px}
-
-/* pestañas */
-.tabs{display:inline-flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;max-width:100%;overflow-x:auto}
-.tabs button{border:0;background:none;padding:9px 18px;border-radius:999px;font-weight:600;color:var(--muted);white-space:nowrap}
-.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
-
-/* armar guion */
-.studio{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
-@media (max-width:900px){.studio{grid-template-columns:minmax(0,1fr)}.stage{order:-1}}
-.group{padding-block:22px;border-top:1px solid var(--line);display:grid;gap:14px}
-.group:first-child{border-top:0;padding-top:0}
-.group > p{color:var(--muted);font-size:14px;margin-top:-8px}
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-@media (max-width:560px){.two{grid-template-columns:minmax(0,1fr)}}
-.field{display:grid;gap:6px;min-width:0}
-.field > span{font-weight:600;font-size:14px}
-input[type=text],select,textarea{font:16px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px;width:100%;min-width:0}
-textarea{min-height:84px;resize:vertical}
-input::placeholder,textarea::placeholder{color:color-mix(in srgb,var(--muted) 75%,transparent)}
-fieldset{border:0;margin:0;padding:0;min-width:0}
-legend{font-weight:600;font-size:14px;padding:0;margin-bottom:8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative}
-.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.chips span{display:inline-block;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:15px;font-weight:500;transition:background .15s,color .15s,border-color .15s}
-.chips input:checked + span{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-cobalt)}
-.chips input:focus-visible + span{outline:3px solid var(--cobalt);outline-offset:2px}
-.chips label:hover span{border-color:var(--cobalt)}
-
-/* escenario: teléfono */
-.stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid;gap:18px;justify-items:center}
-@media (max-width:900px){.stage{position:static}.phone{width:min(100%,250px)}}
-.phone{width:min(100%,300px);aspect-ratio:9/16;background:var(--phone);border-radius:38px;padding:14px;box-shadow:0 30px 60px -30px rgba(20,18,60,.55);position:relative;overflow:hidden;color:var(--phone-ink)}
-.screen{position:absolute;inset:10px;border-radius:30px;overflow:hidden;
-  background:radial-gradient(120% 70% at 20% 10%,#3a3f9e 0%,transparent 60%),radial-gradient(90% 60% at 90% 90%,#7a2f5a 0%,transparent 65%),#1b1a40}
-.bars{position:absolute;top:16px;left:16px;right:16px;display:flex;gap:4px}
-.bars i{height:3px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden;position:relative;display:block}
-.bars i b{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
-.bars i.done b{transform:scaleX(1)}
-.handle{position:absolute;top:30px;left:16px;font-size:13px;font-weight:600;opacity:.9}
-.cap{position:absolute;left:18px;right:18px;top:38%;transform:translateY(-50%);text-align:center}
-.cap .t{display:inline;font:700 clamp(17px,4.6vw,21px)/1.45 var(--f-display);background:var(--coral);color:#1b0b05;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:2px 8px;border-radius:6px}
-.cap .t.plain{background:rgba(255,255,255,.12);color:#fff}
-.beatinfo{position:absolute;left:18px;right:18px;bottom:64px;font-size:14px;line-height:1.4;opacity:.92}
-.beatinfo strong{display:block;font-size:12px;opacity:.75;font-weight:600;margin-bottom:2px}
-.rail{position:absolute;right:12px;bottom:120px;display:grid;gap:14px;opacity:.85}
-.rail span{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18)}
-.ctaPill{position:absolute;left:16px;right:16px;bottom:18px;background:#fff;color:#15142b;border-radius:12px;padding:9px 12px;font-weight:700;font-size:14px;text-align:center}
-.summary{text-align:center;color:var(--muted);font-size:15px;max-width:34ch}
-.summary b{color:var(--ink)}
-.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.btn{border:0;border-radius:999px;padding:12px 20px;font-weight:700;background:var(--cobalt);color:var(--on-cobalt)}
-.btn.quiet{background:var(--surface);color:var(--ink);border:1px solid var(--line);font-weight:600}
-.btn.small{padding:6px 12px;font-size:14px}
-details.prompt{width:100%}
-details.prompt summary{cursor:pointer;color:var(--muted);font-size:14px;text-align:center}
-pre{white-space:pre-wrap;word-break:break-word;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;margin:10px 0 0;max-height:320px;overflow:auto}
-.toast{font-size:14px;color:var(--ok);font-weight:600;min-height:1.2em;text-align:center}
-
-/* ganchos */
-.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.filter button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-weight:500}
-.filter button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.cat{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid var(--line)}
-@media (max-width:760px){.cat{grid-template-columns:minmax(0,1fr);gap:12px}}
-.cat h2{font:700 20px/1.25 var(--f-display);letter-spacing:-.01em}
-.cat .why{color:var(--muted);font-size:15px;margin-top:6px}
-.hooklist{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.hooklist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start;padding:12px 14px;border-radius:12px}
-.hooklist li:hover{background:var(--surface)}
-.hooklist .f{font-weight:600;font-size:17px}
-.hooklist .e{color:var(--muted);font-size:15px;grid-column:1}
-.hooklist button{grid-row:1/3;grid-column:2;align-self:center}
-
-/* estructuras */
-.slist{display:grid;gap:0}
-.srow{padding-block:24px;border-top:1px solid var(--line);display:grid;gap:12px}
-.srow .head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
-.srow h2{font:700 20px/1.25 var(--f-display);letter-spacing:-.01em}
-.srow .use{color:var(--muted);font-size:15px}
-.timeline{display:flex;gap:3px;min-width:0}
-.timeline div{min-width:0;display:grid;gap:6px}
-.timeline .bar{height:10px;border-radius:5px;background:var(--cobalt)}
-.timeline div:nth-child(even) .bar{background:color-mix(in srgb,var(--cobalt) 45%,var(--paper))}
-.timeline div:first-child .bar{background:var(--coral)}
-.timeline small{font-size:13px;color:var(--muted);line-height:1.35;overflow-wrap:anywhere;padding-right:6px}
-.timeline small b{display:block;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
-@media (max-width:640px){.timeline{flex-direction:column}.timeline div{flex:none!important}.timeline small{padding:0}}
-
-/* revisar */
-.review{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start}
-@media (max-width:820px){.review{grid-template-columns:minmax(0,1fr)}}
-.review textarea{min-height:300px;font-size:15px}
-.score{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:18px}
-.score div{display:grid}
-.score b{font:700 30px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
-.score span{color:var(--muted);font-size:14px}
-.flags{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.flags li{padding:10px 14px;border-radius:12px;font-size:15px;display:flex;gap:10px;align-items:baseline}
-.flags li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;transform:translateY(-1px)}
-.flags .bad{background:color-mix(in srgb,var(--bad) 11%,var(--surface))}.flags .bad::before{background:var(--bad)}
-.flags .warn{background:color-mix(in srgb,var(--warn) 12%,var(--surface))}.flags .warn::before{background:var(--warn)}
-.flags .ok{background:color-mix(in srgb,var(--ok) 11%,var(--surface))}.flags .ok::before{background:var(--ok)}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3,p{margin:0}
+h1{font:700 clamp(28px,5vw,44px)/1.05 var(--f-display);letter-spacing:-.02em;text-wrap:balance}
+.lede{color:var(--muted);font-size:17px;margin-top:10px;max-width:56ch}
+header{display:grid;gap:18px;margin-bottom:30px}
+select{font:600 16px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;max-width:100%}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.thumb{background:radial-gradient(110% 80% at 15% 0%,#3a3f9e 0%,transparent 60%),radial-gradient(90% 70% at 100% 100%,#7a2f5a 0%,transparent 65%),var(--thumb);
+  color:#fff;padding:22px 20px 18px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.thumb .top{display:flex;justify-content:space-between;font-size:13px;font-weight:600;opacity:.85}
+.hook{font:700 19px/1.5 var(--f-display)}
+.hook span{background:var(--coral);color:#1b0b05;padding:2px 8px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.body{padding:18px 20px 20px;display:grid;gap:10px;flex:1;align-content:start}
+.body h2{font:700 19px/1.3 var(--f-body)}
+.meta{color:var(--muted);font-size:14px}
+.why{font-size:15px}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;color:var(--cobalt);font-size:15px}
+.beats{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
+.beats li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;font-size:15px}
+.beats time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:14px;padding-top:1px}
+.beats .cta time{color:var(--coral);font-weight:600}
+.beats .extra{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+.alts{margin-top:12px;font-size:14px;color:var(--muted)}
+.pick{margin-top:auto;padding:0 20px 20px}
+.btn{width:100%;border:0;border-radius:999px;padding:12px 18px;font:700 15px var(--f-body);background:var(--cobalt);color:var(--on-cobalt);cursor:pointer}
+.btn.done{background:var(--ink);color:var(--paper)}
+.pending{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:10px;max-width:70ch}
+.pending h2{font:700 18px/1.3 var(--f-body)}
+.pending ul{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:4px}
 .empty{color:var(--muted)}
-.foot{color:var(--muted);font-size:14px;margin-top:16px;max-width:60ch}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 <div class="wrap">
-<header>
-  <div>
-    <h1>Taller de Guiones</h1>
-    <p class="lede">Elige para quién y cómo será el video. El teléfono te muestra la estructura con los tiempos reales; copia el pedido y pégalo en el chat para que Claude escriba el guion.</p>
-  </div>
-  <div class="tabs" role="tablist" aria-label="Secciones">
-    <button role="tab" aria-selected="true" data-tab="armar">Armar guion</button>
-    <button role="tab" aria-selected="false" data-tab="ganchos">Ganchos</button>
-    <button role="tab" aria-selected="false" data-tab="estructuras">Estructuras</button>
-    <button role="tab" aria-selected="false" data-tab="revisar">Revisar guion</button>
-  </div>
-</header>
-
-<!-- ARMAR -->
-<section id="armar">
-<div class="studio">
-  <form id="form" onsubmit="return false">
-    <div class="group">
-      <h2>Para quién es</h2>
-      <div class="two">
-        <label class="field"><span>Universidad</span><input type="text" id="marca" name="marca" placeholder="Nombre de la universidad"></label>
-        <label class="field"><span>Programa</span><input type="text" id="programa" name="programa" placeholder="Maestría en Educación"></label>
-      </div>
-      <fieldset><legend>Objetivo del video</legend><div class="chips" data-name="objetivo"></div></fieldset>
-      <fieldset><legend>Qué tan cerca está de inscribirse</legend><div class="chips" data-name="etapa"></div></fieldset>
-      <div class="two">
-        <label class="field"><span>Audiencia</span><select id="audiencia" name="audiencia">
-          <option>Profesional que trabaja, 25 a 40 años</option><option>Recién graduado, 21 a 26 años</option>
-          <option>Bachiller y su familia</option><option>Mayor de 35 que retoma estudios</option><option>Primera generación universitaria</option></select></label>
-        <label class="field"><span>Su mayor duda</span><select id="objecion" name="objecion">
-          <option value="tiempo">No tengo tiempo</option><option value="dinero">Es muy caro</option><option value="validez">¿El título sirve?</option>
-          <option value="modalidad">Online no se aprende</option><option value="edad">Ya estoy muy grande</option><option value="confianza">¿Es confiable?</option>
-          <option value="empleo">¿Me dará trabajo?</option><option value="familia">Mi familia no me apoya</option></select></label>
-      </div>
+  <header>
+    <div>
+      <h1 id="title">Guiones</h1>
+      <p class="lede">Lee las opciones y quédate con la que más te guste. El botón copia el pedido; pégalo en el chat y te hago más con esa misma fórmula.</p>
     </div>
-
-    <div class="group">
-      <h2>Formato</h2>
-      <fieldset><legend>Plataforma</legend><div class="chips" data-name="plataforma"></div></fieldset>
-      <fieldset><legend>Duración</legend><div class="chips" data-name="dur"></div></fieldset>
-      <fieldset><legend>Ritmo de voz</legend><div class="chips" data-name="ritmo"></div></fieldset>
-      <fieldset><legend>Quién aparece</legend><div class="chips" data-name="voz"></div></fieldset>
-      <fieldset><legend>Producción</legend><div class="chips" data-name="prod"></div></fieldset>
-    </div>
-
-    <div class="group">
-      <h2>Estilo</h2>
-      <fieldset><legend>Tono</legend><div class="chips" data-name="tono"></div></fieldset>
-      <div class="two">
-        <label class="field"><span>Estructura</span><select id="estr" name="estr"></select></label>
-        <label class="field"><span>Tipo de gancho</span><select id="gancho" name="gancho"><option value="auto">Automático</option></select></label>
-        <label class="field"><span>Regionalismo</span><select id="region" name="region"><option value="neutro">Español neutro</option><option>Colombia</option><option>México</option><option>Perú</option><option>Chile</option><option>Ecuador</option><option>Argentina</option></select></label>
-        <label class="field"><span>Ganchos alternativos</span><select id="vars" name="vars"><option>0</option><option>1</option><option selected>2</option><option>3</option><option>5</option></select></label>
-      </div>
-    </div>
-
-    <div class="group">
-      <h2>Cierre</h2>
-      <fieldset><legend>Qué le pides al final</legend><div class="chips" data-name="cta"></div></fieldset>
-      <div class="two">
-        <label class="field"><span>Palabra clave</span><input type="text" id="kw" name="kw" placeholder="MAESTRÍA"></label>
-        <label class="field"><span>Fecha límite confirmada</span><input type="text" id="fecha" name="fecha" placeholder="Solo si es real"></label>
-      </div>
-    </div>
-
-    <div class="group">
-      <h2>Video de referencia</h2>
-      <p>Opcional. Si pegas un video que te gustó, Claude lo desmonta y usa su estructura sin copiar el texto.</p>
-      <label class="field"><span>Link, transcripción o descripción</span><textarea id="ref" name="ref" placeholder="Pega la transcripción o describe los primeros 10 segundos"></textarea></label>
-      <div class="two">
-        <label class="field"><span>Qué tomar</span><select id="usar" name="usar"><option value="estructura">La estructura</option><option value="gancho">El gancho</option><option value="ritmo">El ritmo</option><option value="todo">Todo lo transferible</option></select></label>
-        <label class="field"><span>Evitar</span><input type="text" id="evitar" name="evitar" placeholder="Temas o frases"></label>
-      </div>
-      <label class="field"><span>Debe aparecer</span><input type="text" id="oblig" name="oblig" placeholder="Un dato, un docente o el hashtag de campaña"></label>
-    </div>
-  </form>
-
-  <aside class="stage" aria-label="Vista previa del guion">
-    <div class="phone" aria-hidden="true">
-      <div class="screen">
-        <div class="bars" id="bars"></div>
-        <div class="handle" id="handle">@universidad</div>
-        <div class="cap"><span class="t" id="capText"></span></div>
-        <div class="rail"><span></span><span></span><span></span></div>
-        <div class="beatinfo" id="beatInfo"></div>
-        <div class="ctaPill" id="ctaPill"></div>
-      </div>
-    </div>
-    <p class="summary" id="summary"></p>
-    <div class="actions">
-      <button class="btn quiet" type="button" id="play">Reproducir estructura</button>
-      <button class="btn" type="button" id="copy">Copiar pedido</button>
-    </div>
-    <p class="toast" id="toast" role="status"></p>
-    <details class="prompt"><summary>Ver el pedido completo</summary><pre id="out"></pre></details>
-  </aside>
-</div>
-</section>
-
-<!-- GANCHOS -->
-<section id="ganchos" hidden>
-  <p class="lede" style="margin:0 0 20px">Cada fórmula se llena con datos reales del programa. Combina siempre un gancho que frene el scroll con otro que retenga.</p>
-  <div class="filter" id="hookFilter"></div>
-  <div id="hookList"></div>
-</section>
-
-<!-- ESTRUCTURAS -->
-<section id="estructuras" hidden>
-  <p class="lede" style="margin:0 0 12px">Tiempos ajustados a <b id="durLbl">30</b> segundos. Cambia la duración en Armar guion.</p>
-  <div class="slist" id="structList"></div>
-</section>
-
-<!-- REVISAR -->
-<section id="revisar" hidden>
-  <div class="review">
-    <div class="field">
-      <label for="chkText" style="font-weight:600">Pega el guion</label>
-      <textarea id="chkText" placeholder='- [0:00-0:03] VOZ: "¿Y si el horario ya no fuera excusa?" | PANTALLA: "..."&#10;- [0:24-0:30] CTA: "Comenta MAESTRÍA"'></textarea>
-      <div class="actions" style="justify-content:flex-start;margin-top:8px">
-        <button class="btn" type="button" id="chkBtn">Revisar</button>
-        <button class="btn quiet" type="button" id="chkEx">Probar con un guion de ejemplo</button>
-      </div>
-    </div>
-    <div id="chkOut"><p class="empty">Pega un guion y pulsa Revisar. Usa la duración y el ritmo que elegiste en Armar guion.</p></div>
-  </div>
-</section>
+    <label id="pickerWrap" hidden>
+      <span class="meta" style="display:block;margin-bottom:6px">Tanda</span>
+      <select id="picker"></select>
+    </label>
+  </header>
+  <div class="grid" id="grid"></div>
+  <section class="pending" id="pending" hidden>
+    <h2>Por confirmar antes de publicar</h2>
+    <ul id="pendingList"></ul>
+  </section>
 </div>
 
 <script>
-const CATS=[
-{k:"01",n:"Curiosidad",w:"Una pregunta abierta incomoda hasta que se cierra.",h:[
- ["Lo que nadie te dice de estudiar [programa] a distancia","Lo que nadie te dice de estudiar una maestría trabajando"],
- ["Por qué [creencia común sobre la carrera] es falsa","Por qué «ya estoy muy grande para estudiar» es falso"],
- ["Esto fue lo que me hizo decidir por [programa]","Esto me hizo dejar de posponer mi posgrado"],
- ["Antes de pagar un [tipo de programa], mira esto","Antes de pagar un diplomado, mira esto"]]},
-{k:"02",n:"Contrario",w:"Contradecir una creencia genera disonancia y el espectador se queda a resolverla.",h:[
- ["Deja de [consejo común] si quieres [resultado]","Deja de esperar el momento perfecto para tu maestría"],
- ["No necesitas [obstáculo] para estudiar [programa]","No necesitas dejar tu trabajo para estudiar Administración"],
- ["Todos te dicen [mito]. La realidad es [dato]","Todos dicen que online es más fácil. Mira lo que exige"],
- ["Estudiar [programa] no es para [estereotipo]","Estudiar Derecho no es solo para quien quiere ser juez"]]},
-{k:"03",n:"Autoridad",w:"Lo específico se cree. Úsalo solo con datos confirmados.",h:[
- ["[N] egresados de [programa] hoy trabajan en [lugar real]","[CONFIRMAR] egresados hoy trabajan en [CONFIRMAR]"],
- ["Así es una clase real de [programa] en [N] segundos","Así es una clase real de la maestría en 30 segundos"],
- ["Pregunté a [N] estudiantes de [programa] qué cambiarían","Le pregunté a 3 estudiantes qué les sorprendió"],
- ["[Docente] explica en [N] segundos por qué [tema]","Nuestra decana explica en 20 segundos qué se estudia aquí"]]},
-{k:"04",n:"Identidad",w:"El espectador siente que el video se hizo para él.",h:[
- ["Si trabajas todo el día y aún quieres [meta], esto es para ti","Si trabajas y quieres un posgrado, esto es para ti"],
- ["Para quien cree que [miedo] y aun así quiere [meta]","Para quien cree que ya perdió su oportunidad de estudiar"],
- ["Nadie en tu casa fue a la universidad. Tú puedes ser el primero","—"],
- ["Eres [rol real] y sí puedes con [programa]","Eres mamá y sí puedes estudiar Enfermería"]]},
-{k:"05",n:"Lista",w:"El espectador sabe cuánto dura y qué se lleva.",h:[
- ["[N] preguntas antes de elegir [programa]","3 preguntas antes de elegir tu maestría"],
- ["[N] errores al escoger universidad","4 errores al escoger universidad (el tercero cuesta dinero)"],
- ["[N] cosas que incluye [programa] y no esperabas","3 cosas que incluye tu matrícula y no esperabas"],
- ["Para inscribirte a [programa] solo necesitas [N] cosas","Para inscribirte solo necesitas estos 3 documentos"]]},
-{k:"06",n:"Pregunta",w:"Obliga al espectador a responderse.",h:[
- ["¿Y si [obstáculo] ya no fuera excusa para [meta]?","¿Y si el horario ya no fuera excusa para estudiar?"],
- ["¿Sabías que en [universidad] puedes [beneficio real]?","¿Sabías que aquí puedes pagar en [CONFIRMAR] cuotas?"],
- ["¿Cuánto vale tu tiempo? Así se estudia [programa] aquí","—"],
- ["¿Por qué [N] personas ya se inscribieron a [programa]?","[CONFIRMAR] personas ya se inscribieron. ¿Por qué?"]]},
-{k:"07",n:"Historia",w:"El cerebro sigue narraciones hasta el final.",h:[
- ["Hace [tiempo] yo estaba [situación] y hoy [resultado]","Hace 2 años trabajaba de noche. Hoy soy [CONFIRMAR]"],
- ["Esto me dijo un estudiante el primer día de [programa]","—"],
- ["Ella casi no se inscribe a [programa]. Esto la convenció","—"],
- ["Un día me di cuenta de que [revelación]","Un día entendí que nadie iba a estudiar por mí"]]},
-{k:"08",n:"Alerta",w:"El miedo a equivocarse retiene, sin necesidad de asustar.",h:[
- ["No te inscribas a [tipo de programa] sin revisar esto","No te inscribas a ninguna universidad sin revisar la acreditación"],
- ["El error que más cuesta al elegir [programa]","El error que más cuesta al escoger un posgrado"],
- ["Antes de [fecha límite real], hay algo que debes saber","Antes del [CONFIRMAR fecha], esto debes saber"],
- ["Si no has hecho esto, no puedes entrar a [programa]","—"]]},
-{k:"09",n:"Especificidad",w:"Los números concretos suenan reales.",h:[
- ["[N] meses. [N] horas a la semana. Así es [programa]","[CONFIRMAR] meses y [CONFIRMAR] horas por semana"],
- ["[Cuota real] al mes: esto incluye [programa]","[CONFIRMAR] al mes: esto incluye tu programa"],
- ["De [situación A] a [situación B] en [N] meses","—"],
- ["Quedan [N] días para la convocatoria de [programa]","Quedan [CONFIRMAR] días de la convocatoria"]]},
-{k:"10",n:"Confesión",w:"La sinceridad desarma la desconfianza del sector.",h:[
- ["Seamos honestos: [programa] no es para todos","Seamos honestos: esto exige 8 horas a la semana"],
- ["Lo difícil de estudiar [programa] es [verdad real]","Lo difícil no es la plataforma, es organizar tu semana"],
- ["Te cuento lo que casi nadie dice de [universidad]","—"],
- ["No es la opción más barata, y por eso sirve","Solo si el perfil de la marca lo respalda"]]}
-];
-const G_KEYS={curiosidad:"01",contrario:"02",autoridad:"03",emocional:"04",lista:"05",pregunta:"06",historia:"07",negacion:"08",especifico:"09",confesion:"10"};
-const AUTO_HOOK={captar_leads:"06",quitar_objecion:"02",confianza:"07",convocatoria:"08",autoridad:"03",alcance:"05"};
-const STRUCTS=[
-{id:"auto",n:"Automática según objetivo"},
-{id:"mito_realidad",n:"Mito contra realidad",t:30,use:"Para quitar una objeción a quien aún no te conoce o duda.",b:[[0,3,"El mito, dicho como lo diría el espectador"],[3,12,"La realidad, con un dato del programa"],[12,22,"Prueba rápida: clase, plataforma o testimonio"],[22,30,"Cierre suave"]]},
-{id:"pas",n:"Problema, agitación, solución",t:30,use:"Para captar leads que ya consideran estudiar.",b:[[0,3,"El problema en palabras del público"],[3,12,"Lo que cuesta seguir posponiendo"],[12,24,"La solución: un diferencial y un dato real"],[24,30,"Cierre con un paso simple"]]},
-{id:"testimonio",n:"Testimonio",t:35,use:"Para generar confianza con una historia real y autorizada.",b:[[0,4,"Situación de partida"],[4,18,"La duda o el obstáculo"],[18,28,"Qué lo decidió y qué cambió"],[28,35,"Cierre"]]},
-{id:"objecion",n:"Respuesta a una objeción",t:30,use:"Para mover a la inscripción a quien está casi decidido.",b:[[0,3,"La objeción literal"],[3,15,"Respuesta concreta con dato"],[15,25,"Prueba o ejemplo"],[25,30,"Cierre directo"]]},
-{id:"cuenta_regresiva",n:"Cuenta regresiva",t:25,use:"Para una convocatoria con fecha real de cierre.",b:[[0,2,"Fecha real y programa"],[2,12,"Qué incluye y qué pasa si no llega a tiempo"],[12,20,"Cómo inscribirse, paso a paso"],[20,25,"Cierre con enlace o WhatsApp"]]},
-{id:"dia_en_la_vida",n:"Un día en la vida",t:35,use:"Para conectar y ganar alcance con gente que no te conoce.",b:[[0,3,"Acción en curso con texto"],[3,25,"Tres momentos reales, una línea cada uno"],[25,35,"Cierre emocional y suave"]]},
-{id:"listicle",n:"Lista de cosas",t:30,use:"Para alcance y guardados.",b:[[0,3,"Gancho con el número"],[3,20,"Una frase y una imagen por ítem"],[20,27,"El ítem más útil, al final"],[27,30,"Pide guardar o compartir"]]},
-{id:"pasos",n:"Tres pasos",t:30,use:"Para mostrar autoridad explicando cómo se hace algo.",b:[[0,3,"El resultado que quiere"],[3,22,"Paso uno, dos y tres, cada uno visible"],[22,27,"Resumen en una frase"],[27,30,"Cierre"]]},
-{id:"comparativo",n:"Comparativo honesto",t:35,use:"Para ayudar a decidir sin nombrar a la competencia.",b:[[0,3,"Cómo elegir sin arrepentirte"],[3,25,"Tres criterios y cómo los cumple la universidad"],[25,35,"Cierre"]]},
-{id:"largo",n:"Video largo por capítulos",t:120,use:"Para YouTube y temas que necesitan profundidad.",b:[[0,5,"Gancho y promesa"],[5,20,"Por qué importa"],[20,100,"Dos a cuatro capítulos, cada uno con su gancho"],[100,120,"Resumen, cierre y siguiente video"]]}
-];
-const AUTO={captar_leads:{frio:"listicle",tibio:"pas",cierre:"objecion"},quitar_objecion:{frio:"mito_realidad",tibio:"objecion",cierre:"objecion"},confianza:{frio:"dia_en_la_vida",tibio:"testimonio",cierre:"testimonio"},convocatoria:{frio:"cuenta_regresiva",tibio:"cuenta_regresiva",cierre:"cuenta_regresiva"},autoridad:{frio:"pasos",tibio:"pasos",cierre:"comparativo"},alcance:{frio:"dia_en_la_vida",tibio:"listicle",cierre:"listicle"}};
-const CHIPS={
- objetivo:[["captar_leads","Captar leads"],["quitar_objecion","Quitar una duda"],["confianza","Generar confianza"],["convocatoria","Convocatoria"],["autoridad","Enseñar algo"],["alcance","Ganar seguidores"]],
- etapa:[["frio","No nos conoce"],["tibio","Lo está pensando"],["cierre","Casi decidido"]],
- plataforma:[["TikTok","TikTok"],["Instagram Reels","Reels"],["YouTube Shorts","Shorts"],["Facebook Reels","Facebook"],["YouTube largo","YouTube largo"]],
- dur:[["15","15 s"],["30","30 s"],["45","45 s"],["60","60 s"],["90","90 s"],["120","2 min"]],
- ritmo:[["2.2","Pausado"],["2.7","Normal"],["3.2","Rápido"]],
- voz:[["asesor","Asesor a cámara"],["docente","Docente"],["estudiante","Estudiante"],["voz_en_off","Voz en off"]],
- prod:[["celular","Solo celular"],["con_edicion","Con edición"],["produccion","Producción completa"]],
- tono:[["cercano","Cercano"],["directo","Directo"],["inspirador","Inspirador"],["humor","Con humor"],["serio","Serio"]],
- cta:[["guardar","Guardar o compartir"],["comentar_palabra","Comentar una palabra"],["whatsapp","Escribir al WhatsApp"],["inscribirse","Inscribirse"],["cupon","Usar un cupón"]]
-};
-const DEF={objetivo:"captar_leads",etapa:"tibio",plataforma:"Instagram Reels",dur:"30",ritmo:"2.7",voz:"asesor",prod:"celular",tono:"cercano",cta:"comentar_palabra"};
-const CTA_TXT={guardar:"Guárdalo para después",comentar_palabra:"Comenta {kw}",whatsapp:"Escríbenos al WhatsApp",inscribirse:"Inscríbete en el enlace",cupon:"Usa tu cupón"};
-const BAN_ERR=["garantizado","garantizamos","garantía de empleo","100% seguro","100 % seguro","100% de empleabilidad","100 % de empleabilidad","consigue trabajo","conseguirás trabajo","te conseguimos empleo","empleo asegurado","trabajo asegurado","sin falta","aprobación asegurada","sin esfuerzo","sin estudiar","título fácil","ganarás más","vas a ganar más","duplica tu salario","la mejor universidad","la número 1","la numero 1"];
-const BAN_WARN=["últimos cupos","ultimos cupos","última oportunidad","ultima oportunidad","solo hoy","por tiempo limitado","oferta única","sube de cargo","ascenso","mejor salario","revolucionario","único en","unico en","el mejor del país","no lo vas a creer","secreto"];
-
+const DATA=[{"file":"2026-11-13_uniremington_contaduria.md","title":"Uniremington · Contaduría Pública","options":[{"n":1,"name":"La DIAN ya lo sabe","dur":"35 s","hook":"Lo que te consignan por Nequi, la DIAN también lo ve.","beats":[{"t":"0:00–0:03","voz":"Lo que te consignan por Nequi, la DIAN también lo ve.","cta":false,"extra":"En pantalla: \"La DIAN *ya lo sabe*\" · Imagen: segundo 0: celular con la notificación de una consignación"},{"t":"0:03–0:10","voz":"Bancos y billeteras le reportan a la DIAN información de tus cuentas cada año. Se llama información exógena.","cta":false,"extra":"En pantalla: \"Información exógena\" · Imagen: pantallazo de la página de la DIAN"},{"t":"0:10–0:19","voz":"Si en el año te consignan 1.400 UVT o más, o te entran ingresos por ese monto, te toca declarar renta, así seas independiente.","cta":false,"extra":"En pantalla: \"1.400 UVT = [CONFIRMAR pesos del año]\" · Imagen: la cifra grande en pantalla"},{"t":"0:19–0:23","voz":"Y aquí está lo que casi nadie piensa.","cta":false,"extra":"En pantalla: \"Ojo\" · Imagen: corte a cámara, más cerca"},{"t":"0:23–0:32","voz":"Del otro lado de cada reporte siempre hay un contador. Es la persona que sabe qué sabe la DIAN de ti, antes que tú.","cta":false,"extra":"En pantalla: \"Contaduría Pública\" · Imagen: a cámara; al final, logo Uniremington"},{"t":"0:32–0:35","voz":"Sígueme y te enseño a leer tu propia exógena.","cta":true,"extra":"En pantalla: \"Sígueme\" · Imagen: a cámara"}],"why":"casi todo el que usa Nequi se detiene; el dato de las 1.400 UVT es útil y se comparte, y el giro a Contaduría llega cuando ya están enganchados. La perla (\"sabe qué sabe la DIAN de ti, antes que tú\") es la frase que se queda.","alts":"(El costo oculto) \"Ese Nequi que usas para todo te puede obligar a declarar renta.\" · (La pregunta que le hacen) \"¿La DIAN ve mi Nequi? Sí, y te explico qué ve.\"","gancho":"Lo que nadie dice (6)","estructura":"Embudo, puerta grande","para":"Atraer"},{"n":2,"name":"Tu cédula decide","dur":"35 s","hook":"Los dos últimos números de tu cédula deciden cuándo te pueden multar.","beats":[{"t":"0:00–0:03","voz":"Los dos últimos números de tu cédula deciden cuándo te pueden multar.","cta":false,"extra":"En pantalla: \"Tu cédula *decide*\" · Imagen: segundo 0: un dedo tapa una cédula y solo se ven los dos últimos dígitos"},{"t":"0:03–0:11","voz":"La DIAN reparte los vencimientos de renta de personas entre agosto y octubre según esos dos dígitos. Si se te pasa tu día, ya llegaste tarde.","cta":false,"extra":"En pantalla: \"Agosto a octubre [CONFIRMAR calendario]\" · Imagen: calendario con días marcados"},{"t":"0:11–0:18","voz":"Y declarar tarde tiene una sanción mínima de 10 UVT, aunque no debas ni un peso de impuesto.","cta":false,"extra":"En pantalla: \"Mínimo 10 UVT\" · Imagen: la cifra en rojo"},{"t":"0:18–0:22","voz":"Ahora, mira quién se sabe ese calendario de memoria.","cta":false,"extra":"En pantalla: \"¿Quién?\" · Imagen: corte rápido"},{"t":"0:22–0:31","voz":"Los contadores. Para ellos agosto es como diciembre para un comerciante: el mes en que todo el mundo los necesita al mismo tiempo.","cta":false,"extra":"En pantalla: \"Agosto = diciembre\" · Imagen: escritorio lleno de carpetas, teléfono sonando"},{"t":"0:31–0:35","voz":"Comenta tus dos últimos números y te digo tu fecha.","cta":true,"extra":"En pantalla: \"Comenta tus 2 números\" · Imagen: a cámara"}],"why":"convierte un trámite aburrido en algo personal (tu cédula), da un dato que ahorra plata y el cierre dispara cientos de comentarios porque cada persona quiere su fecha. Requiere que alguien responda los comentarios.","alts":"(Especificidad) \"Hay un día exacto del año en que la DIAN te empieza a cobrar.\" · (Lo que nadie dice) \"Declarar tarde te cuesta plata aunque no debas impuesto.\"","gancho":"El costo oculto (2)","estructura":"Embudo, puerta mediana","para":"Atraer"},{"n":3,"name":"Vende todo y quiebra","dur":"35 s","hook":"Una tienda puede vender todos los días y quebrar igual.","beats":[{"t":"0:00–0:03","voz":"Una tienda puede vender todos los días y quebrar igual.","cta":false,"extra":"En pantalla: \"Vende todo. *Quiebra.*\" · Imagen: segundo 0: persiana de un local bajando"},{"t":"0:03–0:11","voz":"Pasa así: vendes un millón en el mes, pero le fías la mitad a los clientes y el arriendo se paga el primero.","cta":false,"extra":"En pantalla: \"$1.000.000 vendido\" · Imagen: cuaderno de fiados, recibo de arriendo"},{"t":"0:11–0:18","voz":"En el papel ganaste. En la caja no hay con qué pagar.","cta":false,"extra":"En pantalla: \"Caja: $0\" · Imagen: caja registradora vacía"},{"t":"0:18–0:22","voz":"Y casi ningún dueño lo ve venir.","cta":false,"extra":"En pantalla: \"Nadie lo ve venir\" · Imagen: a cámara"},{"t":"0:22–0:31","voz":"Eso se llama flujo de caja, y es lo primero que revisa un contador cuando entra a un negocio: la plata que de verdad entra y sale, mes a mes.","cta":false,"extra":"En pantalla: \"Flujo de caja\" · Imagen: tabla simple de entradas y salidas"},{"t":"0:31–0:35","voz":"Guárdalo y mándaselo a alguien que tenga negocio.","cta":true,"extra":"En pantalla: \"Mándaselo\" · Imagen: a cámara, señala la pantalla"}],"why":"todo el mundo conoce un negocio que cerró \"aunque se llenaba\". Se comparte con familiares que tienen negocio, y deja la idea de que el contador es quien evita eso.","alts":"(No fue eso) \"Este negocio se llenaba todos los días y cerró. No fue por ventas.\" · (El error) \"El error que cierra más tiendas de barrio no es vender poco.\"","gancho":"No fue eso (17)","estructura":"Embudo, puerta grande","para":"Atraer"},{"n":4,"name":"La IA no firma","dur":"35 s","hook":"La IA ya hace contabilidad. Y los contadores van a valer más.","beats":[{"t":"0:00–0:03","voz":"La IA ya hace contabilidad. Y los contadores van a valer más.","cta":false,"extra":"En pantalla: \"IA vs *contador*\" · Imagen: segundo 0: un chat de IA generando un asiento contable"},{"t":"0:03–0:10","voz":"Es cierto: una IA clasifica facturas y cuadra extractos en segundos. Por eso mucha gente cree que la carrera se acaba.","cta":false,"extra":"En pantalla: \"Facturas en segundos\" · Imagen: grabación de pantalla rápida"},{"t":"0:10–0:16","voz":"Pero hay algo que la ley no le deja hacer a una máquina: firmar.","cta":false,"extra":"En pantalla: \"Firmar\" · Imagen: mano firmando un estado financiero"},{"t":"0:16–0:27","voz":"Los estados financieros y las declaraciones grandes necesitan la firma de un contador público con tarjeta profesional, que responde con su nombre si algo sale mal.","cta":false,"extra":"En pantalla: \"Tarjeta profesional\" · Imagen: tarjeta profesional [CONFIRMAR imagen autorizada]"},{"t":"0:27–0:32","voz":"La IA hace el trabajo pesado. La responsabilidad sigue teniendo nombre y apellido.","cta":false,"extra":"En pantalla: \"Nombre y apellido\" · Imagen: a cámara"},{"t":"0:32–0:35","voz":"¿Tú qué crees? Comenta IA o CONTADOR.","cta":true,"extra":"En pantalla: \"¿IA o CONTADOR?\" · Imagen: a cámara"}],"why":"\"la IA acaba con los empleos\" es un debate en el que todos tienen opinión. Toma partido, lo defiende con un hecho legal real (la firma) y el cierre invita a votar en comentarios, que es lo que el algoritmo premia.","alts":"(Responder una idea) \"Dicen que la IA acaba con los contadores. Mira lo que no puede hacer.\" · (El costo oculto) \"Lo único que la IA no puede hacer en contabilidad es lo que más vale.\"","gancho":"La voltereta (4)","estructura":"Opinión que divide","para":"Atraer y comentarios"},{"n":5,"name":"Día de vencimiento","dur":"36 s","hook":"Día de vencimiento, cuatro de la tarde, y las facturas llegan en fotos.","beats":[{"t":"0:00–0:04","voz":"Día de vencimiento, cuatro de la tarde, y las facturas llegan en fotos.","cta":false,"extra":"En pantalla: \"Vence hoy. *4 p. m.*\" · Imagen: segundo 0: chat de WhatsApp lleno de fotos de facturas"},{"t":"0:04–0:12","voz":"Cuarenta fotos, la mitad borrosas, y una es la cuenta de un almuerzo. Así se ve la contabilidad de un negocio pequeño.","cta":false,"extra":"En pantalla: \"40 fotos\" · Imagen: pasar las fotos rápido"},{"t":"0:12–0:20","voz":"En ese momento tienes que decidir qué sirve, qué no y qué se puede presentar hoy sin inventar nada.","cta":false,"extra":"En pantalla: \"Sirve / no sirve\" · Imagen: separar facturas en dos montones"},{"t":"0:20–0:24","voz":"Esa parte no sale en ningún libro.","cta":false,"extra":"En pantalla: \"No sale en libros\" · Imagen: a cámara"},{"t":"0:24–0:33","voz":"Se aprende con casos. Por eso en Uniremington los estudiantes de Contaduría practican en un consultorio contable con negocios de verdad.","cta":false,"extra":"En pantalla: \"Consultorio contable [CONFIRMAR]\" · Imagen: estudiantes atendiendo un caso"},{"t":"0:33–0:36","voz":"Si esto te parece un reto divertido, comenta CONTADOR.","cta":true,"extra":"En pantalla: \"Comenta CONTADOR\" · Imagen: a cámara, sonrisa"}],"why":"empieza en plena escena, sin presentación, y muestra el oficio real con humor. Quien se ríe y piensa \"eso me gustaría resolverlo\" es justo el aspirante correcto.","alts":"(Confesión) \"La primera vez que me mandaron facturas por WhatsApp, quise renunciar.\" [CONFIRMAR que sea real] · (Antes y después) \"Cuarenta fotos borrosas a las 4. Declaración presentada a las 6.\"","gancho":"En plena escena (12)","estructura":"Historia vivida","para":"Confianza"},{"n":6,"name":"El consultorio por dentro","dur":"26 s","hook":"Así se ve por dentro el consultorio contable virtual de Uniremington.","beats":[{"t":"0:00–0:03","voz":"Así se ve por dentro el consultorio contable virtual de Uniremington.","cta":false,"extra":"En pantalla: \"El consultorio *por dentro*\" · Imagen: segundo 0: grabación de pantalla del consultorio"},{"t":"0:03–0:12","voz":"Llega un caso: un emprendedor que no sabe si tiene que facturar electrónicamente. El estudiante lo revisa con un docente y le responde.","cta":false,"extra":"En pantalla: \"Caso real [CONFIRMAR]\" · Imagen: recorrido por la pantalla del caso"},{"t":"0:12–0:19","voz":"Es lo mismo que vas a hacer cuando te gradúes, pero con alguien al lado que te corrige.","cta":false,"extra":"En pantalla: \"Con alguien que te corrige\" · Imagen: comentario del docente en pantalla"},{"t":"0:19–0:23","voz":"Y no esperas al último semestre para hacerlo.","cta":false,"extra":"En pantalla: \"Desde [CONFIRMAR semestre]\" · Imagen: corte a cámara"},{"t":"0:23–0:26","voz":"Comenta CONTADOR y te mandamos el recorrido completo.","cta":true,"extra":"En pantalla: \"Comenta CONTADOR\" · Imagen: a cámara"}],"why":"mostrar la pantalla real es la prueba más fuerte que hay; nadie más puede publicar este video, y el cierre ofrece algo concreto (el recorrido).","alts":"(Detrás del resultado) \"Así responde un estudiante de Contaduría su primer caso real.\" · (Cómo, sin) \"Cómo practicar contabilidad sin tener todavía un trabajo.\"","gancho":"El recibo (20)","estructura":"Prueba en pantalla","para":"Confianza"},{"n":7,"name":"Experiencia te sobra","dur":"30 s","hook":"'Llevo ocho años de auxiliar, ¿para qué estudio?' Para poder firmar.","beats":[{"t":"0:00–0:03","voz":"'Llevo ocho años de auxiliar, ¿para qué estudio?' Para poder firmar.","cta":false,"extra":"En pantalla: \"8 años de auxiliar\" · Imagen: segundo 0: escritorio con facturas; otra persona firma el documento"},{"t":"0:03–0:12","voz":"Haces la conciliación, la nómina y la exógena. Pero el estado financiero lo firma otra persona, y el cliente le confía el negocio a quien firma.","cta":false,"extra":"En pantalla: \"Tú haces. Otro firma.\" · Imagen: a cámara, tono serio"},{"t":"0:12–0:15","voz":"Experiencia te sobra. Te falta el título.","cta":false,"extra":"En pantalla: \"Te falta el título\" · Imagen: corte"},{"t":"0:15–0:25","voz":"La Contaduría Pública virtual de Uniremington la estudias desde la casa, sin soltar tu trabajo, y tiene registro SNIES 104911.","cta":false,"extra":"En pantalla: \"SNIES 104911 [CONFIRMAR vigencia]\" · Imagen: persona estudiando de noche en su portátil"},{"t":"0:25–0:30","voz":"Comenta CONTADOR y te mandamos el plan de estudios.","cta":true,"extra":"En pantalla: \"Pide el plan de estudios\" · Imagen: a cámara"}],"why":"usa la frase exacta que dice el auxiliar contable y la responde en dos palabras (\"para firmar\"). El cierre ofrece un objeto concreto, el plan de estudios, en vez de \"más información\".","alts":"(Todavía atascado) \"Llevas años haciendo la contabilidad y todavía firma otro.\" · (La pregunta que le hacen) \"¿Vale la pena estudiar Contaduría si ya soy auxiliar? Sí, por una razón.\"","gancho":"Sus propias palabras (3)","estructura":"Oferta","para":"Vender"}],"pending":["Valor en pesos de 1.400 UVT y de 10 UVT para el año en que se publique, y el calendario de vencimientos de renta de personas naturales.","Vigencia del SNIES 104911 (Contaduría virtual) y si la acreditación en alta calidad cubre la modalidad virtual.","Si los estudiantes virtuales usan el consultorio contable, desde qué semestre, y si atienden casos reales. Grabación de pantalla con permiso.","Opción 5: docente o egresado real que cuente su experiencia.","Canal oficial del CTA (WhatsApp o formulario) y quién responde los comentarios de la opción 2.","Límite real del concepto: las cifras son pistas de patrones generales; aún no se midió qué es viral en este nicho (falta acceso a YouTube o Treg)."]}];
 const $=id=>document.getElementById(id);
-const form=$("form");
-const val=n=>{const x=new FormData(form).get(n);return x==null?"":String(x).trim()};
-const fmt=s=>{s=Math.round(s);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function sget(k){try{return localStorage.getItem(k)}catch(e){return null}}
-function sset(k,x){try{localStorage.setItem(k,x)}catch(e){}}
+function sset(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 
-// construir chips
-document.querySelectorAll(".chips[data-name]").forEach(box=>{
-  const n=box.dataset.name;
-  box.setAttribute("role","radiogroup");
-  box.innerHTML=CHIPS[n].map(([v,l])=>`<label><input type="radio" name="${n}" value="${esc(v)}" ${v===DEF[n]?"checked":""}><span>${esc(l)}</span></label>`).join("");
-});
-STRUCTS.forEach(s=>{const o=document.createElement("option");o.value=s.id;o.textContent=s.n;$("estr").appendChild(o)});
-Object.entries(G_KEYS).forEach(([k,c])=>{const o=document.createElement("option");o.value=k;o.textContent=CATS.find(x=>x.k===c).n;$("gancho").appendChild(o)});
-
-function struct(){let id=val("estr")||"auto";if(id==="auto")id=(AUTO[val("objetivo")]||{})[val("etapa")]||"pas";return STRUCTS.find(s=>s.id===id)}
-function scaled(s,d){const k=d/s.t;return s.b.map(([a,b,l])=>[a*k,b*k,l])}
-function hookCat(){const g=val("gancho");return g&&g!=="auto"?G_KEYS[g]:(AUTO_HOOK[val("objetivo")]||"06")}
-function sampleHook(){
-  const c=CATS.find(x=>x.k===hookCat()), p=val("programa"), u=val("marca");
-  let h=c.h[0][0];
-  h=h.replace(/\[programa\]/g,p||"tu programa").replace(/\[universidad\]/g,u||"nuestra universidad");
-  if(/\[/.test(h)){const ex=c.h.find(x=>x[1]!=="—"&&!/\[/.test(x[1]));if(ex)h=ex[1]}
-  return h;
+function show(i){
+  const t=DATA[i]; if(!t)return;
+  $("title").textContent=t.title;
+  $("grid").innerHTML=t.options.map(o=>`
+    <article class="card">
+      <div class="thumb"><div class="top"><span>Opción ${o.n}</span><span>${esc(o.dur)}</span></div>
+        <p class="hook"><span>${esc(o.hook)}</span></p></div>
+      <div class="body">
+        <h2>${esc(o.name)}</h2>
+        <p class="meta">${esc([o.gancho&&o.gancho.replace(/\s*\(\d+\)/,""),o.estructura,o.para].filter(Boolean).join(" · "))}</p>
+        ${o.why?`<p class="why">${esc(o.why.charAt(0).toUpperCase()+o.why.slice(1))}</p>`:""}
+        <details><summary>Ver guion completo</summary>
+          <ol class="beats">${o.beats.map(b=>`<li class="${b.cta?"cta":""}"><time>${esc(b.t)}</time><div>${esc(b.voz)}${b.extra?`<span class="extra">${esc(b.extra)}</span>`:""}</div></li>`).join("")}</ol>
+          ${o.alts?`<p class="alts">Otros ganchos: ${esc(o.alts)}</p>`:""}
+        </details>
+      </div>
+      <div class="pick"><button class="btn" type="button" data-n="${o.n}">Quiero más como este</button></div>
+    </article>`).join("");
+  $("pending").hidden=!t.pending.length;
+  $("pendingList").innerHTML=t.pending.map(p=>`<li>${esc(p)}</li>`).join("");
+  sset("guiones-tanda",String(i));
 }
-
-let frame=0, timer=null;
-function paintPhone(){
-  const d=+val("dur")||30, s=struct(), beats=scaled(s,d);
-  if(frame>=beats.length)frame=0;
-  $("bars").innerHTML=beats.map((b,i)=>`<i style="flex:${(b[1]-b[0]).toFixed(2)}" class="${i<frame?"done":""}"><b style="transform:scaleX(${i<frame?1:i===frame?.5:0})"></b></i>`).join("");
-  const cap=$("capText");
-  if(frame===0){cap.textContent=sampleHook();cap.className="t"}
-  else{cap.textContent=beats[frame][2];cap.className="t plain"}
-  $("beatInfo").innerHTML=`<strong>${fmt(beats[frame][0])} a ${fmt(beats[frame][1])}</strong>${esc(frame===0?"Gancho: "+beats[0][2]:"Momento "+(frame+1)+" de "+beats.length)}`;
-  const u=val("marca").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"");
-  $("handle").textContent="@"+(u||"universidad");
-  $("ctaPill").textContent=CTA_TXT[val("cta")].replace("{kw}",val("kw")||"INFO");
+function init(){
+  if(!DATA||!DATA.length){$("grid").innerHTML='<p class="empty">Todavía no hay tandas. Pide guiones en el chat y aparecerán aquí.</p>';return}
+  if(DATA.length>1){$("pickerWrap").hidden=false;$("picker").innerHTML=DATA.map((t,i)=>`<option value="${i}">${esc(t.title)}</option>`).join("")}
+  let i=+(sget("guiones-tanda")||0); if(!(i<DATA.length))i=0; $("picker").value=i; show(i);
+  $("picker").addEventListener("change",e=>show(+e.target.value));
+  $("grid").addEventListener("click",e=>{
+    const b=e.target.closest("[data-n]"); if(!b)return;
+    const t=DATA[+$("picker").value||0], o=t.options.find(x=>String(x.n)===b.dataset.n);
+    const txt=`Me gusta la opción ${o.n} (${o.name}) de "${t.title}". Hazme más como esa.`;
+    const ok=()=>{b.textContent="Copiado. Pégalo en el chat";b.classList.add("done");setTimeout(()=>{b.textContent="Quiero más como este";b.classList.remove("done")},2400)};
+    const fail=()=>{b.textContent=`Escribe en el chat: "me gusta la ${o.n}"`;b.classList.add("done")};
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,fail);else fail();
+  });
 }
-function render(){
-  const d=+val("dur")||30, w=+val("ritmo")||2.7, s=struct(), beats=scaled(s,d);
-  $("summary").innerHTML=`Entre <b>${Math.round(d*.85*w)} y ${Math.round(d*1.15*w)} palabras</b> en ${beats.length} momentos, con la estructura <b>${esc(s.n.toLowerCase())}</b>.`;
-  $("out").textContent=prompt_(s,d,w);
-  $("durLbl").textContent=d;
-  paintPhone(); renderStructs(); save();
-}
-function prompt_(s,d,w){
-  const L=["Usa el skill guiones. Genera un guion con esta configuración:",""];
-  const add=(k,v)=>{if(v!==""&&v!=null)L.push(k+": "+v)};
-  add("marca",val("marca")||"[falta: universidad]"); add("programa",val("programa")||"[falta: programa]");
-  add("objetivo",val("objetivo")); add("etapa_embudo",val("etapa")); add("audiencia",val("audiencia")); add("objecion_principal",val("objecion"));
-  add("plataforma",val("plataforma")); add("duracion_seg",d); add("ritmo_voz",`${w} palabras por segundo (${Math.round(d*.85*w)} a ${Math.round(d*1.15*w)} palabras)`);
-  add("persona_voz",val("voz")); add("con_cara",val("voz")==="voz_en_off"?"no":"si"); add("nivel_produccion",val("prod"));
-  add("tono",val("tono")); add("regionalismo",val("region"));
-  add("estructura",val("estr")==="auto"?`auto (sugerida: ${s.n})`:s.n);
-  add("estilo_gancho",val("gancho")==="auto"?`auto (sugerido: ${CATS.find(x=>x.k===hookCat()).n})`:CATS.find(x=>x.k===hookCat()).n);
-  add("ganchos_alternativos",val("vars")); add("cta",val("cta")); add("palabra_clave_cta",val("kw")); add("fecha_limite",val("fecha"));
-  if(val("ref")){add("referencia",val("ref").length>700?val("ref").slice(0,700)+"…":val("ref"));add("usar_de_la_referencia",val("usar"))}
-  add("evitar",val("evitar")); add("obligatorio",val("oblig"));
-  L.push("","Antes de entregar: pasa studio-script humanize, verifica con tools/revisar.mjs y marca [CONFIRMAR] lo que no esté en el perfil de la marca.");
-  return L.join("\n");
-}
-function renderStructs(){
-  const d=+val("dur")||30;
-  $("structList").innerHTML=STRUCTS.filter(s=>s.b).map(s=>{const b=scaled(s,d);return `<article class="srow"><div class="head"><h2>${esc(s.n)}</h2><p class="use">${esc(s.use)}</p></div>
-   <div class="timeline">${b.map(([x,y,l])=>`<div style="flex:${(y-x).toFixed(2)}"><span class="bar"></span><small><b>${fmt(x)}–${fmt(y)}</b>${esc(l)}</small></div>`).join("")}</div></article>`}).join("");
-}
-let filter="all";
-function renderHooks(){
-  $("hookFilter").innerHTML=`<button type="button" aria-pressed="${filter==="all"}" data-f="all">Todos</button>`+CATS.map(c=>`<button type="button" aria-pressed="${filter===c.k}" data-f="${c.k}">${esc(c.n)}</button>`).join("");
-  $("hookList").innerHTML=CATS.filter(c=>filter==="all"||c.k===filter).map(c=>`<section class="cat"><div><h2>${esc(c.n)}</h2><p class="why">${esc(c.w)}</p></div>
-   <ul class="hooklist">${c.h.map(h=>`<li><span class="f">${esc(h[0])}</span>${h[1]!=="—"?`<span class="e">${esc(h[1])}</span>`:""}<button class="btn quiet small" type="button" data-copy="${esc(h[0])}">Copiar</button></li>`).join("")}</ul></section>`).join("");
-}
-// revisar
-const EX='- [0:00-0:06] VOZ: "Hola a todos, bienvenidos a la mejor universidad del país, empleo asegurado para todos los que se inscriban" | PANTALLA: "Inscríbete"\n- [0:10-0:20] CTA: "Inscríbete ya, últimos cupos" | PANTALLA: "Link en bio"';
-const words=s=>(s.match(/[\p{L}\p{N}]+(?:[’'.-][\p{L}\p{N}]+)*/gu)||[]).length;
-function review(){
-  const t=$("chkText").value, d=+val("dur")||30, w=+val("ritmo")||2.7, f=[];
-  if(!t.trim()){$("chkOut").innerHTML='<p class="empty">Pega un guion para revisarlo.</p>';return}
-  const sp=[];t.split(/\r?\n/).forEach(l=>{const m=l.match(/(?:VOZ|CTA):\s*(.+?)(?=\s*\|\s*(?:PANTALLA|VISUAL|VOZ|CTA):|$)/);if(m)sp.push(m[1].replace(/^["“]|["”]\s*$/g,""))});
-  const n=words(sp.length?sp.join(" "):t), est=n/w, dev=(est-d)/d;
-  if(Math.abs(dev)>.15)f.push(["bad",`La duración ${dev>0?"se pasa":"se queda corta"} un ${Math.abs(Math.round(dev*100))} %. Apunta a ${Math.round(d*.85*w)} a ${Math.round(d*1.15*w)} palabras.`]);
-  else f.push(["ok","La duración está dentro del rango."]);
-  if(sp.length){const hw=words(sp[0]);
-    if(hw>14)f.push(["warn",`El gancho tiene ${hw} palabras. Déjalo en 12 o menos.`]);
-    if(/^\s*(hola|buenas|bienvenid)/i.test(sp[0]))f.push(["warn","El gancho empieza saludando. Empieza por la idea."]);}
-  else f.push(["warn","No encontré líneas con VOZ: o CTA:, así que conté todo el texto."]);
-  const ctas=(t.match(/(^|\s)CTA:/g)||[]).length;
-  if(sp.length&&!ctas)f.push(["warn","Falta un cierre marcado con CTA:."]);
-  if(ctas>1)f.push(["warn","Hay más de un cierre. Deja uno solo."]);
-  const low=t.toLowerCase();
-  BAN_ERR.filter(p=>low.includes(p)).forEach(p=>f.push(["bad",`Quita «${p}»: es una promesa que la universidad no puede hacer.`]));
-  BAN_WARN.filter(p=>low.includes(p)).forEach(p=>f.push(["warn",`Revisa «${p}»: solo vale si es cierto y está confirmado.`]));
-  const pend=t.match(/\[CONFIRMAR[^\]]*\]/g); if(pend)f.push(["warn",`${pend.length} dato(s) por confirmar con la universidad.`]);
-  if(!f.some(x=>x[0]==="bad"))f.push(["ok","No hay promesas prohibidas."]);
-  $("chkOut").innerHTML=`<div class="score"><div><b>${n}</b><span>palabras habladas</span></div><div><b>${est.toFixed(0)} s</b><span>duración estimada</span></div><div><b>${d} s</b><span>objetivo</span></div></div>
-   <ul class="flags">${f.map(([c,m])=>`<li class="${c}">${esc(m)}</li>`).join("")}</ul>
-   <p class="foot">Es una versión rápida de la revisión completa. La lista de frases es un punto de partida: amplíala con el área jurídica de cada universidad.</p>`;
-}
-// guardar y restaurar
-function save(){const o={};new FormData(form).forEach((v,k)=>o[k]=v);sset("taller-guiones",JSON.stringify(o))}
-function restore(){try{const o=JSON.parse(sget("taller-guiones")||"{}");Object.entries(o).forEach(([k,v])=>{const els=form.querySelectorAll(`[name="${k}"]`);els.forEach(el=>{if(el.type==="radio")el.checked=el.value===v;else el.value=v})})}catch(e){}}
-function toast(m){$("toast").textContent=m;clearTimeout(toast.t);toast.t=setTimeout(()=>$("toast").textContent="",1800)}
-function copy(txt,okMsg){
-  const fallback=()=>{const d=$("out").closest("details");d.open=true;const r=document.createRange();r.selectNodeContents($("out"));const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Selecciona y copia el texto marcado")};
-  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(()=>toast(okMsg),fallback);else fallback();
-}
-// eventos
-document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
-  document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));
-  ["armar","ganchos","estructuras","revisar"].forEach(id=>$(id).hidden=id!==b.dataset.tab)});
-form.addEventListener("input",()=>{frame=0;render()});
-form.addEventListener("change",()=>{frame=0;render()});
-$("copy").addEventListener("click",()=>copy($("out").textContent,"Pedido copiado. Pégalo en el chat."));
-$("play").addEventListener("click",()=>{
-  if(timer){clearInterval(timer);timer=null;$("play").textContent="Reproducir estructura";return}
-  const n=scaled(struct(),+val("dur")||30).length;frame=0;paintPhone();$("play").textContent="Detener";
-  timer=setInterval(()=>{frame++;if(frame>=n){clearInterval(timer);timer=null;frame=0;$("play").textContent="Reproducir estructura"}paintPhone()},1700);
-});
-$("hookFilter").addEventListener("click",e=>{const b=e.target.closest("[data-f]");if(b){filter=b.dataset.f;renderHooks()}});
-$("hookList").addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if(!b)return;
-  const t=b.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent="Copiado";setTimeout(()=>b.textContent="Copiar",1300)},()=>{b.textContent="No se pudo";setTimeout(()=>b.textContent="Copiar",1300)})});
-$("chkBtn").addEventListener("click",review);
-$("chkEx").addEventListener("click",()=>{$("chkText").value=EX;review()});
-restore(); renderHooks(); render();
+init();
 </script>
 
 </body>

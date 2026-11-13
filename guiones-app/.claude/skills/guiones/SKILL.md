@@ -30,6 +30,16 @@ universidad, otro ángulo u otra objeción. Si el usuario dice "ahora para <prog
 
 Cada tanda se guarda en `guiones/AAAA-MM-DD_<marca>_<programa>.md`.
 
+**Nivel profesional, obligatorio en cada tanda** (la primera tanda de prueba salió básica por saltarse esto):
+1. Antes de escribir, lee `studio-script/references/hooks.md`, `script-rules.md`, `funnel.md`, `viral.md` y `ai-tells.md`.
+2. Cada opción usa una fórmula distinta de `hooks.md` (nómbrala) y saca 7/10 o más en su puntaje de gancho.
+3. Al menos la mitad de la tanda va en **embudo**: abre con un tema que le importa a mucha gente (dinero, la DIAN, la IA,
+   el trabajo, una escena cotidiana) y gira al programa entre el 20 % y el 35 % del guion. Pocas opciones hablan del programa desde el segundo 0.
+4. Cada gancho lleva un dato concreto (número, marca, escena) y dice qué se ve en el segundo 0. Hay un reenganche entre el 40 % y el 60 %.
+5. Nada de frases de IA (`ai-tells.md`): sin "no es X, es Y", sin tríadas de adjetivos, sin "¿el resultado?".
+6. Datos del sector (impuestos, normas, cifras) solo si son ciertos; lo que dependa del año va `[CONFIRMAR]`.
+7. Al terminar: `node tools/panel.mjs <ruta del artifact>` y republica el panel para que la tanda aparezca ahí.
+
 ## Modo tanda (ideas libres → muchos guiones)
 
 Es el modo por defecto cuando el usuario escribe ideas en vez de un brief. **No todo guion es sobre un programa**:

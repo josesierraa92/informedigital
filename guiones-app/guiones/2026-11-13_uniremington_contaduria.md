@@ -1,102 +1,125 @@
-# Uniremington · Contaduría Pública — tanda de 7 opciones
+# Uniremington · Contaduría Pública — tanda 2 (método studio-script)
 marca: uniremington | programa: Contaduría Pública (virtual) | plataforma: Reels + TikTok | fecha: 2026-11-13
 
-Elige la que más te guste ("me gusta la 3") y creo más con ese mismo ADN para otros programas.
+Cuatro guiones abren con un tema que le importa a cualquier colombiano (la DIAN, Nequi, la IA, un negocio que quiebra) y
+giran a Contaduría a mitad del video: son los que traen gente nueva. Dos generan confianza y uno vende.
+Elige el que más te guste y creo más con ese mismo ADN para otros programas.
 
 | # | Fórmula ganadora | Gancho | Estructura | Duración | Para qué |
 |---|---|---|---|---|---|
-| 1 | El enemigo común | Contrario | Mito contra realidad | 30 s | Ganar alcance |
-| 2 | El espejo | Identidad | Problema, agitación, solución | 30 s | Captar leads |
-| 3 | Lista con bucle abierto | Lista | Listicle | 45 s | Guardados y compartidos |
-| 4 | La objeción literal | Pregunta | Respuesta a objeción | 30 s | Quitar la duda del tiempo |
-| 5 | Antes y después | Historia | Testimonio | 35 s | Confianza |
-| 6 | Checklist del comprador | Alerta | Comparativo honesto | 40 s | Ayudar a decidir |
-| 7 | El filtro honesto | Confesión | Gancho, giro, cierre | 15 s | Alcance rápido |
+| 1 | La DIAN ya lo sabe | Lo que nadie dice (6) | Embudo, puerta grande | 35 s | Atraer |
+| 2 | Tu cédula decide | El costo oculto (2) | Embudo, puerta mediana | 35 s | Atraer |
+| 3 | Vende todo y quiebra | No fue eso (17) | Embudo, puerta grande | 35 s | Atraer |
+| 4 | La IA no firma | La voltereta (4) | Opinión que divide | 35 s | Atraer y comentarios |
+| 5 | Día de vencimiento | En plena escena (12) | Historia vivida | 36 s | Confianza |
+| 6 | El consultorio por dentro | El recibo (20) | Prueba en pantalla | 26 s | Confianza |
+| 7 | Experiencia te sobra | Sus propias palabras (3) | Oferta | 30 s | Vender |
 
 ---
 
-## Opción 1 · El enemigo común (30 s)
+## Opción 1 · La DIAN ya lo sabe (35 s)
 
-- [0:00-0:03] VOZ: "Todos creen que estudiar Contaduría es pasarse la vida haciendo cuentas." | PANTALLA: "¿Solo cuentas?" | VISUAL: a cámara con una calculadora en la mano; la suelta sobre la mesa
-- [0:03-0:12] VOZ: "Pues no. Las cuentas las hace el software. Lo que hace un contador es decirle a una empresa si va bien, si va mal y qué decisión tomar antes de que sea tarde." | PANTALLA: "El software suma. Tú decides." | VISUAL: pantalla de un software contable, corte a cámara
-- [0:12-0:24] VOZ: "Por eso en Uniremington no te quedas en la teoría: practicas con casos reales en un consultorio contable virtual, desde tu casa." | PANTALLA: "Consultorio contable virtual" | VISUAL: grabación de pantalla del consultorio [CONFIRMAR material]
-- [0:24-0:30] CTA: "Si te gusta entender cómo se mueve el dinero, comenta CONTADOR y te contamos más." | PANTALLA: "Comenta CONTADOR" | VISUAL: a cámara, señala hacia abajo
+- [0:00-0:03] VOZ: "Lo que te consignan por Nequi, la DIAN también lo ve." | PANTALLA: "La DIAN *ya lo sabe*" | VISUAL: segundo 0: celular con la notificación de una consignación
+- [0:03-0:10] VOZ: "Bancos y billeteras le reportan a la DIAN información de tus cuentas cada año. Se llama información exógena." | PANTALLA: "Información exógena" | VISUAL: pantallazo de la página de la DIAN
+- [0:10-0:19] VOZ: "Si en el año te consignan 1.400 UVT o más, o te entran ingresos por ese monto, te toca declarar renta, así seas independiente." | PANTALLA: "1.400 UVT = [CONFIRMAR pesos del año]" | VISUAL: la cifra grande en pantalla
+- [0:19-0:23] VOZ: "Y aquí está lo que casi nadie piensa." | PANTALLA: "Ojo" | VISUAL: corte a cámara, más cerca
+- [0:23-0:32] VOZ: "Del otro lado de cada reporte siempre hay un contador. Es la persona que sabe qué sabe la DIAN de ti, antes que tú." | PANTALLA: "Contaduría Pública" | VISUAL: a cámara; al final, logo Uniremington
+- [0:32-0:35] CTA: "Sígueme y te enseño a leer tu propia exógena." | PANTALLA: "Sígueme" | VISUAL: a cámara
 
-**Por qué puede funcionar:** ataca una creencia que casi todos tienen sobre la carrera y la rompe con una imagen clara (el software suma, tú decides).
-**Ganchos alternativos:** (Curiosidad) "Lo que nadie te dice de estudiar Contaduría." · (Pregunta) "¿De verdad crees que un contador solo suma?"
+**Por qué puede funcionar:** casi todo el que usa Nequi se detiene; el dato de las 1.400 UVT es útil y se comparte, y el giro a Contaduría llega cuando ya están enganchados. La perla ("sabe qué sabe la DIAN de ti, antes que tú") es la frase que se queda.
+**Ganchos alternativos:** (El costo oculto) "Ese Nequi que usas para todo te puede obligar a declarar renta." · (La pregunta que le hacen) "¿La DIAN ve mi Nequi? Sí, y te explico qué ve."
+**Ficha:** gancho 10/10 · disparadores: brecha 0 s, se reconoce 0 s, prueba 6 s, quiebre 19 s, especificidad 12 s · rol atraer · el puente llega al tema en menos de 15 s ✓
 
-## Opción 2 · El espejo (30 s)
+## Opción 2 · Tu cédula decide (35 s)
 
-- [0:00-0:03] VOZ: "Haces la contabilidad de otros, pero la firma es de alguien más." | PANTALLA: "Tu trabajo, la firma de otro" | VISUAL: manos revisando facturas; un tercero firma el documento
-- [0:03-0:12] VOZ: "Sabes conciliar, sabes de nómina, conoces la DIAN mejor que muchos. Pero sin tarjeta profesional, tu trabajo siempre sale con el nombre de otro." | PANTALLA: "Sin tarjeta profesional" | VISUAL: a cámara, tono serio
-- [0:12-0:24] VOZ: "La Contaduría Pública virtual de Uniremington está pensada para quien ya trabaja: estudias desde donde estés y lo que ya sabes lo conviertes en un título profesional." | PANTALLA: "Virtual · SNIES 104911 [CONFIRMAR vigencia]" | VISUAL: persona estudiando de noche en su portátil
-- [0:24-0:30] CTA: "Escribe CONTADOR en los comentarios y te enviamos la información." | PANTALLA: "Escribe CONTADOR" | VISUAL: a cámara
+- [0:00-0:03] VOZ: "Los dos últimos números de tu cédula deciden cuándo te pueden multar." | PANTALLA: "Tu cédula *decide*" | VISUAL: segundo 0: un dedo tapa una cédula y solo se ven los dos últimos dígitos
+- [0:03-0:11] VOZ: "La DIAN reparte los vencimientos de renta de personas entre agosto y octubre según esos dos dígitos. Si se te pasa tu día, ya llegaste tarde." | PANTALLA: "Agosto a octubre [CONFIRMAR calendario]" | VISUAL: calendario con días marcados
+- [0:11-0:18] VOZ: "Y declarar tarde tiene una sanción mínima de 10 UVT, aunque no debas ni un peso de impuesto." | PANTALLA: "Mínimo 10 UVT" | VISUAL: la cifra en rojo
+- [0:18-0:22] VOZ: "Ahora, mira quién se sabe ese calendario de memoria." | PANTALLA: "¿Quién?" | VISUAL: corte rápido
+- [0:22-0:31] VOZ: "Los contadores. Para ellos agosto es como diciembre para un comerciante: el mes en que todo el mundo los necesita al mismo tiempo." | PANTALLA: "Agosto = diciembre" | VISUAL: escritorio lleno de carpetas, teléfono sonando
+- [0:31-0:35] CTA: "Comenta tus dos últimos números y te digo tu fecha." | PANTALLA: "Comenta tus 2 números" | VISUAL: a cámara
 
-**Por qué puede funcionar:** le habla a una persona muy concreta (el auxiliar sin título) con su propio dolor; se siente hecho para ella.
-**Ganchos alternativos:** (Especificidad) "Llevas [CONFIRMAR] años haciendo cuentas sin título." · (Negación) "No sigas trabajando para que otro firme."
+**Por qué puede funcionar:** convierte un trámite aburrido en algo personal (tu cédula), da un dato que ahorra plata y el cierre dispara cientos de comentarios porque cada persona quiere su fecha. Requiere que alguien responda los comentarios.
+**Ganchos alternativos:** (Especificidad) "Hay un día exacto del año en que la DIAN te empieza a cobrar." · (Lo que nadie dice) "Declarar tarde te cuesta plata aunque no debas impuesto."
+**Ficha:** gancho 9/10 (rápido 1: 12 palabras) · disparadores: brecha 0 s, se reconoce 0 s, prueba 11 s, quiebre 18 s, pérdida 11 s · rol atraer
 
-## Opción 3 · Lista con bucle abierto (45 s)
+## Opción 3 · Vende todo y quiebra (35 s)
 
-- [0:00-0:03] VOZ: "Tres señales de que deberías estudiar Contaduría. La tercera casi nadie la ve." | PANTALLA: "3 señales" | VISUAL: a cámara, tres dedos arriba
-- [0:03-0:13] VOZ: "Uno: eres la persona que lleva las cuentas del paseo, del grupo o de la casa, y todos te preguntan cuánto le toca a cada uno." | PANTALLA: "1. Tú haces las cuentas del paseo" | VISUAL: chat de grupo con una lista de gastos
-- [0:13-0:23] VOZ: "Dos: te da curiosidad por qué un negocio que vende mucho igual se quiebra. Esa pregunta es, literalmente, la carrera." | PANTALLA: "2. ¿Vende mucho y quiebra?" | VISUAL: tienda de barrio, corte a cámara
-- [0:23-0:37] VOZ: "Y tres, la que casi nadie ve: te gusta el orden, pero también te gusta tener la razón con pruebas. Un contador no opina, demuestra con números. Si te ves en las tres, esto puede ser lo tuyo, y en Uniremington lo puedes estudiar virtual." | PANTALLA: "3. Tienes la razón con pruebas" | VISUAL: a cámara, sonrisa
-- [0:37-0:45] CTA: "Guarda este video y compártelo con la persona que siempre hace las cuentas del grupo." | PANTALLA: "Compártelo con tu contador del grupo" | VISUAL: a cámara, señala la pantalla
+- [0:00-0:03] VOZ: "Una tienda puede vender todos los días y quebrar igual." | PANTALLA: "Vende todo. *Quiebra.*" | VISUAL: segundo 0: persiana de un local bajando
+- [0:03-0:11] VOZ: "Pasa así: vendes un millón en el mes, pero le fías la mitad a los clientes y el arriendo se paga el primero." | PANTALLA: "$1.000.000 vendido" | VISUAL: cuaderno de fiados, recibo de arriendo
+- [0:11-0:18] VOZ: "En el papel ganaste. En la caja no hay con qué pagar." | PANTALLA: "Caja: $0" | VISUAL: caja registradora vacía
+- [0:18-0:22] VOZ: "Y casi ningún dueño lo ve venir." | PANTALLA: "Nadie lo ve venir" | VISUAL: a cámara
+- [0:22-0:31] VOZ: "Eso se llama flujo de caja, y es lo primero que revisa un contador cuando entra a un negocio: la plata que de verdad entra y sale, mes a mes." | PANTALLA: "Flujo de caja" | VISUAL: tabla simple de entradas y salidas
+- [0:31-0:35] CTA: "Guárdalo y mándaselo a alguien que tenga negocio." | PANTALLA: "Mándaselo" | VISUAL: a cámara, señala la pantalla
 
-**Por qué puede funcionar:** la lista promete algo corto, y "la tercera casi nadie la ve" deja una pregunta abierta hasta el final. Se presta para compartir y etiquetar.
-**Ganchos alternativos:** (Curiosidad) "Si haces las cuentas del paseo, mira esto." · (Identidad) "Esto es para la persona que siempre divide la cuenta."
+**Por qué puede funcionar:** todo el mundo conoce un negocio que cerró "aunque se llenaba". Se comparte con familiares que tienen negocio, y deja la idea de que el contador es quien evita eso.
+**Ganchos alternativos:** (No fue eso) "Este negocio se llenaba todos los días y cerró. No fue por ventas." · (El error) "El error que cierra más tiendas de barrio no es vender poco."
+**Ficha:** gancho 9/10 (específico 1: sin número) · disparadores: brecha 0 s, prueba 3 s (ejemplo con cifras), quiebre 18 s, especificidad 22 s · rol atraer · cifras de ejemplo, no de un caso real
 
-## Opción 4 · La objeción literal (30 s)
+## Opción 4 · La IA no firma (35 s)
 
-- [0:00-0:03] VOZ: "¿Y si trabajar todo el día ya no fuera excusa para ser contador?" | PANTALLA: "¿Sin tiempo?" | VISUAL: persona saliendo del trabajo de noche
-- [0:03-0:15] VOZ: "Te entiendo: sales cansado, llegas a la casa y lo último que quieres es un salón de clase. Por eso la Contaduría de Uniremington también es virtual, sin desplazarte ni llegar corriendo a las seis." | PANTALLA: "Sin desplazarte" | VISUAL: a cámara en la sala de su casa
-- [0:15-0:25] VOZ: "Son 9 semestres [CONFIRMAR], organizas tu semana como te sirva y la práctica la haces en el consultorio contable virtual." | PANTALLA: "9 semestres [CONFIRMAR]" | VISUAL: calendario semanal en pantalla
-- [0:25-0:30] CTA: "Comenta CONTADOR y una asesora te ayuda a organizar tus horas." | PANTALLA: "Comenta CONTADOR" | VISUAL: a cámara
+- [0:00-0:03] VOZ: "La IA ya hace contabilidad. Y los contadores van a valer más." | PANTALLA: "IA vs *contador*" | VISUAL: segundo 0: un chat de IA generando un asiento contable
+- [0:03-0:10] VOZ: "Es cierto: una IA clasifica facturas y cuadra extractos en segundos. Por eso mucha gente cree que la carrera se acaba." | PANTALLA: "Facturas en segundos" | VISUAL: grabación de pantalla rápida
+- [0:10-0:16] VOZ: "Pero hay algo que la ley no le deja hacer a una máquina: firmar." | PANTALLA: "Firmar" | VISUAL: mano firmando un estado financiero
+- [0:16-0:27] VOZ: "Los estados financieros y las declaraciones grandes necesitan la firma de un contador público con tarjeta profesional, que responde con su nombre si algo sale mal." | PANTALLA: "Tarjeta profesional" | VISUAL: tarjeta profesional [CONFIRMAR imagen autorizada]
+- [0:27-0:32] VOZ: "La IA hace el trabajo pesado. La responsabilidad sigue teniendo nombre y apellido." | PANTALLA: "Nombre y apellido" | VISUAL: a cámara
+- [0:32-0:35] CTA: "¿Tú qué crees? Comenta IA o CONTADOR." | PANTALLA: "¿IA o CONTADOR?" | VISUAL: a cámara
 
-**Por qué puede funcionar:** nombra la excusa número uno de quien trabaja y la responde con hechos concretos en menos de 15 segundos.
-**Ganchos alternativos:** (Contrario) "No necesitas dejar tu trabajo para ser contador." · (Confesión) "Seamos honestos: estudiar trabajando cansa. Pero mira esto."
+**Por qué puede funcionar:** "la IA acaba con los empleos" es un debate en el que todos tienen opinión. Toma partido, lo defiende con un hecho legal real (la firma) y el cierre invita a votar en comentarios, que es lo que el algoritmo premia.
+**Ganchos alternativos:** (Responder una idea) "Dicen que la IA acaba con los contadores. Mira lo que no puede hacer." · (El costo oculto) "Lo único que la IA no puede hacer en contabilidad es lo que más vale."
+**Ficha:** gancho 9/10 · disparadores: brecha 0 s, enemigo 3 s (el mito), quiebre 10 s, prueba 16 s · rol atraer · opinión que divide, cierre suave
 
-## Opción 5 · Antes y después (35 s)
+## Opción 5 · Día de vencimiento (36 s)
 
-> Requiere una persona real que cuente su historia con autorización. Los datos de la historia son de ella.
+> Lo cuenta un docente o egresado contador de Uniremington con su experiencia real. [CONFIRMAR persona]
 
-- [0:00-0:03] VOZ: "Hace [CONFIRMAR] años yo solo digitaba facturas y nadie me preguntaba nada." | PANTALLA: "Antes: solo digitaba" | VISUAL: estudiante real a cámara [CONFIRMAR persona]
-- [0:03-0:14] VOZ: "Sabía hacer el trabajo, pero en las reuniones importantes nunca estaba. Pensaba que ya estaba muy grande para empezar una carrera, y que con trabajo e hijos era imposible." | PANTALLA: "«Ya estoy muy grande»" | VISUAL: fotos de su rutina
-- [0:14-0:28] VOZ: "Lo que me decidió fue estudiar virtual en Uniremington sin dejar el trabajo. Hoy voy en [CONFIRMAR semestre] y ya no solo digito: entiendo los estados financieros y propongo cosas." | PANTALLA: "Hoy: propongo" | VISUAL: estudiando de noche; luego en su oficina explicando un informe
-- [0:28-0:35] CTA: "Si estás donde yo estaba, comenta CONTADOR y te cuento cómo empecé." | PANTALLA: "Comenta CONTADOR" | VISUAL: a cámara, cercano
+- [0:00-0:04] VOZ: "Día de vencimiento, cuatro de la tarde, y las facturas llegan en fotos." | PANTALLA: "Vence hoy. *4 p. m.*" | VISUAL: segundo 0: chat de WhatsApp lleno de fotos de facturas
+- [0:04-0:12] VOZ: "Cuarenta fotos, la mitad borrosas, y una es la cuenta de un almuerzo. Así se ve la contabilidad de un negocio pequeño." | PANTALLA: "40 fotos" | VISUAL: pasar las fotos rápido
+- [0:12-0:20] VOZ: "En ese momento tienes que decidir qué sirve, qué no y qué se puede presentar hoy sin inventar nada." | PANTALLA: "Sirve / no sirve" | VISUAL: separar facturas en dos montones
+- [0:20-0:24] VOZ: "Esa parte no sale en ningún libro." | PANTALLA: "No sale en libros" | VISUAL: a cámara
+- [0:24-0:33] VOZ: "Se aprende con casos. Por eso en Uniremington los estudiantes de Contaduría practican en un consultorio contable con negocios de verdad." | PANTALLA: "Consultorio contable [CONFIRMAR]" | VISUAL: estudiantes atendiendo un caso
+- [0:33-0:36] CTA: "Si esto te parece un reto divertido, comenta CONTADOR." | PANTALLA: "Comenta CONTADOR" | VISUAL: a cámara, sonrisa
 
-**Por qué puede funcionar:** la historia de antes y después de una persona real es la prueba más creíble en educación; la duda de "ya estoy muy grande" queda resuelta sin que la universidad lo diga.
-**Ganchos alternativos:** (Emocional) "Para quien cree que ya perdió su oportunidad de estudiar." · (Especificidad) "Con [CONFIRMAR] años y dos hijos empecé Contaduría."
+**Por qué puede funcionar:** empieza en plena escena, sin presentación, y muestra el oficio real con humor. Quien se ríe y piensa "eso me gustaría resolverlo" es justo el aspirante correcto.
+**Ganchos alternativos:** (Confesión) "La primera vez que me mandaron facturas por WhatsApp, quise renunciar." [CONFIRMAR que sea real] · (Antes y después) "Cuarenta fotos borrosas a las 4. Declaración presentada a las 6."
+**Ficha:** gancho 9/10 (rápido 1: 13 palabras) · disparadores: se reconoce 0 s, prueba 4 s, quiebre 20 s, especificidad 24 s · rol confianza
 
-## Opción 6 · Checklist del comprador (40 s)
+## Opción 6 · El consultorio por dentro (26 s)
 
-- [0:00-0:03] VOZ: "No te inscribas a Contaduría virtual sin revisar estas tres cosas." | PANTALLA: "Revisa esto antes" | VISUAL: a cámara, mano levantada como alto
-- [0:03-0:14] VOZ: "Una: que tenga registro calificado. Búscalo en el SNIES; si no aparece, ese título te puede salir muy caro. En Uniremington, la Contaduría virtual aparece con el código 104911." | PANTALLA: "SNIES 104911 [CONFIRMAR vigencia]" | VISUAL: grabación de pantalla buscando en el SNIES
-- [0:14-0:26] VOZ: "Dos: que haya práctica de verdad. Un contador se forma resolviendo casos reales, no solo leyendo diapositivas. Aquí tienes un consultorio contable virtual para practicar desde el primer momento [CONFIRMAR]." | PANTALLA: "Práctica real" | VISUAL: consultorio contable virtual
-- [0:26-0:36] VOZ: "Tres: pregunta por la acreditación y por quiénes son tus docentes. La facultad de Ciencias Contables de Uniremington tiene [CONFIRMAR acreditación y alcance]." | PANTALLA: "Acreditación [CONFIRMAR]" | VISUAL: docente de la facultad [CONFIRMAR]
-- [0:36-0:40] CTA: "Guarda este video para cuando compares universidades." | PANTALLA: "Guárdalo" | VISUAL: a cámara
+> Necesita una grabación de pantalla real del consultorio contable virtual. [CONFIRMAR acceso y permiso]
 
-**Por qué puede funcionar:** da valor real antes de vender (cómo no equivocarse) y deja a la universidad bien parada en cada punto sin atacar a nadie.
-**Ganchos alternativos:** (Autoridad) "Así revisas si una universidad está aprobada." · (Pregunta) "¿Sabes si tu carrera virtual tiene registro?"
+- [0:00-0:03] VOZ: "Así se ve por dentro el consultorio contable virtual de Uniremington." | PANTALLA: "El consultorio *por dentro*" | VISUAL: segundo 0: grabación de pantalla del consultorio
+- [0:03-0:12] VOZ: "Llega un caso: un emprendedor que no sabe si tiene que facturar electrónicamente. El estudiante lo revisa con un docente y le responde." | PANTALLA: "Caso real [CONFIRMAR]" | VISUAL: recorrido por la pantalla del caso
+- [0:12-0:19] VOZ: "Es lo mismo que vas a hacer cuando te gradúes, pero con alguien al lado que te corrige." | PANTALLA: "Con alguien que te corrige" | VISUAL: comentario del docente en pantalla
+- [0:19-0:23] VOZ: "Y no esperas al último semestre para hacerlo." | PANTALLA: "Desde [CONFIRMAR semestre]" | VISUAL: corte a cámara
+- [0:23-0:26] CTA: "Comenta CONTADOR y te mandamos el recorrido completo." | PANTALLA: "Comenta CONTADOR" | VISUAL: a cámara
 
-## Opción 7 · El filtro honesto (15 s)
+**Por qué puede funcionar:** mostrar la pantalla real es la prueba más fuerte que hay; nadie más puede publicar este video, y el cierre ofrece algo concreto (el recorrido).
+**Ganchos alternativos:** (Detrás del resultado) "Así responde un estudiante de Contaduría su primer caso real." · (Cómo, sin) "Cómo practicar contabilidad sin tener todavía un trabajo."
+**Ficha:** gancho 8/10 (tensión 1) · disparadores: prueba 0 s, especificidad 3 s, quiebre 19 s · rol confianza
 
-- [0:00-0:03] VOZ: "Seamos honestos: Contaduría no es para todo el mundo." | PANTALLA: "No es para todos" | VISUAL: a cámara, serio
-- [0:03-0:11] VOZ: "Si odias los detalles y te aburre buscar por qué no cuadra un peso, piénsalo dos veces." | PANTALLA: "¿No cuadra un peso?" | VISUAL: hoja de cálculo con una celda en rojo
-- [0:11-0:15] CTA: "Pero si encontrar ese peso te emociona, comenta CONTADOR." | PANTALLA: "Comenta CONTADOR" | VISUAL: sonrisa, señala abajo
+## Opción 7 · Experiencia te sobra (30 s)
 
-**Por qué puede funcionar:** es corto, va contra lo que se espera de una universidad (decir que no es para todos) y deja que la audiencia correcta se identifique sola.
-**Ganchos alternativos:** (Contrario) "No estudies Contaduría si odias los detalles." · (Pregunta) "¿Te emociona encontrar un peso perdido?"
+- [0:00-0:03] VOZ: "'Llevo ocho años de auxiliar, ¿para qué estudio?' Para poder firmar." | PANTALLA: "8 años de auxiliar" | VISUAL: segundo 0: escritorio con facturas; otra persona firma el documento
+- [0:03-0:12] VOZ: "Haces la conciliación, la nómina y la exógena. Pero el estado financiero lo firma otra persona, y el cliente le confía el negocio a quien firma." | PANTALLA: "Tú haces. Otro firma." | VISUAL: a cámara, tono serio
+- [0:12-0:15] VOZ: "Experiencia te sobra. Te falta el título." | PANTALLA: "Te falta el título" | VISUAL: corte
+- [0:15-0:25] VOZ: "La Contaduría Pública virtual de Uniremington la estudias desde la casa, sin soltar tu trabajo, y tiene registro SNIES 104911." | PANTALLA: "SNIES 104911 [CONFIRMAR vigencia]" | VISUAL: persona estudiando de noche en su portátil
+- [0:25-0:30] CTA: "Comenta CONTADOR y te mandamos el plan de estudios." | PANTALLA: "Pide el plan de estudios" | VISUAL: a cámara
+
+**Por qué puede funcionar:** usa la frase exacta que dice el auxiliar contable y la responde en dos palabras ("para firmar"). El cierre ofrece un objeto concreto, el plan de estudios, en vez de "más información".
+**Ganchos alternativos:** (Todavía atascado) "Llevas años haciendo la contabilidad y todavía firma otro." · (La pregunta que le hacen) "¿Vale la pena estudiar Contaduría si ya soy auxiliar? Sí, por una razón."
+**Ficha:** gancho 10/10 · disparadores: se reconoce 0 s, enemigo 3 s, quiebre 12 s, especificidad 15 s · rol vender
 
 ---
 
-## Caption sugerido (sirve para cualquiera)
-¿Contaduría es solo hacer cuentas? 👀 En Uniremington la estudias virtual y practicas con casos reales. Comenta CONTADOR y te enviamos la información.
-#Contaduría #ContaduríaPública #Uniremington #EstudiarVirtual #Colombia
+## Caption sugerido (sirve para la 1 y la 2)
+La DIAN ve más de lo que crees. Guarda este video y compártelo con quien siempre deja la renta para el último día.
+#DIAN #DeclaraciónDeRenta #Contaduría #Uniremington #Colombia
 
-## Por confirmar con Uniremington antes de publicar
-- Vigencia del SNIES 104911 (Contaduría virtual) y duración de 9 semestres.
-- Si la acreditación en alta calidad cubre la modalidad virtual.
-- Si los estudiantes virtuales usan el consultorio contable virtual, y material visual disponible.
-- Canal oficial del CTA (WhatsApp / formulario) y la palabra CONTADOR.
-- Opción 5: estudiante real con autorización escrita.
+## Por confirmar antes de publicar
+- Valor en pesos de 1.400 UVT y de 10 UVT para el año en que se publique, y el calendario de vencimientos de renta de personas naturales.
+- Vigencia del SNIES 104911 (Contaduría virtual) y si la acreditación en alta calidad cubre la modalidad virtual.
+- Si los estudiantes virtuales usan el consultorio contable, desde qué semestre, y si atienden casos reales. Grabación de pantalla con permiso.
+- Opción 5: docente o egresado real que cuente su experiencia.
+- Canal oficial del CTA (WhatsApp o formulario) y quién responde los comentarios de la opción 2.
+- Límite real del concepto: las cifras son pistas de patrones generales; aún no se midió qué es viral en este nicho (falta acceso a YouTube o Treg).
