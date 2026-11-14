@@ -23,6 +23,10 @@ Ejemplos del Quindío: café, arroba, finca, la tienda de la esquina, Salento. I
 ## Pace
 160 wpm (≈ 2,7 palabras por segundo).
 
+## Length and lines
+Cada guion dura entre 40 y 60 segundos. Frases cortas (15 palabras o menos), palabras de todos los días, fáciles de decir
+para estudiantes y profesores. Mejor varios momentos cortos o un pequeño diálogo que frases largas.
+
 ## Words I use a lot
 plata, llevar las cuentas, negocio, finca, cosecha, Uniremington Armenia, Contaduría, escríbenos, matricúlate.
 

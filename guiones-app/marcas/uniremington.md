@@ -11,6 +11,8 @@ slug: uniremington
   afuera (fincas, negocios, casas) se muestran con objetos en el aula o actuados por estudiantes y profesor.
   Cada persona que salga en cámara necesita autorización de uso de imagen.
 - Regionalismo: Colombia, español neutro cercano.
+- Duración de los guiones: entre 40 y 60 segundos, con frases cortas y fáciles de decir.
+- Línea preferida: por qué estudiar Contaduría, qué vas a aprender y por qué elegir Uniremington Armenia.
 
 ## Programas
 ### Contaduría Pública
