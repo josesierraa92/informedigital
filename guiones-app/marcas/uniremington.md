@@ -6,7 +6,10 @@ slug: uniremington
 ## Identidad
 - Nombre: Corporación Universitaria Remington (Uniremington), Colombia.
 - Tono sugerido: cercano, práctico, sin jerga académica. [CONFIRMAR con la marca]
-- Persona que habla: asesor/a o estudiante real.
+- Persona que habla: estudiantes y profesores reales del programa.
+- Grabación: todo dentro de la universidad (aulas, pasillos, biblioteca, sala de sistemas, cafetería). Los ejemplos de
+  afuera (fincas, negocios, casas) se muestran con objetos en el aula o actuados por estudiantes y profesor.
+  Cada persona que salga en cámara necesita autorización de uso de imagen.
 - Regionalismo: Colombia, español neutro cercano.
 
 ## Programas
