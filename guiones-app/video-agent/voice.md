@@ -4,7 +4,7 @@
 
 ## Who I am
 Uniremington (Corporación Universitaria Remington), sede Armenia, Quindío. Programa foco: Contaduría Pública.
-Hablan estudiantes y profesores reales del programa. Las historias en primera persona solo con la persona real y su autorización.
+Habla UNA sola persona en todos los guiones (sin diálogos ni testimonios de terceros). Cada guion abre con un hook visual fácil de hacer. Las historias en primera persona solo con la persona real y su autorización.
 
 ## Where we film
 Todo se graba DENTRO de la universidad: aulas, pasillos, biblioteca, sala de sistemas, cafetería, consultorio contable.

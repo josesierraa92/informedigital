@@ -6,7 +6,8 @@ slug: uniremington
 ## Identidad
 - Nombre: Corporación Universitaria Remington (Uniremington), Colombia.
 - Tono sugerido: cercano, práctico, sin jerga académica. [CONFIRMAR con la marca]
-- Persona que habla: estudiantes y profesores reales del programa.
+- Persona que habla: UNA sola persona graba todos los guiones (sin diálogos; si hace falta otra voz, es una pregunta a cámara).
+- Cada guion arranca con un hook visual fácil de hacer en los primeros 2 segundos, con objetos del aula (post-its, billetes de juego, una hoja, una carpeta), y trae una alternativa.
 - Grabación: todo dentro de la universidad (aulas, pasillos, biblioteca, sala de sistemas, cafetería). Los ejemplos de
   afuera (fincas, negocios, casas) se muestran con objetos en el aula o actuados por estudiantes y profesor.
   Cada persona que salga en cámara necesita autorización de uso de imagen.
