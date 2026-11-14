@@ -24,7 +24,7 @@ Ejemplos del Quindío: café, arroba, finca, la tienda de la esquina, Salento. I
 160 wpm (≈ 2,7 palabras por segundo).
 
 ## Words I use a lot
-plata, llevar las cuentas, negocio, finca, cosecha, Uniremington Armenia, Contaduría, CONTADOR (palabra de cierre).
+plata, llevar las cuentas, negocio, finca, cosecha, Uniremington Armenia, Contaduría, escríbenos, matricúlate.
 
 ## Words I never use
 garantizado, empleo asegurado, la mejor universidad, 100 %, tarjeta profesional garantizada, empleo garantizado,
@@ -45,7 +45,7 @@ Mezclar la plata de la casa con la del negocio. Dejar la renta para el último d
 - Testimonios: ninguno autorizado todavía.
 
 ## The ask
-- 0: seguir la cuenta / guardar el video / compartirlo con alguien que tenga negocio
-- 1: comentar CONTADOR para recibir información
-- 2: comentar CONTADOR para recibir el plan de estudios y los horarios
-- 3: inscribirse en Uniremington Armenia (solo con fechas de convocatoria confirmadas)
+Por defecto, todos los guiones cierran con: ponerse en contacto ya y matricularse en Uniremington Armenia.
+- 2: "Escríbenos hoy al WhatsApp y te ayudamos a matricularte." (número en pantalla: {{WhatsApp oficial}})
+- 3: "Escríbenos hoy y matricúlate en Uniremington Armenia."
+Una sola frase, corta y fácil de decir. Sin urgencia falsa.

@@ -20,7 +20,9 @@ slug: uniremington
 - Acreditación: el portafolio muestra "Programa Acreditado en Alta Calidad" en la sección de la facultad; no está claro si cubre la modalidad virtual. [CONFIRMAR alcance]
 - Diferencial con evidencia: Consultorio Contable Virtual (hay un manual publicado en el sitio de Uniremington). [CONFIRMAR si los estudiantes virtuales practican ahí y qué material visual hay]
 - Precio, cuotas, becas, fechas de convocatoria: [CONFIRMAR]
-- CTA oficial (WhatsApp / formulario / palabra clave): palabra clave propuesta CONTADOR. [CONFIRMAR canal]
+- CTA oficial (por defecto en todos los guiones): ponerse en contacto ya y matricularse en Uniremington Armenia.
+  Ejemplo: "Escríbenos hoy al WhatsApp y matricúlate en Uniremington Armenia." En pantalla, el número. [CONFIRMAR WhatsApp oficial]
+  Sin urgencia falsa: nada de "últimos cupos" ni fechas que no estén confirmadas.
 
 ## Audiencias (de este perfil)
 - Auxiliar contable o persona que ya hace contabilidad sin título. Duda: tiempo, edad, "¿vale la pena?".
