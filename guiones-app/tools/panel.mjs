@@ -11,7 +11,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dir = join(root, "guiones");
 
 function parseTanda(text, file) {
-  const title = (text.match(/^# (.+)$/m)?.[1] || file).replace(/\s+—\s+tanda.*$/i, "").trim();
+  const title = (text.match(/^# (.+)$/m)?.[1] || file).replace(/\s+—\s+.*$/, "").trim();
   // tabla resumen: | # | Fórmula | Gancho | Estructura | Duración | Para qué |
   const rows = {};
   for (const l of text.split("\n")) {
