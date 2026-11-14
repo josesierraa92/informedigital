@@ -18,6 +18,13 @@ No eres un generador genérico. Armas cada guion **en capas**, y nunca saltas la
 | **revisar** | el usuario pega un guion | Puntaje + reescritura de lo débil |
 | **tanda** | el usuario da ideas, temas, anécdotas o intereses sueltos y pide varios guiones | N guiones distintos (ver "Modo tanda") |
 
+## Regla del usuario: usar todas las herramientas
+
+Cada vez que el usuario pida guiones, **ejecuta** (con la herramienta Skill) `studio-script` (con puntaje de ganchos y
+`humanize`), `viral-hooks`, `marketing-psychology`, `copywriting`/`copy-editing` y `caption-generator`; `offers` o
+`ad-creative` cuando aplique; e intenta `outliers`/`studio-script viral`. Genera antes `video-agent/voice.md` de la marca.
+Al final reporta qué skills corrieron y cuáles no (y por qué). El flujo completo está en el `CLAUDE.md` raíz del repo.
+
 ## Nicho por defecto
 
 El nicho es **educación**: que más personas quieran **estudiar Contaduría Pública en Uniremington** (`marcas/uniremington.md`).

@@ -165,3 +165,28 @@ git push origin main         # -> Vercel redeploya solo
 
 - Windows 11, PowerShell + Git Bash disponibles.
 - Node v24. Dependencias ya instaladas (`node_modules/` presente).
+
+## Guiones de video (OBLIGATORIO cada vez que el usuario pida guiones)
+
+Pedido explícito del usuario: **cada vez que pida guiones por este chat, se usan todas las herramientas de `guiones-app/`**,
+ejecutando las skills con la herramienta Skill (no aplicar sus reglas "de memoria"). Nicho por defecto: estudiar
+Contaduría Pública en Uniremington (`guiones-app/marcas/uniremington.md`), salvo que pida otro programa o sede.
+
+Flujo, en orden, sin saltarse pasos:
+
+1. **`guiones`** (orquestador, `guiones-app/.claude/skills/guiones/SKILL.md`): leerlo primero y seguir su flujo.
+2. **Voz de la marca:** generar o actualizar `guiones-app/video-agent/voice.md` desde `marcas/<marca>.md`
+   con `video-agent/_voice-plantilla.md`.
+3. **`studio-script`**: escribir con su método (fórmulas de `hooks.md`, embudo de `funnel.md`, reglas de `script-rules.md`
+   y `viral.md`), **puntuar cada gancho** (7/10 o más) y pasar **`humanize`** a cada guion.
+4. **`viral-hooks`**: contrastar los ganchos con su base de 100 fórmulas y dar alternativos.
+5. **`marketing-psychology`**: revisar que los disparadores sean honestos y estén bien colocados.
+6. **`copywriting` / `copy-editing`**: pulir frases; **`caption-generator`** (pedirle español) para el caption.
+7. **`offers`** si el guion vende (becas, cupones, convocatoria); **`ad-creative`** si va con pauta.
+8. **`outliers` / `studio-script viral`** para medir qué es viral en el nicho: intentarlo siempre; si no hay red a
+   YouTube o Treg, decirlo en una línea y seguir.
+9. **Verificar:** `node guiones-app/tools/revisar.mjs <guion> --seg <s> --marca <marca>` para cada guion (cero errores).
+10. **Guardar** en `guiones-app/guiones/AAAA-MM-DD_<marca>_<tema>.md`, reconstruir la app con
+    `node guiones-app/tools/panel.mjs <archivo del artifact>`, republicar el artifact "Estudio de Guiones" y hacer commit/push.
+11. **Reportar al final** qué skills se ejecutaron y cuáles no se pudieron usar (y por qué). Nunca decir que se usó una
+    skill que no se ejecutó.
