@@ -39,21 +39,21 @@ tools/revisar.mjs       # verifica duración + cumplimiento + formato
 
 ## Skills especialistas instaladas
 
-Además de `guiones` (orquestador) hay 14 skills de terceros en `.claude/skills/` (lista y licencias en `NOTICE.md`).
-La tabla de cuándo usar cada una está en `.claude/skills/guiones/SKILL.md`. Las clave:
-`studio-script` (guionista + quitar tono de IA), `outliers` / `studio-script viral` (qué es viral en el nicho, medido),
-`marketing-psychology`, `offers`, `ad-creative`, `copywriting`, `frontend-design` (diseño del panel).
+Además de `guiones` (orquestador) hay 6 skills de terceros en `.claude/skills/` (licencias en `NOTICE.md`):
+`studio-script` (guionista y paso que quita el tono de IA), `viral-hooks`, `marketing-psychology`, `copy-editing`,
+`offers` y `caption-generator`. La tabla de cuándo usar cada una está en `.claude/skills/guiones/SKILL.md`.
 
-`studio-script`, `outliers` e `insta-audit` leen `video-agent/voice.md`: se genera desde `marcas/<slug>.md`
-con `video-agent/_voice-plantilla.md` cada vez que cambia la marca activa.
+`studio-script` lee `video-agent/voice.md`: se genera desde `marcas/<slug>.md` con `video-agent/_voice-plantilla.md`
+cada vez que cambia la marca activa.
 
-Red: la búsqueda de virales necesita acceso a YouTube (yt-dlp) o Treg (TikTok/Instagram, de pago y con login).
-Si el entorno no lo permite, se trabaja con transcripciones pegadas.
+Medir qué es viral no está disponible aquí (necesita YouTube o Treg, bloqueados). Si hay un video de referencia, se
+trabaja con su transcripción en el modo desmontar.
 
 ## Panel visual
 
-`panel/index.html` es el Taller de Guiones (configurar pedido, ganchos, estructuras, revisión rápida). Se abre en el
-navegador sin servidor. La versión publicada está en claude.ai como artifact privado.
+El artifact "Estudio de Guiones" en claude.ai muestra todas las tandas en tarjetas y sirve de vitrina. Se arma desde
+`panel/template.html` con `node tools/panel.mjs <archivo>` (que también escribe `panel/index.html`) y se republica tras cada
+tanda. Los guiones se piden por el chat de Claude Code, donde corren las skills completas.
 
 ## Reglas de trabajo
 

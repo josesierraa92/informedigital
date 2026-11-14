@@ -10,9 +10,8 @@ Motor de guiones de video corto para universidades. Combina:
 No hay servidor ni API key: el motor es Claude Code trabajando en esta carpeta.
 
 **Especialistas incluidos** (skills de terceros, ver `NOTICE.md`): guionista con 22 fórmulas de gancho y paso
-anti-IA (`studio-script`), buscador de videos que rompen la media de cada cuenta (`outliers`, `studio-script viral`),
-auditoría de Instagram (`insta-audit`), psicología de persuasión, ofertas, anuncios, copywriting, captions,
-estrategia de contenido, investigación de audiencia y diseño de interfaz (`frontend-design`).
+anti-IA (`studio-script`), 100 ganchos extra (`viral-hooks`), psicología de persuasión (`marketing-psychology`),
+pulido de textos (`copy-editing`), ofertas (`offers`) y captions (`caption-generator`).
 
 **Panel visual:** abre `panel/index.html` en el navegador.
 

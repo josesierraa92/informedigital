@@ -1,6 +1,6 @@
 # voice.md (marca activa: <slug>)
 
-> Este archivo lo leen `studio-script`, `outliers` e `insta-audit`. Se GENERA desde `marcas/<slug>.md`
+> Este archivo lo lee `studio-script`. Se GENERA desde `marcas/<slug>.md`
 > cuando cambias de universidad ("activa la marca <slug>"). No lo edites a mano: edita el perfil de marca.
 > Los títulos de sección van en inglés porque las skills los buscan por nombre; el contenido va en español.
 

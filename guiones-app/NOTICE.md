@@ -16,14 +16,16 @@ Copiadas sin modificar (salvo quitar sus carpetas `evals/`). Licencias completas
 
 | Skills | Repo | Licencia |
 |---|---|---|
-| copywriting, copy-editing, marketing-psychology, social, ad-creative, offers, customer-research, content-strategy | coreyhaines31/marketingskills | MIT |
-| studio-script, outliers, insta-audit | Melvynx/video-agent-skills | MIT |
-| frontend-design | anthropics/skills | Apache-2.0 (LICENSE.txt dentro de la skill) |
+| copy-editing, marketing-psychology, offers | coreyhaines31/marketingskills | MIT |
+| studio-script | Melvynx/video-agent-skills | MIT |
 | viral-hooks | rediumvex/viral-hooks-skill | MIT |
 | caption-generator (`social-captions`) | rediumvex/social-media-caption-generator-claude | MIT |
 
 Revisadas y **no** instaladas: superdesign (depende de su canvas en la nube), beatra viral-video-remake (conector de pago),
-ViralForge (CLI y nube propios), oil-ui (scripts y documentación en chino; frontend-design cubre el caso).
+ViralForge (CLI y nube propios), oil-ui (scripts y documentación en chino).
+
+Instaladas y luego quitadas por no funcionar aquí o no usarse (siguen en el historial de git): outliers e insta-audit
+(necesitan Treg/YouTube, bloqueados), ad-creative, content-strategy, customer-research, social, copywriting y frontend-design.
 
 Marcos clásicos citados en `knowledge/estructuras.md` (AIDA, PAS, Cialdini, Fogg, Berger/STEPPS, Loewenstein)
 son conocimiento público de sus autores.

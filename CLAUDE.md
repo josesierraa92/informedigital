@@ -168,25 +168,28 @@ git push origin main         # -> Vercel redeploya solo
 
 ## Guiones de video (OBLIGATORIO cada vez que el usuario pida guiones)
 
-Pedido explícito del usuario: **cada vez que pida guiones por este chat, se usan todas las herramientas de `guiones-app/`**,
-ejecutando las skills con la herramienta Skill (no aplicar sus reglas "de memoria"). Nicho por defecto: estudiar
-Contaduría Pública en Uniremington (`guiones-app/marcas/uniremington.md`), salvo que pida otro programa o sede.
+Pedido explícito del usuario: **cada vez que pida guiones por este chat, se usan las 7 skills de `guiones-app/`**,
+ejecutándolas con la herramienta Skill (no aplicar sus reglas "de memoria"). Si una skill ya se cargó en esta misma
+sesión, no se vuelve a cargar: se aplica la que ya está. Nicho por defecto: estudiar Contaduría Pública en Uniremington
+(`guiones-app/marcas/uniremington.md`), salvo que pida otro programa o sede.
+
+Skills instaladas (solo estas): `guiones`, `studio-script`, `viral-hooks`, `marketing-psychology`, `copy-editing`,
+`offers`, `caption-generator`. Se quitaron las que no funcionan aquí (medir virales con YouTube/Treg, auditar Instagram)
+y las que no entraban en el flujo; están en el historial de git si algún día hacen falta.
 
 Flujo, en orden, sin saltarse pasos:
 
 1. **`guiones`** (orquestador, `guiones-app/.claude/skills/guiones/SKILL.md`): leerlo primero y seguir su flujo.
-2. **Voz de la marca:** generar o actualizar `guiones-app/video-agent/voice.md` desde `marcas/<marca>.md`
-   con `video-agent/_voice-plantilla.md`.
+2. **Voz de la marca:** usar `guiones-app/video-agent/voice.md`; regenerarlo desde `marcas/<marca>.md` solo si cambia la
+   marca o la sede.
 3. **`studio-script`**: escribir con su método (fórmulas de `hooks.md`, embudo de `funnel.md`, reglas de `script-rules.md`
-   y `viral.md`), **puntuar cada gancho** (7/10 o más) y pasar **`humanize`** a cada guion.
+   y `viral.md`), **puntuar cada gancho** (7/10 o más) y pasar **`humanize`** a cada guion. Su modo `viral` no se usa
+   (necesita YouTube, bloqueado aquí).
 4. **`viral-hooks`**: contrastar los ganchos con su base de 100 fórmulas y dar alternativos.
 5. **`marketing-psychology`**: revisar que los disparadores sean honestos y estén bien colocados.
-6. **`copywriting` / `copy-editing`**: pulir frases; **`caption-generator`** (pedirle español) para el caption.
-7. **`offers`** si el guion vende (becas, cupones, convocatoria); **`ad-creative`** si va con pauta.
-8. **`outliers` / `studio-script viral`** para medir qué es viral en el nicho: intentarlo siempre; si no hay red a
-   YouTube o Treg, decirlo en una línea y seguir.
-9. **Verificar:** `node guiones-app/tools/revisar.mjs <guion> --seg <s> --marca <marca>` para cada guion (cero errores).
-10. **Guardar** en `guiones-app/guiones/AAAA-MM-DD_<marca>_<tema>.md`, reconstruir la app con
-    `node guiones-app/tools/panel.mjs <archivo del artifact>`, republicar el artifact "Estudio de Guiones" y hacer commit/push.
-11. **Reportar al final** qué skills se ejecutaron y cuáles no se pudieron usar (y por qué). Nunca decir que se usó una
-    skill que no se ejecutó.
+6. **`copy-editing`**: pulir frases y quitar rastros de IA; **`caption-generator`** (pedirle español) para el caption.
+7. **`offers`** si el guion vende (becas, cupones, convocatoria, plan de estudios).
+8. **Verificar:** `node guiones-app/tools/revisar.mjs <guion> --seg <s> --marca <marca>` para cada guion (cero errores).
+9. **Guardar** en `guiones-app/guiones/AAAA-MM-DD_<marca>_<tema>.md`, reconstruir la app con
+   `node guiones-app/tools/panel.mjs <archivo del artifact>`, republicar el artifact "Estudio de Guiones" y hacer commit/push.
+10. **Reportar al final** qué skills se aplicaron. Nunca decir que se usó una skill que no se aplicó.

@@ -20,10 +20,10 @@ No eres un generador genérico. Armas cada guion **en capas**, y nunca saltas la
 
 ## Regla del usuario: usar todas las herramientas
 
-Cada vez que el usuario pida guiones, **ejecuta** (con la herramienta Skill) `studio-script` (con puntaje de ganchos y
-`humanize`), `viral-hooks`, `marketing-psychology`, `copywriting`/`copy-editing` y `caption-generator`; `offers` o
-`ad-creative` cuando aplique; e intenta `outliers`/`studio-script viral`. Genera antes `video-agent/voice.md` de la marca.
-Al final reporta qué skills corrieron y cuáles no (y por qué). El flujo completo está en el `CLAUDE.md` raíz del repo.
+Cada vez que el usuario pida guiones, aplica las 7 skills instaladas: `studio-script` (puntaje de ganchos y `humanize`),
+`viral-hooks`, `marketing-psychology`, `copy-editing`, `caption-generator` y `offers` cuando el guion venda. Si ya se
+cargaron en esta sesión, no se recargan. Usa `video-agent/voice.md` de la marca. Al final reporta qué skills se aplicaron.
+El flujo completo está en el `CLAUDE.md` raíz del repo.
 
 ## Nicho por defecto
 
@@ -85,21 +85,19 @@ especialistas. Todas siguen sujetas a las reglas de esta página (cumplimiento, 
 
 | Necesidad | Skill | Nota |
 |---|---|---|
-| Guion corto de máxima calidad, "semana de guiones", reescritura, quitar tono de IA | `studio-script` | Requiere `video-agent/voice.md` de la marca activa (ver abajo). Su modo `humanize` se pasa a **todo** guion antes de entregar. |
-| Qué es viral en el nicho (medido contra la mediana de cada cuenta) | `studio-script viral` (YouTube, gratis con yt-dlp) · `outliers` (TikTok/Instagram vía Treg, de pago ~USD 0,001 por página) | Necesita red a YouTube / Treg. Si no hay acceso, dilo y usa el modo desmontar con lo que pegue el usuario. Siempre decir el costo antes de gastar. |
-| Auditar la cuenta de Instagram de la universidad | `insta-audit` | Treg; gratis en la cuenta propia. Pide autorización antes de instalar nada. |
+| Guion corto de máxima calidad, reescritura, quitar tono de IA | `studio-script` | Lee `video-agent/voice.md`. Su `humanize` se pasa a **todo** guion. Su modo `viral` no se usa aquí (YouTube bloqueado). |
 | 100 ganchos extra (inglés) | `viral-hooks` | Complementa `knowledge/ganchos.md`; traducir y adaptar, nunca literal. |
-| Psicología de persuasión honesta (sesgos, anclaje, prueba social) | `marketing-psychology` | Para elegir disparadores. |
-| Oferta: becas, cupones, urgencia honesta | `offers` | Para guiones de cierre/convocatoria. |
-| Variantes de anuncio pagado (Meta/TikTok Ads) | `ad-creative` | Cuando el video irá con pauta. |
-| Plan de contenidos / calendario por programa | `content-strategy` · `social` | Para "qué publico este mes". |
-| Copy de captions, landing, mensajes | `copywriting` · `copy-editing` · `caption-generator` | Caption final del guion. `caption-generator` escribe en inglés por defecto: pídele siempre español. |
-| Entender objeciones a partir de comentarios/encuestas de leads | `customer-research` | Alimenta `marcas/<slug>.md` → Audiencias. |
-| Diseño visual del panel u otras páginas | `frontend-design` | — |
+| Psicología de persuasión honesta | `marketing-psychology` | Para elegir y revisar disparadores. |
+| Oferta: plan de estudios, becas, cupones, urgencia honesta | `offers` | Para guiones de cierre o venta. |
+| Pulir frases y quitar rastros de IA | `copy-editing` | Después de escribir. |
+| Caption del video | `caption-generator` | Escribe en inglés por defecto: pídele siempre español. |
+
+Para saber qué es viral en el nicho no hay herramienta que funcione aquí: si el usuario trae un video o transcripción,
+usa el modo **desmontar**.
 
 ### Marca activa y `video-agent/voice.md`
 
-`studio-script`, `outliers` e `insta-audit` leen un único `video-agent/voice.md`. Cuando el usuario elija o cambie de
+`studio-script` lee `video-agent/voice.md`. Cuando el usuario elija o cambie de
 universidad, **genera** ese archivo desde `marcas/<slug>.md` usando `video-agent/_voice-plantilla.md` y dilo en una línea
 ("Marca activa: <slug>"). Nunca inventes datos al generarlo. Sus guiones se guardan en `video-agent/scripts/`; al entregarlos
 pásalos también por `tools/revisar.mjs` (convierte al formato de beats si hace falta).
