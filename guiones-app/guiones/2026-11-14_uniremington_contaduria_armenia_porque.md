@@ -1,204 +1,203 @@
 # Uniremington Armenia · Contaduría Pública — por qué estudiarla, qué aprendes y por qué la U
 marca: uniremington | sede: Armenia, Quindío | programa: Contaduría Pública | plataforma: Reels + TikTok | fecha: 2026-11-14
 
-Diez guiones de menos de 30 segundos, con frases cortas y palabras de todos los días para que estudiantes y profesores
-los digan sin trabarse. Todo se graba dentro de la universidad. Tres bloques: por qué estudiar Contaduría (1 a 4),
-qué vas a aprender (5 a 7) y por qué Uniremington (8 a 10).
-Proceso: guiones, studio-script (puntaje y humanize), viral-hooks, marketing-psychology, copy-editing, offers y caption-generator.
+Versión larga: diez guiones de 34 a 40 segundos, con frases cortas y fáciles de decir y pequeños diálogos entre
+estudiante y profesor. Todo se graba dentro de la universidad. Cierre: escribir ya y matricularse.
 
 | # | Fórmula ganadora | Gancho | Estructura | Duración | Para qué |
 |---|---|---|---|---|---|
-| 1 | Por qué: tres razones | La pregunta que le hacen | Lista | 25 s | Atraer |
-| 2 | Por qué: puro número | Sus propias palabras | Testimonio | 22 s | Confianza |
-| 3 | Por qué: el sueldo que se va | Todavía atascado | Enseñanza | 22 s | Atraer |
-| 4 | Por qué: empresa o tus clientes | A vs B | Comparativo | 22 s | Atraer |
-| 5 | Qué aprendes: tres cosas | La lista corta | Lista | 27 s | Confianza |
-| 6 | Qué aprendes: la DIAN sin miedo | Antes y después | Testimonio | 19 s | Confianza |
-| 7 | Qué aprendes: la hoja que lo dice todo | El recibo | Prueba en mano | 25 s | Confianza |
-| 8 | Por qué la U: por qué la escogí | Detrás del resultado | Testimonio | 25 s | Vender |
-| 9 | Por qué la U: revisa que esté aprobada | Cómo, sin | Enseñanza | 25 s | Confianza |
-| 10 | Por qué la U: practicar antes de graduarte | Para y empieza | Prueba | 20 s | Vender |
+| 1 | Por qué: tres razones | La pregunta que le hacen | Lista con diálogo | 40 s | Atraer |
+| 2 | Por qué: puro número | Sus propias palabras | Testimonio | 38 s | Confianza |
+| 3 | Por qué: el sueldo que se va | Todavía atascado | Enseñanza con diálogo | 38 s | Atraer |
+| 4 | Por qué: empresa o tus clientes | A vs B | Comparativo | 40 s | Atraer |
+| 5 | Qué aprendes: tres cosas | La lista corta | Lista | 40 s | Confianza |
+| 6 | Qué aprendes: la DIAN sin miedo | Antes y después | Testimonio | 38 s | Confianza |
+| 7 | Qué aprendes: la hoja que lo dice todo | El recibo | Prueba en mano | 38 s | Confianza |
+| 8 | Por qué la U: por qué la escogí | Detrás del resultado | Testimonio | 37 s | Vender |
+| 9 | Por qué la U: revisa que esté aprobada | Cómo, sin | Enseñanza | 36 s | Confianza |
+| 10 | Por qué la U: practicar antes de graduarte | Para y empieza | Prueba con diálogo | 34 s | Vender |
 
 ---
 
-## Opción 1 · Por qué: tres razones (25 s)
+## Opción 1 · Por qué: tres razones (40 s)
 
-> Habla: profesor. Lugar: aula, frente al tablero.
+> Hablan: profesor y un estudiante. Lugar: aula, frente al tablero.
 
 - [0:00-0:03] VOZ: "¿Por qué estudiar Contaduría? Te doy tres razones." | PANTALLA: "*3 razones*" | VISUAL: segundo 0: el profesor levanta tres dedos frente al tablero
-- [0:03-0:10] VOZ: "Una: todo negocio lleva cuentas. La tienda, la finca, la empresa grande. Todos necesitan un contador." | PANTALLA: "1. Todo negocio" | VISUAL: escribe "1. Todo negocio" en el tablero
-- [0:10-0:16] VOZ: "Dos: puedes trabajar en una empresa o tener tus propios clientes." | PANTALLA: "2. Empresa o independiente" | VISUAL: escribe el punto 2
-- [0:16-0:22] VOZ: "Y tres, la que más me gusta: ayudas a la gente a cuidar su plata." | PANTALLA: "3. Cuidar la plata" | VISUAL: escribe el punto 3 y sonríe a cámara
-- [0:22-0:25] CTA: "Si te suena, escríbenos hoy al WhatsApp y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:11] VOZ: "Una: todo negocio lleva cuentas. La tienda de la esquina, la finca, el hotel, la empresa grande. Todos necesitan un contador." | PANTALLA: "1. Todo negocio" | VISUAL: escribe "1. Todo negocio" en el tablero
+- [0:11-0:13] VOZ: "¿Hasta la tienda de mi mamá, profe?" | PANTALLA: "¿Hasta la tienda?" | VISUAL: habla un estudiante desde su puesto
+- [0:13-0:17] VOZ: "Hasta la tienda de tu mamá. Ella también necesita saber cuánto gana." | PANTALLA: "Hasta la tienda" | VISUAL: el profesor le responde sonriendo
+- [0:17-0:23] VOZ: "Dos: puedes trabajar en una empresa o tener tus propios clientes. Tú decides cómo trabajar." | PANTALLA: "2. Empresa o independiente" | VISUAL: escribe el punto 2
+- [0:23-0:26] VOZ: "Y la tercera es la que más me gusta." | PANTALLA: "La que más me gusta" | VISUAL: el profesor a cámara
+- [0:26-0:33] VOZ: "Ayudas a la gente a cuidar su plata. A que no pierda lo que le costó tanto ganar." | PANTALLA: "3. Cuidar la plata" | VISUAL: escribe el punto 3
+- [0:33-0:40] CTA: "¿Alguna de estas razones es la tuya? Escríbenos hoy al WhatsApp y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** responde la pregunta que se hace todo el que está pensando en la carrera, con tres razones fáciles de recordar.
-**Ganchos alternativos:** (viral-hooks #042) "Las únicas tres razones que necesitas para estudiar Contaduría." 8/10 · (Lo que nadie dice) "Lo que nadie te dice de estudiar Contaduría." 7/10
-**Ficha:** gancho 8/10 (Específico 1, Tensión 1) · psicología: lista corta (fácil de recordar), bucle abierto ("la que más me gusta") · disparadores: brecha 0 s, se reconoce 3 s, quiebre 16 s, especificidad 3 s · humanize 10/10 · frases de 11 palabras o menos ✓
+**Por qué puede funcionar:** responde la pregunta de todo el que piensa en la carrera, y la pregunta del estudiante ("¿hasta la tienda de mi mamá?") la vuelve cercana.
 
-## Opción 2 · Por qué: puro número (22 s)
+## Opción 2 · Por qué: puro número (38 s)
 
-> Habla: estudiante. Lugar: pasillo. Ajustar a lo que el estudiante piense de verdad. [CONFIRMAR estudiante]
+> Habla: estudiante. Lugar: pasillo y aula. Ajustar a lo que el estudiante piense de verdad. [CONFIRMAR estudiante]
 
 - [0:00-0:03] VOZ: "'¿Contaduría? Eso es puro número.' Eso pensaba yo." | PANTALLA: "¿Puro *número*?" | VISUAL: segundo 0: el estudiante a cámara, caminando por el pasillo
-- [0:03-0:06] VOZ: "Pero en clase me encontré otra cosa." | PANTALLA: "En clase" | VISUAL: entra al salón
-- [0:06-0:13] VOZ: "Aprendí por qué un negocio gana plata y otro la pierde. Aunque vendan lo mismo." | PANTALLA: "Gana o pierde" | VISUAL: en clase, mirando unas cuentas con un compañero
-- [0:13-0:16] VOZ: "Y eso me parece emocionante." | PANTALLA: "Emocionante" | VISUAL: a cámara
-- [0:16-0:19] VOZ: "Es como ser detective, pero con la plata." | PANTALLA: "Detective de la plata" | VISUAL: se pone unas gafas con una lupa de juguete sobre una factura
-- [0:19-0:22] CTA: "Si te da curiosidad, escríbenos hoy y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:07] VOZ: "Me imaginaba todo el día con una calculadora, sin hablar con nadie." | PANTALLA: "Solo calculadora" | VISUAL: hace cara de aburrido con una calculadora
+- [0:07-0:10] VOZ: "Pero en clase me encontré otra cosa." | PANTALLA: "En clase" | VISUAL: entra al salón
+- [0:10-0:16] VOZ: "Aprendí por qué un negocio gana plata y otro la pierde. Aunque vendan lo mismo." | PANTALLA: "Gana o pierde" | VISUAL: en clase, mirando unas cuentas con un compañero
+- [0:16-0:23] VOZ: "Por ejemplo: dos panaderías venden lo mismo. Pero una gasta más en harina y no se da cuenta." | PANTALLA: "Dos panaderías" | VISUAL: el tablero con dos columnas, "Panadería A" y "Panadería B"
+- [0:23-0:28] VOZ: "Y eso se descubre con números. Es como ser detective, pero con la plata." | PANTALLA: "Detective de la plata" | VISUAL: revisa una factura con una lupa de juguete
+- [0:28-0:32] VOZ: "Y hablo con mucha más gente de la que pensaba." | PANTALLA: "Más gente de la que pensaba" | VISUAL: conversa con compañeros
+- [0:32-0:38] CTA: "Si te da curiosidad, escríbenos hoy al WhatsApp y matricúlate en Uniremington Armenia. Te esperamos." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** empieza con el prejuicio más común sobre la carrera, dicho por alguien que lo creyó. "Detective de la plata" es una imagen fácil de recordar y de compartir.
-**Ganchos alternativos:** (Mito y realidad, viral-hooks #079) "Mito: Contaduría es aburrida. Realidad: es como ser detective." 9/10 · (Confesión) "Les confieso que yo pensaba que Contaduría era aburrida." 8/10
-**Ficha:** gancho 9/10 (Específico 1) · psicología: similitud (un estudiante como el espectador), sorpresa · disparadores: enemigo 0 s (el prejuicio), se reconoce 0 s, quiebre 13 s, especificidad 6 s · humanize 10/10
+**Por qué puede funcionar:** empieza con el prejuicio más común sobre la carrera, dicho por alguien que lo creyó, y el ejemplo de las panaderías lo hace fácil de entender.
 
-## Opción 3 · Por qué: el sueldo que se va (22 s)
+## Opción 3 · Por qué: el sueldo que se va (38 s)
 
-> Habla: profesor. Lugar: aula. Objetos: billetes de juego.
+> Hablan: profesor y un estudiante. Lugar: aula. Objetos: billetes de juego.
 
-- [0:00-0:03] VOZ: "Te pagan el sueldo y a los diez días ya no tienes nada." | PANTALLA: "Día 10: *$0*" | VISUAL: segundo 0: el profesor tiene billetes de juego en la mano y se le acaban
-- [0:03-0:06] VOZ: "Y no sabes en qué se fue." | PANTALLA: "¿En qué se fue?" | VISUAL: muestra las manos vacías
-- [0:06-0:12] VOZ: "En Contaduría aprendes a llevar cuentas: lo que entra y lo que sale." | PANTALLA: "Lo que entra, lo que sale" | VISUAL: dibuja dos columnas en el tablero
-- [0:12-0:18] VOZ: "Y eso lo usas en todo. En tu casa, en tu trabajo y en tu negocio." | PANTALLA: "Casa, trabajo, negocio" | VISUAL: estudiantes anotando
-- [0:18-0:22] CTA: "Escríbenos hoy al WhatsApp y empieza tu matrícula en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:00-0:03] VOZ: "Te pagan el sueldo y a los diez días ya no tienes nada." | PANTALLA: "Día 10: *$0*" | VISUAL: segundo 0: al profesor se le acaban los billetes de juego de la mano
+- [0:03-0:05] VOZ: "Y no sabes en qué se fue." | PANTALLA: "¿En qué se fue?" | VISUAL: muestra las manos vacías
+- [0:05-0:08] VOZ: "Profe, eso me pasa a mí todos los meses." | PANTALLA: "Me pasa a mí" | VISUAL: habla un estudiante, todos se ríen
+- [0:08-0:11] VOZ: "Le pasa a mucha gente. Y tiene arreglo." | PANTALLA: "Tiene arreglo" | VISUAL: el profesor a cámara
+- [0:11-0:16] VOZ: "En Contaduría aprendes a llevar cuentas: lo que entra y lo que sale." | PANTALLA: "Lo que entra, lo que sale" | VISUAL: dibuja dos columnas en el tablero
+- [0:16-0:21] VOZ: "Anotas cada gasto, aunque sea pequeño. El tinto, el bus, el domicilio." | PANTALLA: "Tinto, bus, domicilio" | VISUAL: escribe los gastos en la columna de lo que sale
+- [0:21-0:27] VOZ: "A fin de mes ves en qué se te fue la plata. Y decides qué cambiar." | PANTALLA: "Decides qué cambiar" | VISUAL: encierra en un círculo el gasto más grande
+- [0:27-0:33] VOZ: "Y eso lo usas en todo. En tu casa, en tu trabajo y en tu negocio." | PANTALLA: "Casa, trabajo, negocio" | VISUAL: estudiantes anotando
+- [0:33-0:38] CTA: "Escríbenos hoy al WhatsApp y empieza tu matrícula en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** a casi todo el mundo se le va el sueldo sin saber en qué. Muestra que lo que aprendes en Contaduría sirve desde el primer día, también en tu vida.
-**Ganchos alternativos:** (El costo oculto) "No anotar tus gastos te está costando la mitad del sueldo." 8/10 · (Pregunta, viral-hooks #055) "¿Esto te pasa a mitad de mes?" 8/10
-**Ficha:** gancho 10/10 · psicología: aversión a la pérdida 0 s, utilidad inmediata · disparadores: se reconoce 0 s, brecha 3 s, especificidad 6 s · humanize 10/10
+**Por qué puede funcionar:** a casi todo el mundo se le va el sueldo sin saber en qué. El estudiante que dice "me pasa a mí" hace que el espectador se ría y se reconozca.
 
-## Opción 4 · Por qué: empresa o tus clientes (22 s)
+## Opción 4 · Por qué: empresa o tus clientes (40 s)
 
 > Habla: profesor. Lugar: pasillo o aula.
 
 - [0:00-0:03] VOZ: "¿Trabajar en una empresa o tener tus propios clientes?" | PANTALLA: "Empresa *o* tus clientes" | VISUAL: segundo 0: el profesor señala a un lado y luego al otro
 - [0:03-0:05] VOZ: "Un contador puede escoger." | PANTALLA: "Tú escoges" | VISUAL: a cámara
-- [0:05-0:12] VOZ: "Puedes trabajar en una empresa, en un banco o en una entidad del Estado." | PANTALLA: "Empresa, banco, Estado" | VISUAL: escribe las tres en el tablero
-- [0:12-0:15] VOZ: "O puedes tener tu propia oficina." | PANTALLA: "Tu propia oficina" | VISUAL: se sienta en un escritorio con un letrero "Contador"
-- [0:15-0:20] VOZ: "Con clientes como la tienda del barrio o el negocio de un amigo." | PANTALLA: "Tus clientes" | VISUAL: un estudiante llega como "cliente" con una carpeta
-- [0:20-0:22] CTA: "Si quieres esa libertad, escríbenos ya y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:05-0:11] VOZ: "Puedes trabajar en una empresa, en un banco o en una entidad del Estado." | PANTALLA: "Empresa, banco, Estado" | VISUAL: escribe las tres en el tablero
+- [0:11-0:16] VOZ: "Ahí llevas las cuentas, revisas que todo cuadre y ayudas a tomar decisiones." | PANTALLA: "Que todo cuadre" | VISUAL: estudiantes revisando papeles
+- [0:16-0:19] VOZ: "O puedes tener tu propia oficina." | PANTALLA: "Tu propia oficina" | VISUAL: se sienta en un escritorio con un letrero "Contador"
+- [0:19-0:25] VOZ: "Con clientes como la tienda del barrio, un restaurante o el negocio de un amigo." | PANTALLA: "Tus clientes" | VISUAL: un estudiante llega como "cliente" con una carpeta
+- [0:25-0:29] VOZ: "Puedes empezar con un cliente e ir creciendo poco a poco." | PANTALLA: "Poco a poco" | VISUAL: el profesor recibe la carpeta y la abre
+- [0:29-0:34] VOZ: "En los dos caminos haces lo mismo: cuidar la plata de alguien. ¿Cuál te llama más?" | PANTALLA: "¿Cuál te llama más?" | VISUAL: a cámara
+- [0:34-0:40] CTA: "Si quieres esa libertad, escríbenos ya y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** muestra que la carrera abre dos caminos, y el de trabajar por tu cuenta le llama mucho a la gente joven. No promete empleo: dice lo que un contador puede hacer.
-**Ganchos alternativos:** (Pregunta, viral-hooks #052) "¿Y si pudieras escoger entre tener jefe o tener clientes?" 8/10 · (Para y empieza) "Deja de pensar que un contador solo trabaja en una oficina." 7/10
-**Ficha:** gancho 9/10 (Tensión 1) · psicología: autonomía y libertad, imaginar el futuro · disparadores: brecha 0 s, se reconoce 0 s, quiebre 12 s, especificidad 5 s · humanize 10/10
+**Por qué puede funcionar:** muestra los dos caminos de la carrera sin prometer empleo, y la pregunta del final invita a comentar.
 
-## Opción 5 · Qué aprendes: tres cosas (27 s)
+## Opción 5 · Qué aprendes: tres cosas (40 s)
 
-> Habla: profesor. Lugar: aula, frente al tablero.
+> Habla: profesor. Lugar: aula, frente al tablero. Objetos: un pan.
 
 - [0:00-0:03] VOZ: "Tres cosas que aprendes en Contaduría y usas toda la vida." | PANTALLA: "*3 cosas* para toda la vida" | VISUAL: segundo 0: el profesor escribe "3" en el tablero
-- [0:03-0:10] VOZ: "Una: llevar las cuentas de un negocio. Lo que entra, lo que sale y lo que queda." | PANTALLA: "1. Llevar cuentas" | VISUAL: escribe el punto 1
-- [0:10-0:16] VOZ: "Dos: saber cuánto cuesta hacer un producto, y a qué precio venderlo." | PANTALLA: "2. Costos y precio" | VISUAL: sostiene un pan o un café y lo señala
-- [0:16-0:22] VOZ: "Tres: cómo funcionan los impuestos, para no pagar multas por no saber." | PANTALLA: "3. Impuestos sin multas" | VISUAL: escribe el punto 3
-- [0:22-0:27] CTA: "Si quieres aprender esto, escríbenos hoy. Te ayudamos a matricularte en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:09] VOZ: "Una: llevar las cuentas de un negocio. Lo que entra, lo que sale y lo que queda." | PANTALLA: "1. Llevar cuentas" | VISUAL: escribe el punto 1
+- [0:09-0:12] VOZ: "Así sabes si el negocio de verdad está ganando." | PANTALLA: "¿De verdad gana?" | VISUAL: a cámara
+- [0:12-0:17] VOZ: "Dos: saber cuánto cuesta hacer un producto, y a qué precio venderlo." | PANTALLA: "2. Costos y precio" | VISUAL: levanta un pan
+- [0:17-0:24] VOZ: "Hacer un pan te cuesta mil pesos. Si lo vendes a mil, no estás ganando nada." | PANTALLA: "Cuesta $1.000, vale $1.000" | VISUAL: escribe "1.000 = 1.000" en el tablero
+- [0:24-0:29] VOZ: "Tres: cómo funcionan los impuestos, para no pagar multas por no saber." | PANTALLA: "3. Impuestos sin multas" | VISUAL: escribe el punto 3
+- [0:29-0:34] VOZ: "Y todo esto lo practicas en clase con ejemplos de negocios reales." | PANTALLA: "Con ejemplos reales" | VISUAL: estudiantes resolviendo un caso en grupo
+- [0:34-0:40] CTA: "Si quieres aprender esto, escríbenos hoy. Te ayudamos a matricularte en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** dice en palabras simples lo que se aprende, con ejemplos que cualquiera entiende. El cierre ofrece ayuda concreta para matricularse.
-**Ganchos alternativos:** (viral-hooks #045) "Tres cosas que me habría gustado saber antes de estudiar Contaduría." 8/10 · (El atajo) "Lo más útil de Contaduría se aprende en el primer año." [CONFIRMAR] 7/10
-**Ficha:** gancho 9/10 (Tensión 1) · psicología: utilidad práctica, reciprocidad · disparadores: brecha 0 s, especificidad 3 s, quiebre 16 s · humanize 10/10 · temas generales de la carrera; el detalle por semestre está en el plan de estudios [CONFIRMAR]
+**Por qué puede funcionar:** dice en palabras simples lo que se aprende, y el ejemplo del pan de mil pesos lo entiende cualquiera en un segundo.
 
-## Opción 6 · Qué aprendes: la DIAN sin miedo (19 s)
+## Opción 6 · Qué aprendes: la DIAN sin miedo (38 s)
 
 > Habla: estudiante. Lugar: biblioteca o aula. Ajustar a lo que cuente el estudiante. [CONFIRMAR estudiante]
 
 - [0:00-0:03] VOZ: "Antes la DIAN me daba miedo. Ahora la entiendo." | PANTALLA: "DIAN: *sin miedo*" | VISUAL: segundo 0: el estudiante a cámara en la biblioteca
-- [0:03-0:10] VOZ: "En Contaduría aprendí cómo funciona la declaración de renta y quién tiene que hacerla." | PANTALLA: "Declaración de renta" | VISUAL: estudiando con un compañero frente al computador
-- [0:10-0:15] VOZ: "Y ahora mi familia me pregunta a mí cuando tiene dudas." | PANTALLA: "Mi familia me pregunta" | VISUAL: a cámara, sonrisa
-- [0:15-0:19] CTA: "¿A ti también te da miedo la DIAN? Escríbenos hoy y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:08] VOZ: "Cuando oía 'declaración de renta', pensaba que era algo solo para ricos." | PANTALLA: "¿Solo para ricos?" | VISUAL: hace cara de confundido
+- [0:08-0:12] VOZ: "En Contaduría aprendí cómo funciona y quién tiene que hacerla." | PANTALLA: "Cómo funciona" | VISUAL: estudiando con un compañero frente al computador
+- [0:12-0:18] VOZ: "Por ejemplo, que la fecha para declarar depende de los últimos números de la cédula." | PANTALLA: "Mira tu cédula" | VISUAL: tapa una cédula con el dedo y deja ver los últimos números
+- [0:18-0:22] VOZ: "Y que si declaras tarde, te pueden cobrar una multa." | PANTALLA: "Tarde = multa" | VISUAL: a cámara
+- [0:22-0:27] VOZ: "Hasta le ayudé a mi papá a revisar si tenía que declarar [CONFIRMAR con el estudiante]." | PANTALLA: "Le ayudé a mi papá" | VISUAL: sonríe
+- [0:27-0:32] VOZ: "Ahora mi familia me pregunta a mí cuando tiene dudas. Y eso se siente bien." | PANTALLA: "Mi familia me pregunta" | VISUAL: a cámara
+- [0:32-0:38] CTA: "¿A ti también te da miedo la DIAN? Escríbenos hoy y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** la DIAN asusta a casi todos. Ver a un estudiante que ya no le tiene miedo hace que la carrera se vea útil y cercana.
-**Ganchos alternativos:** (Confesión, viral-hooks #092) "Lo admito: antes ni sabía qué era la DIAN." 8/10 · (Pregunta) "¿Te da miedo la DIAN? A mí también me daba." 8/10
-**Ficha:** gancho 9/10 (Específico 1) · psicología: antes y después, similitud · disparadores: se reconoce 0 s, enemigo 0 s (el miedo), especificidad 3 s · humanize 10/10
+**Por qué puede funcionar:** la DIAN asusta a casi todos. Ver a un estudiante que ya la entiende, y que hasta ayuda a su familia, hace que la carrera se vea útil y cercana.
 
-## Opción 7 · Qué aprendes: la hoja que lo dice todo (25 s)
+## Opción 7 · Qué aprendes: la hoja que lo dice todo (38 s)
 
-> Habla: profesor. Lugar: aula. Objetos: un estado financiero de ejemplo impreso.
+> Habla: profesor. Lugar: aula y sala de sistemas. Objetos: un estado financiero de ejemplo impreso.
 
 - [0:00-0:03] VOZ: "Esta hoja dice si una empresa gana o pierde plata." | PANTALLA: "¿Gana o *pierde*?" | VISUAL: segundo 0: el profesor levanta la hoja frente a la cámara
-- [0:03-0:08] VOZ: "Se llama estado financiero, y en Contaduría aprendes a leerla." | PANTALLA: "Estado financiero" | VISUAL: señala las líneas de la hoja
-- [0:08-0:14] VOZ: "Con ella sabes si al negocio le alcanza para pagar, crecer o contratar." | PANTALLA: "Pagar, crecer, contratar" | VISUAL: estudiantes leyendo copias de la hoja
-- [0:14-0:17] VOZ: "Y no lo haces a mano." | PANTALLA: "No a mano" | VISUAL: corte a la sala de sistemas
-- [0:17-0:22] VOZ: "Lo haces en los programas contables que usan las empresas [CONFIRMAR cuáles se enseñan]." | PANTALLA: "Programas contables" | VISUAL: estudiantes trabajando en un software contable
-- [0:22-0:25] CTA: "Escríbenos hoy al WhatsApp y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:07] VOZ: "Se llama estado financiero, y en Contaduría aprendes a leerla." | PANTALLA: "Estado financiero" | VISUAL: señala el título de la hoja
+- [0:07-0:12] VOZ: "Aquí arriba está lo que la empresa vendió. Aquí abajo, lo que gastó." | PANTALLA: "Vendió · gastó" | VISUAL: señala arriba y abajo
+- [0:12-0:14] VOZ: "Y al final, lo que le quedó." | PANTALLA: "Lo que quedó" | VISUAL: señala la última línea
+- [0:14-0:19] VOZ: "Con ella sabes si al negocio le alcanza para pagar, crecer o contratar." | PANTALLA: "Pagar, crecer, contratar" | VISUAL: estudiantes leyendo copias de la hoja
+- [0:19-0:25] VOZ: "Un banco la mira antes de prestarle plata a una empresa. Por eso es tan importante saber leerla." | PANTALLA: "El banco la mira" | VISUAL: a cámara
+- [0:25-0:27] VOZ: "Y no lo haces a mano." | PANTALLA: "No a mano" | VISUAL: corte a la sala de sistemas
+- [0:27-0:32] VOZ: "Lo haces en los programas contables que usan las empresas [CONFIRMAR cuáles se enseñan]." | PANTALLA: "Programas contables" | VISUAL: estudiantes en un software contable
+- [0:32-0:38] CTA: "Escríbenos hoy al WhatsApp y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** mostrar el objeto real en la mano detiene el dedo, y explica en una frase lo que hace un contador. La parte del software le quita la imagen de "carrera de papel y lápiz".
-**Ganchos alternativos:** (Cifra, viral-hooks #081) "Una hoja: eso es lo que mira un banco antes de prestarle a una empresa." 8/10 · (Detrás del resultado) "Así se ve por dentro lo que estudia un contador." 8/10
-**Ficha:** gancho 10/10 · psicología: curiosidad, prueba visual · disparadores: prueba 0 s, brecha 0 s, quiebre 14 s, especificidad 8 s · humanize 10/10
+**Por qué puede funcionar:** el objeto real en la mano detiene el dedo, y en pocos segundos el espectador entiende qué lee un contador y por qué importa.
 
-## Opción 8 · Por qué la U: por qué la escogí (25 s)
+## Opción 8 · Por qué la U: por qué la escogí (37 s)
 
-> Habla: estudiante. Lugar: entrada o pasillo de la sede. Las tres razones deben ser las suyas de verdad. [CONFIRMAR estudiante y razones]
+> Habla: estudiante. Lugar: entrada de la sede. Las razones deben ser las suyas de verdad. [CONFIRMAR estudiante y razones]
 
 - [0:00-0:03] VOZ: "¿Por qué escogí Uniremington? Te lo digo rápido." | PANTALLA: "¿Por qué *Uniremington*?" | VISUAL: segundo 0: el estudiante a cámara en la entrada de la sede
-- [0:03-0:09] VOZ: "Primero, porque queda aquí en Armenia. No me tocó irme a otra ciudad." | PANTALLA: "1. Aquí en Armenia" | VISUAL: señala la fachada de la sede
-- [0:09-0:14] VOZ: "Segundo, porque podía seguir trabajando mientras estudio [CONFIRMAR modalidad y horario]." | PANTALLA: "2. Sigo trabajando" | VISUAL: entra con el bolso del trabajo
-- [0:14-0:21] VOZ: "Y tercero, porque el programa tiene registro calificado del Ministerio de Educación. Yo lo revisé." | PANTALLA: "3. Registro calificado" | VISUAL: muestra en el celular la consulta del SNIES
-- [0:21-0:25] CTA: "Si buscas dónde estudiar Contaduría, escríbenos hoy y matricúlate aquí, en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:10] VOZ: "Primero, porque queda aquí en Armenia. No me tocó irme a otra ciudad ni pagar arriendo lejos de mi familia." | PANTALLA: "1. Aquí en Armenia" | VISUAL: señala la fachada de la sede
+- [0:10-0:13] VOZ: "Segundo, porque podía seguir trabajando mientras estudio [CONFIRMAR modalidad y horario]." | PANTALLA: "2. Sigo trabajando" | VISUAL: entra con el bolso del trabajo
+- [0:13-0:15] VOZ: "Sin trabajo, no hubiera podido estudiar." | PANTALLA: "Sin trabajo, no podía" | VISUAL: a cámara
+- [0:15-0:19] VOZ: "Y tercero, porque el programa tiene registro calificado del Ministerio de Educación." | PANTALLA: "3. Registro calificado" | VISUAL: saca el celular
+- [0:19-0:23] VOZ: "Antes de matricularme, lo busqué en el SNIES. Y ahí estaba." | PANTALLA: "Lo busqué en el SNIES" | VISUAL: muestra en el celular la consulta del SNIES
+- [0:23-0:27] VOZ: "Y los profes son contadores que trabajan en lo mismo que enseñan [CONFIRMAR]." | PANTALLA: "Profes contadores" | VISUAL: saluda a un profesor en el pasillo
+- [0:27-0:30] VOZ: "Esas cosas me dieron tranquilidad." | PANTALLA: "Tranquilidad" | VISUAL: a cámara
+- [0:30-0:37] CTA: "Si buscas dónde estudiar Contaduría, escríbenos hoy y matricúlate aquí, en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
 **Por qué puede funcionar:** las razones las dice un estudiante, no la universidad, y por eso se creen más. Cada razón quita una duda real: distancia, tiempo y confianza.
-**Ganchos alternativos:** (Lista corta) "Tres razones por las que escogí Uniremington Armenia." 9/10 · (Pregunta) "¿Dónde estudiar Contaduría en Armenia? Te cuento dónde estudio yo." 8/10
-**Ficha:** gancho 8/10 (Específico 1, Tensión 1) · offers: baja el esfuerzo (cerca, sigue trabajando), sube la confianza (registro calificado), sin urgencia falsa · psicología: prueba social real, similitud · disparadores: se reconoce 0 s, prueba 14 s, especificidad 3 s · humanize 10/10
 
-## Opción 9 · Por qué la U: revisa que esté aprobada (25 s)
+## Opción 9 · Por qué la U: revisa que esté aprobada (36 s)
 
 > Habla: profesor. Lugar: sala de sistemas. Objetos: computador o celular con la página del SNIES.
 
-- [0:00-0:03] VOZ: "Cómo saber si una carrera está aprobada sin preguntarle a nadie." | PANTALLA: "¿Está *aprobada*?" | VISUAL: segundo 0: el profesor abre la página del SNIES en el computador
-- [0:03-0:09] VOZ: "Entra a la página del SNIES del Ministerio de Educación y busca el programa." | PANTALLA: "Busca en el SNIES" | VISUAL: escribe "Contaduría Pública" en el buscador
-- [0:09-0:13] VOZ: "Si aparece con registro calificado, está aprobado." | PANTALLA: "Registro calificado = aprobado" | VISUAL: aparece el resultado
-- [0:13-0:16] VOZ: "Si no aparece, pregunta antes de pagar." | PANTALLA: "Pregunta antes de pagar" | VISUAL: a cámara
-- [0:16-0:21] VOZ: "La Contaduría Pública de Uniremington aparece ahí. Búscala tú mismo [CONFIRMAR código para Armenia]." | PANTALLA: "Búscala tú" | VISUAL: señala el programa de Uniremington en la pantalla
-- [0:21-0:25] CTA: "Escríbenos hoy al WhatsApp. Te mandamos el enlace y te ayudamos a matricularte." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:00-0:03] VOZ: "Cómo saber si una carrera está aprobada sin preguntarle a nadie." | PANTALLA: "¿Está *aprobada*?" | VISUAL: segundo 0: el profesor frente al computador
+- [0:03-0:07] VOZ: "Antes de pagar una matrícula, haz esto. Toma menos de un minuto." | PANTALLA: "Menos de 1 minuto" | VISUAL: a cámara
+- [0:07-0:11] VOZ: "Entra a la página del SNIES del Ministerio de Educación." | PANTALLA: "Página del SNIES" | VISUAL: abre la página del SNIES
+- [0:11-0:14] VOZ: "Escribe el nombre del programa y de la universidad." | PANTALLA: "Programa + universidad" | VISUAL: escribe "Contaduría Pública" en el buscador
+- [0:14-0:17] VOZ: "Si aparece con registro calificado, está aprobado." | PANTALLA: "Registro calificado = aprobado" | VISUAL: aparece el resultado
+- [0:17-0:20] VOZ: "Si no aparece, pregunta antes de pagar." | PANTALLA: "Pregunta antes de pagar" | VISUAL: a cámara
+- [0:20-0:24] VOZ: "Mira, aquí está la Contaduría Pública de Uniremington. Búscala tú mismo [CONFIRMAR código para Armenia]." | PANTALLA: "Búscala tú" | VISUAL: señala el programa en la pantalla
+- [0:24-0:29] VOZ: "Así estudias tranquilo, sabiendo que el programa está aprobado." | PANTALLA: "Estudia tranquilo" | VISUAL: a cámara
+- [0:29-0:36] CTA: "Escríbenos hoy al WhatsApp. Te mandamos el enlace y te ayudamos a matricularte." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** enseña algo útil para cualquier aspirante, sin vender, y deja a Uniremington bien parada porque invita a comprobarlo. La confianza se gana mostrando, no diciendo.
-**Ganchos alternativos:** (El error) "El error que más plata cuesta al escoger universidad." 8/10 · (Para y empieza) "No pagues una matrícula sin revisar esto primero." 9/10
-**Ficha:** gancho 9/10 (Viewer 1) · psicología: reciprocidad (dato útil gratis), autoridad (Ministerio), transparencia · disparadores: brecha 0 s, prueba 9 s, especificidad 3 s, pérdida 13 s · humanize 10/10 · no nombra a otras universidades ✓
+**Por qué puede funcionar:** enseña algo útil para cualquier aspirante, sin vender, y deja a Uniremington bien parada porque invita a comprobarlo.
 
-## Opción 10 · Por qué la U: practicar antes de graduarte (20 s)
+## Opción 10 · Por qué la U: practicar antes de graduarte (34 s)
 
-> Habla: estudiante. Lugar: consultorio contable o aula donde se atienden casos. [CONFIRMAR que aplica en la sede Armenia]
+> Hablan: un estudiante y el profesor. Lugar: consultorio contable o aula donde se atienden casos. [CONFIRMAR que aplica en la sede Armenia]
 
 - [0:00-0:03] VOZ: "No esperes a graduarte para practicar contabilidad." | PANTALLA: "Practica *desde ya*" | VISUAL: segundo 0: el estudiante atiende a una persona con una carpeta de facturas
-- [0:03-0:09] VOZ: "Aquí practicamos con casos de negocios reales en el consultorio contable [CONFIRMAR]." | PANTALLA: "Consultorio contable" | VISUAL: estudiantes revisando un caso en grupo
-- [0:09-0:12] VOZ: "Y te corrige un profesor." | PANTALLA: "Con un profesor" | VISUAL: el profesor revisa y señala algo en el papel
-- [0:12-0:17] VOZ: "Así practicas lo mismo que vas a hacer cuando te gradúes." | PANTALLA: "Lo mismo, desde ya" | VISUAL: a cámara
-- [0:17-0:20] CTA: "Si quieres aprender así, escríbenos ya y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
+- [0:03-0:07] VOZ: "Aquí practicamos con casos de negocios reales en el consultorio contable [CONFIRMAR]." | PANTALLA: "Consultorio contable" | VISUAL: estudiantes revisando un caso en grupo
+- [0:07-0:10] VOZ: "Llega una persona con sus facturas y sus dudas." | PANTALLA: "Facturas y dudas" | VISUAL: la persona pone la carpeta sobre la mesa
+- [0:10-0:15] VOZ: "Por ejemplo, una señora que vende arepas y quiere saber si le está yendo bien." | PANTALLA: "¿Le va bien?" | VISUAL: el estudiante escucha y anota
+- [0:15-0:18] VOZ: "Nosotros revisamos su caso y le ayudamos." | PANTALLA: "Revisamos su caso" | VISUAL: estudiantes con calculadora y cuaderno
+- [0:18-0:21] VOZ: "Y yo reviso todo antes de que salga." | PANTALLA: "El profesor revisa" | VISUAL: habla el profesor mientras revisa el papel
+- [0:21-0:25] VOZ: "Así practicas lo mismo que vas a hacer cuando te gradúes." | PANTALLA: "Lo mismo, desde ya" | VISUAL: el estudiante a cámara
+- [0:25-0:28] VOZ: "La primera vez da nervios. Después te encanta." | PANTALLA: "Da nervios, después encanta" | VISUAL: sonríe
+- [0:28-0:34] CTA: "Si quieres aprender así, escríbenos ya y matricúlate en Uniremington Armenia." | PANTALLA: "Escríbenos: [CONFIRMAR WhatsApp] · *Matricúlate*" | VISUAL: a cámara, con el número de WhatsApp en pantalla
 
-**Por qué puede funcionar:** practicar con casos reales es una razón concreta para escoger una universidad, y verlo en cámara lo prueba. Quita el miedo de "salir sin experiencia".
-**Ganchos alternativos:** (Detrás del resultado) "Así atiende un estudiante de Contaduría su primer caso real." 9/10 · (Cómo, sin) "Cómo ganar experiencia en contabilidad sin haberte graduado." 8/10
-**Ficha:** gancho 9/10 (Específico 1) · offers: sube la probabilidad percibida (práctica real con profesor) · psicología: prueba visual, aversión al arrepentimiento · disparadores: prueba 0 s, especificidad 3 s, quiebre 9 s · humanize 10/10
+**Por qué puede funcionar:** practicar con casos reales es una razón concreta para escoger una universidad, y verlo en cámara lo prueba.
 
 ---
 
 ## Captions (caption-generator, en español)
 
-**Instagram Reels** (fórmula: valor + guardado)
+**Instagram Reels**
 ```
 Tres cosas que aprendes en Contaduría y usas toda la vida. Escríbenos al WhatsApp [CONFIRMAR] y matricúlate en Uniremington Armenia.
 
 #Contaduría #QuéEstudiar #Armenia #Uniremington
 ```
 
-**TikTok** (fórmula: pregunta para comentarios)
+**TikTok**
 ```
 ¿Contaduría es puro número? 🤔 Esto dice alguien que la estudia. Escríbenos y matricúlate en Uniremington Armenia 👇
 
 #Contaduría #QuéEstudiar #Armenia #Uniremington
 ```
 
-**YouTube Shorts**
-Título: `Por qué estudiar Contaduría Pública: 3 razones claras`
-Descripción:
-```
-Tres razones para estudiar Contaduría Pública, explicadas fácil. Escríbenos al WhatsApp [CONFIRMAR] y matricúlate en Uniremington Armenia.
-
-#Contaduría #QuéEstudiar #Armenia
-```
-
-## Qué skills se aplicaron
-- guiones (orquestador) ✓ · studio-script: puntaje de ganchos, reglas de guion y humanize ✓ · viral-hooks ✓ · marketing-psychology ✓ · copy-editing ✓ · offers (opciones 8 y 10) ✓ · caption-generator (en español) ✓
-
 ## Por confirmar antes de grabar
 - Número de WhatsApp oficial de Uniremington Armenia para el cierre de todos los guiones.
 - Autorización de uso de imagen de cada estudiante y profesor.
-- Opciones 2, 6 y 8: estudiantes reales y que lo que dicen sea su experiencia (en la 8, sus tres razones).
-- Modalidades y horarios en la sede Armenia (opción 8).
-- Código SNIES que aplica a la sede Armenia (opciones 8 y 9).
-- Qué programas contables se enseñan (opción 7).
-- Si el consultorio contable funciona en la sede Armenia y con casos reales (opción 10).
+- Opciones 2, 6 y 8: estudiantes reales y que lo que dicen sea su experiencia (en la 6, lo de ayudarle al papá; en la 8, sus razones).
+- Opción 8: modalidad y horario para estudiar trabajando; que los profesores sean contadores en ejercicio.
+- Opciones 8 y 9: código SNIES que aplica a la sede Armenia.
+- Opción 7: qué programas contables se enseñan.
+- Opción 10: si el consultorio contable funciona en la sede Armenia y con casos reales.
