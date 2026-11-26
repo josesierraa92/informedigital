@@ -300,10 +300,12 @@ const parseCsv = (raw: string): Lead[] => {
 
 export const parseData = (): Lead[] => parseCsv(rawData);
 
-// Cierres del mes (Ganados) — Noviembre 2026. El export del 26/11 no trae
-// ningún Ganado todavía; se agregan aquí a medida que haya cierres (incluidos los
-// de convocatorias previas que no aparecen en el pipeline del mes).
-export const ganadosRawData = `Nº;ESTADO;Novedad;DÍAS EN ESTADO;Nivel de Interés;ASESOR EDUCATIVO;PASA CUPÓN;NOMBRE;EMAIL;TELÉFONO;@ WHATSAPP;DEPARTAMENTO;CIUDAD;EMPRESA;CANAL DE INGRESO;# Digital;UNIVERSIDAD;TÍTULO DE INTERÉS;ÁREA DE ESTUDIO;FACULTAD;ÚLTIMOS ESTUDIOS;CONVOCATORIA;MÉTODO DE PAGO;F. PAGO RESERVA;MES CIERRE;INICIO CLASES;DESCUENTO;VALOR INICIAL;VALOR FINAL;PAGO RESERVA;COMENTARIO DIRECTOR;F. ULT. SEGUIMIENTO;TRANSFERIDO;INF. CONVENIO;INF. FINANCIERO;HOMOLOGACIÓN;COTIZACIÓN;MENSAJES DE MARKETING;FECHA CREADA;ÚLTIMA ACTUALIZACIÓN;F. ASIGNACIÓN`;
+// Cierres del mes (Ganados) — Noviembre 2026. Leads creados en octubre que
+// cerraron en noviembre; no aparecen en el pipeline del mes (export del 26/11).
+export const ganadosRawData = `Nº;ESTADO;Novedad;DÍAS EN ESTADO;Nivel de Interés;ASESOR EDUCATIVO;PASA CUPÓN;NOMBRE;EMAIL;TELÉFONO;@ WHATSAPP;DEPARTAMENTO;CIUDAD;EMPRESA;CANAL DE INGRESO;# Digital;UNIVERSIDAD;TÍTULO DE INTERÉS;ÁREA DE ESTUDIO;FACULTAD;ÚLTIMOS ESTUDIOS;CONVOCATORIA;MÉTODO DE PAGO;F. PAGO RESERVA;MES CIERRE;INICIO CLASES;DESCUENTO;VALOR INICIAL;VALOR FINAL;PAGO RESERVA;COMENTARIO DIRECTOR;F. ULT. SEGUIMIENTO;TRANSFERIDO;INF. CONVENIO;INF. FINANCIERO;HOMOLOGACIÓN;COTIZACIÓN;MENSAJES DE MARKETING;FECHA CREADA;ÚLTIMA ACTUALIZACIÓN;F. ASIGNACIÓN
+1;Ganado;;3;;Jineth Janeth Sarmiento;;Aldemar Jose Olea Páez;aldemarolea18@gmail.com;+573106539679;;Córdoba;Tierralta;;Digital;2604;UNIR;;Maestría;Educación;;Primavera 2027;;2026-11-06;Noviembre;;;;;;;;No;No;No;No;No;0;27/10/26 09:17am;23/11/26 09:19pm;27/10/26 09:17am
+2;Ganado;;3;;Yeisi Gallego;;Jose Aguilar Gamboa;aguilarley18@hotmail.com;+573213732430;;Bogotá D.C.;Bogotá;;Digital;2522;UNIR;Industria 4.0;Maestría;Ingeniería;;Primavera 2027;;2026-11-05;Noviembre;;;;;;;;No;No;No;No;No;0;15/10/26 10:27am;23/11/26 09:50am;15/10/26 10:27am
+3;Ganado;;3;;Jineth Janeth Sarmiento;;Glorieth Sanchez Ortega;gsoasesoriascontables@gmail.com;+573107669117;;Cesar;Aguachica;;Digital;2495;FUNIR;Especialización en Revisoría Fiscal y Auditoría de Cuentas;Especialización;Ciencias Económicas y Administrativas;Profesional/Licenciado;Primavera 2027;Financiado;2026-11-11;Noviembre;Febrero;50%;$ 14.669.500;$ 7.334.750;$ 150.000;;;No;No;No;No;No;0;13/10/26 12:58pm;23/11/26 09:06am;13/10/26 01:16pm`;
 
 export const getGanados = (): Lead[] => parseCsv(ganadosRawData);
 
