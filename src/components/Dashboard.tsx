@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { 
   BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, 
-  PieChart, Pie, Cell, Legend, LabelList
+  PieChart, Pie, Cell, Legend, LabelList, ReferenceArea, ReferenceLine
 } from 'recharts';
 import { cn } from '../utils';
 import {
@@ -168,11 +168,25 @@ export default function Dashboard() {
 
     // Slide 3: Distribución Estado de Leads
     () => {
-      // Los Ganados del mes incluyen cierres de convocatorias previas que
-      // no están en el pipeline principal, por eso se sobreescribe el conteo.
-      const adjustedByStatus = leadsByStatus.map(s =>
-        s.name.toLowerCase().includes('ganado') ? { ...s, value: ganadosMes.length } : s
-      );
+      // El dataset de Ganados es la fuente autoritativa: incluye cierres que no están en
+      // el pipeline y otros que el export aún muestra con otro estado (p. ej. Valorando).
+      // Esos últimos se restan de su estado del pipeline y todos cuentan como Ganado,
+      // aunque el export no traiga ningún "Ganado".
+      const ganadoIds = new Set(ganadosMes.map(g => g.digitalId));
+      const restar: Record<string, number> = {};
+      leads.forEach(l => {
+        if (ganadoIds.has(l.digitalId) && !l.status.toLowerCase().includes('ganado')) {
+          const key = l.status || 'Sin Dato';
+          restar[key] = (restar[key] || 0) + 1;
+        }
+      });
+      const adjustedByStatus = [
+        ...leadsByStatus
+          .filter(s => !s.name.toLowerCase().includes('ganado'))
+          .map(s => ({ ...s, value: s.value - (restar[s.name] || 0) }))
+          .filter(s => s.value > 0),
+        ...(ganadosMes.length > 0 ? [{ name: 'Ganado', value: ganadosMes.length }] : []),
+      ];
       const sortedLeadsByStatus = [...adjustedByStatus].sort((a, b) => {
         const aName = a.name.toLowerCase();
         const bName = b.name.toLowerCase();
@@ -569,64 +583,137 @@ export default function Dashboard() {
 
     // Slide 9: Ganados por Mes
     () => {
-      const ganadosMesData = [
-        { name: 'Abril', value: 6 },
-        { name: 'Mayo', value: 3 },
-        { name: 'Junio', value: 5 },
-        { name: 'Julio', value: 9 },
-        { name: 'Agosto', value: 3 },
-        { name: 'Septiembre', value: 6 },
-        { name: 'Octubre', value: 6 },
-        { name: 'Noviembre', value: ganadosMes.length },
+      // Cada mes pertenece a una convocatoria: Abril–Octubre cerraron Otoño 2026 y
+      // desde Noviembre los cierres cuentan para Primavera 2027.
+      const CONVOCATORIAS = {
+        otono: { label: 'Otoño 2026', color: '#f59e0b' },
+        primavera: { label: 'Primavera 2027', color: '#00df9a' },
+      } as const;
+      type Conv = keyof typeof CONVOCATORIAS;
+
+      const ganadosMesData: { name: string; value: number; conv: Conv }[] = [
+        { name: 'Abril', value: 6, conv: 'otono' },
+        { name: 'Mayo', value: 3, conv: 'otono' },
+        { name: 'Junio', value: 5, conv: 'otono' },
+        { name: 'Julio', value: 9, conv: 'otono' },
+        { name: 'Agosto', value: 3, conv: 'otono' },
+        { name: 'Septiembre', value: 6, conv: 'otono' },
+        { name: 'Octubre', value: 6, conv: 'otono' },
+        { name: 'Noviembre', value: ganadosMes.length, conv: 'primavera' },
       ];
 
-      const totalGanados = ganadosMesData.reduce((acc, m) => acc + m.value, 0);
+      // Eje X numérico (0..n-1) para poder sombrear cada convocatoria por media columna
+      // y trazar el corte justo entre Octubre y Noviembre.
+      const n = ganadosMesData.length;
+      const corte = ganadosMesData.findIndex(m => m.conv === 'primavera');
+      const chartData = ganadosMesData.map((m, i) => ({
+        x: i,
+        name: m.name,
+        otono: m.conv === 'otono' ? m.value : null,
+        primavera: m.conv === 'primavera' ? m.value : null,
+        // Tramo punteado que une el último mes de Otoño con el primero de Primavera
+        puente: i === corte - 1 || i === corte ? m.value : null,
+      }));
+      const totalPor = (c: Conv) => ganadosMesData.filter(m => m.conv === c).reduce((acc, m) => acc + m.value, 0);
+      const rangoPor = (c: Conv) => {
+        const meses = ganadosMesData.filter(m => m.conv === c);
+        return meses.length > 1 ? `${meses[0].name} a ${meses[meses.length - 1].name}` : meses[0]?.name ?? '';
+      };
+      const maxValor = Math.max(...ganadosMesData.map(m => m.value));
 
       return (
         <div className="h-full flex flex-col space-y-6">
-          <div className="shrink-0 flex justify-between items-end">
+          <div className="shrink-0 flex justify-between items-end gap-6">
             <div className="space-y-2">
               <h2 className="text-3xl font-light tracking-tight text-white flex items-center gap-3">
                 <Calendar className="text-[#00df9a] w-8 h-8" /> Tendencia de Ganados por Mes
               </h2>
-              <p className="text-slate-400">Evolución de matrículas confirmadas (Abril a Noviembre).</p>
+              <p className="text-slate-400">
+                Matrículas confirmadas por convocatoria: <span className="font-semibold" style={{ color: CONVOCATORIAS.otono.color }}>Otoño 2026</span> ({rangoPor('otono')}) y <span className="font-semibold" style={{ color: CONVOCATORIAS.primavera.color }}>Primavera 2027</span> (desde {ganadosMesData[corte]?.name}).
+              </p>
             </div>
-            <div className="text-right flex flex-col items-end">
-              <div className="relative mr-2">
-                <div className="absolute -inset-4 bg-[#00df9a]/20 blur-xl rounded-full"></div>
-                <div className="relative text-6xl md:text-7xl font-bold text-white drop-shadow-[0_0_15px_rgba(0,223,154,0.5)] tracking-tighter">{totalGanados}</div>
-              </div>
-              <div className="text-xs text-[#00df9a] uppercase tracking-[0.2em] font-bold mt-2 bg-[#00df9a]/10 px-4 py-1.5 rounded-full border border-[#00df9a]/20">Total Ganados</div>
+            <div className="flex items-end gap-8 shrink-0">
+              {(Object.keys(CONVOCATORIAS) as Conv[]).map(c => {
+                const { label, color } = CONVOCATORIAS[c];
+                return (
+                  <div key={c} className="text-right flex flex-col items-end">
+                    <div className="relative mr-2">
+                      <div className="absolute -inset-4 blur-xl rounded-full opacity-20" style={{ backgroundColor: color }}></div>
+                      <div className="relative text-6xl md:text-7xl font-bold text-white tracking-tighter" style={{ filter: `drop-shadow(0 0 15px ${color}80)` }}>{totalPor(c)}</div>
+                    </div>
+                    <div className="text-xs uppercase tracking-[0.2em] font-bold mt-2 px-4 py-1.5 rounded-full border" style={{ color, backgroundColor: `${color}1a`, borderColor: `${color}33` }}>
+                      Ganados {label}
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-1.5 mr-2">{rangoPor(c)}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div className="bg-gradient-to-b from-[#032018]/80 to-transparent border border-[#00df9a]/20 rounded-xl p-8 flex-1 min-h-0 flex flex-col relative overflow-hidden shadow-[0_0_30px_rgba(0,223,154,0.05)]">
-            <h3 className="text-xl font-medium text-white mb-8 shrink-0 text-center">Matrículas Confirmadas (Ganados)</h3>
+            <div className="flex items-center justify-between mb-6 shrink-0">
+              <h3 className="text-xl font-medium text-white">Matrículas Confirmadas (Ganados)</h3>
+              <div className="flex items-center gap-6 text-sm">
+                {(Object.keys(CONVOCATORIAS) as Conv[]).map(c => (
+                  <span key={c} className="flex items-center gap-2 text-slate-300">
+                    <span className="w-3 h-3 rounded-full" style={{ backgroundColor: CONVOCATORIAS[c].color }} />
+                    Convocatoria {CONVOCATORIAS[c].label}
+                  </span>
+                ))}
+              </div>
+            </div>
             <div className="flex-1 min-h-0">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={ganadosMesData} margin={{ top: 20, right: 30, left: 0, bottom: 20 }}>
-                  <XAxis dataKey="name" stroke="#94a3b8" fontSize={14} tickLine={false} axisLine={false} />
-                  <YAxis stroke="#475569" fontSize={14} tickLine={false} axisLine={false} allowDecimals={false} />
-                  <Tooltip 
-                    cursor={{ stroke: 'rgba(0, 223, 154, 0.2)', strokeWidth: 2 }} 
-                    contentStyle={{ backgroundColor: '#02120e', border: '1px solid #00df9a', borderRadius: '8px', color: '#fff' }}
-                    itemStyle={{ color: '#00df9a', fontWeight: 'bold' }}
+                <LineChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 20 }}>
+                  {/* Los tipos de ReferenceArea no declaran fill/fillOpacity, pero sí se aplican al SVG */}
+                  <ReferenceArea
+                    x1={-0.5} x2={corte - 0.5}
+                    {...{ fill: CONVOCATORIAS.otono.color, fillOpacity: 0.06, strokeOpacity: 0 }}
+                    label={{ value: `CONVOCATORIA ${CONVOCATORIAS.otono.label.toUpperCase()}`, position: 'insideTop', fill: CONVOCATORIAS.otono.color, fontSize: 12, fontWeight: 700, letterSpacing: 2 }}
                   />
-                  <Line 
-                    type="monotone" 
-                    dataKey="value" 
-                    name="Ganados"
-                    stroke="#00df9a" 
-                    strokeWidth={4}
-                    dot={{ r: 6, fill: '#00df9a', stroke: '#02120e', strokeWidth: 2 }}
-                    activeDot={{ r: 8, fill: '#fff', stroke: '#00df9a', strokeWidth: 2 }}
-                  >
-                    <LabelList dataKey="value" position="top" fill="#00df9a" fontSize={16} fontWeight="bold" offset={15} />
-                  </Line>
+                  <ReferenceArea
+                    x1={corte - 0.5} x2={n - 0.5}
+                    {...{ fill: CONVOCATORIAS.primavera.color, fillOpacity: 0.1, strokeOpacity: 0 }}
+                    label={{ value: CONVOCATORIAS.primavera.label.toUpperCase(), position: 'insideTop', fill: CONVOCATORIAS.primavera.color, fontSize: 12, fontWeight: 700, letterSpacing: 2 }}
+                  />
+                  <ReferenceLine x={corte - 0.5} stroke="#94a3b8" strokeDasharray="6 6" strokeOpacity={0.6} />
+                  <XAxis
+                    type="number" dataKey="x" domain={[-0.5, n - 0.5]}
+                    ticks={chartData.map(d => d.x)} tickFormatter={(i: number) => ganadosMesData[i]?.name ?? ''}
+                    stroke="#94a3b8" fontSize={14} tickLine={false} axisLine={false}
+                  />
+                  <YAxis stroke="#475569" fontSize={14} tickLine={false} axisLine={false} allowDecimals={false} domain={[0, maxValor + 3]} />
+                  <Tooltip
+                    cursor={{ stroke: 'rgba(148, 163, 184, 0.2)', strokeWidth: 2 }}
+                    labelFormatter={(i: number) => ganadosMesData[i]?.name ?? ''}
+                    contentStyle={{ backgroundColor: '#02120e', border: '1px solid #084f3c', borderRadius: '8px', color: '#fff' }}
+                  />
+                  <Line
+                    dataKey="puente" stroke="#94a3b8" strokeWidth={2} strokeDasharray="4 6"
+                    dot={false} activeDot={false} legendType="none" tooltipType="none" isAnimationActive={false}
+                  />
+                  {(Object.keys(CONVOCATORIAS) as Conv[]).map(c => {
+                    const { label, color } = CONVOCATORIAS[c];
+                    return (
+                      <Line
+                        key={c}
+                        type="monotone"
+                        dataKey={c}
+                        name={`Ganados ${label}`}
+                        stroke={color}
+                        strokeWidth={4}
+                        connectNulls={false}
+                        dot={{ r: 6, fill: color, stroke: '#02120e', strokeWidth: 2 }}
+                        activeDot={{ r: 8, fill: '#fff', stroke: color, strokeWidth: 2 }}
+                      >
+                        <LabelList dataKey={c} position="top" fill={color} fontSize={16} fontWeight="bold" offset={15} />
+                      </Line>
+                    );
+                  })}
                 </LineChart>
               </ResponsiveContainer>
             </div>
-
           </div>
         </div>
       );
